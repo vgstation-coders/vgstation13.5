@@ -20,7 +20,7 @@
     maxTargets: 2
     angle: 180
     soundHit:
-      collection: MetalThud
+      collection: Whip
   - type: DamageOtherOnHit
     damage:
       types:
