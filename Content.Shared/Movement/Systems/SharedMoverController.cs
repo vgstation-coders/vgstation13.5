@@ -149,12 +149,9 @@ namespace Content.Shared.Movement.Systems
             }
 
             // Update relative movement
-            if (mover.LerpTarget < Timing.CurTime)
+            if (TryUpdateRelative(mover, xform))
             {
-                if (TryUpdateRelative(mover, xform))
-                {
-                    Dirty(uid, mover);
-                }
+                Dirty(uid, mover);
             }
 
             LerpRotation(uid, mover, frameTime);
@@ -646,21 +643,6 @@ namespace Content.Shared.Movement.Systems
                 return true;
             }
 
-            // Otherwise, begin TileMovement.
-
-            // Set WorldRotation so that our character is facing the way we're walking.
-            if (!NoRotateQuery.HasComponent(uid))
-            {
-                if (tileMovement.SlideActive && TryComp(
-                    inputMover.RelativeEntity,
-                    out TransformComponent? parentTransform))
-                {
-                    var delta = tileMovement.Destination - tileMovement.Origin.Position;
-                    var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
-                    _transform.SetWorldRotation(targetTransform, worldRot);
-                }
-            }
-
             // Play step sound.
             if (MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
                 TryGetSound(false, uid, inputMover, mobMover, targetTransform, out var sound, tileDef: tileDef))
@@ -695,6 +677,21 @@ namespace Content.Shared.Movement.Systems
                         ForceSnapToTile(uid, inputMover);
                     }
                 }
+                // Special case: tile movement takes us between two fully adjacent grids seamlessly.
+                // Since we perform tile movement in local coordinates, stop and start the movement
+                // again to realign to new grid.
+                // Improvement suggestion: this is mostly smooth but there is a very tiny bit of
+                // jitter. Instead of being lazy and stopping/starting a new movement, it should
+                // convert the origin into the coordinate system with the new grid as the parent.
+                else if (tileMovement.Origin.EntityId != targetTransform.ParentUid)
+                {
+                    var previousButtons = tileMovement.CurrentSlideMoveButtons;
+                    var previousInitialKeyDownTime = tileMovement.MovementKeyInitialDownTime;
+                    InitializeSlideToCenter(physicsUid, tileMovement);
+                    tileMovement.CurrentSlideMoveButtons = previousButtons;
+                    tileMovement.MovementKeyInitialDownTime = previousInitialKeyDownTime;
+                    UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                }
                 // Otherwise, continue slide.
                 else
                 {
@@ -708,7 +705,19 @@ namespace Content.Shared.Movement.Systems
                 UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
             }
 
-            tileMovement.LastTickPosition = targetTransform.LocalPosition;
+            // Set WorldRotation so that our character is facing the way we're walking.
+            if (!NoRotateQuery.HasComponent(uid))
+            {
+                if (tileMovement.SlideActive && TryComp(
+                    inputMover.RelativeEntity,
+                    out TransformComponent? parentTransform))
+                {
+                    var delta = tileMovement.Destination - tileMovement.Origin.Position;
+                    var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
+                    _transform.SetWorldRotation(targetTransform, worldRot);
+                }
+            }
+
             Dirty(uid, tileMovement);
             return true;
         }
@@ -743,10 +752,11 @@ namespace Content.Shared.Movement.Systems
         /// <param name="tileMovement">TileMovementComponent on the entity represented by UID.</param>
         private void InitializeSlideToCenter(EntityUid uid, TileMovementComponent tileMovement)
         {
-            var localPosition = Transform(uid).LocalPosition;
+            var transform = Transform(uid);
+            var localPosition = transform.LocalPosition;
 
             tileMovement.SlideActive = true;
-            tileMovement.Origin = new EntityCoordinates(uid, localPosition);
+            tileMovement.Origin = new EntityCoordinates(transform.ParentUid, localPosition);
             tileMovement.Destination = SnapCoordinatesToTile(localPosition);
             tileMovement.MovementKeyInitialDownTime = CurrentTime;
             tileMovement.CurrentSlideMoveButtons = MoveButtons.None;
@@ -762,12 +772,13 @@ namespace Content.Shared.Movement.Systems
         /// <param name="inputMover">InputMoverComponent on the entity represented by UID.</param>
         private void InitializeSlide(EntityUid uid, TileMovementComponent tileMovement, InputMoverComponent inputMover)
         {
-            var localPosition = Transform(uid).LocalPosition;
+            var transform = Transform(uid);
+            var localPosition = transform.LocalPosition;
             var offset = DirVecForButtons(inputMover.HeldMoveButtons);
             offset = inputMover.TargetRelativeRotation.RotateVec(offset);
 
             tileMovement.SlideActive = true;
-            tileMovement.Origin = new EntityCoordinates(uid, localPosition);
+            tileMovement.Origin = new EntityCoordinates(transform.ParentUid, localPosition);
             tileMovement.Destination = SnapCoordinatesToTile(localPosition + offset);
             tileMovement.MovementKeyInitialDownTime = CurrentTime;
             tileMovement.CurrentSlideMoveButtons = StripWalk(inputMover.HeldMoveButtons);
