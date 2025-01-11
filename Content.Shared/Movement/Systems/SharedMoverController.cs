@@ -149,10 +149,13 @@ namespace Content.Shared.Movement.Systems
             }
 
             // Update relative movement
+            // LERP delay disabled for /vg/ tile movement. Feels nicer!
+            //if (mover.LerpTarget < Timing.CurTime)
             if (TryUpdateRelative(mover, xform))
             {
                 Dirty(uid, mover);
             }
+            //}
 
             LerpRotation(uid, mover, frameTime);
 
