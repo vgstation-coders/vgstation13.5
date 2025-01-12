@@ -765,7 +765,10 @@ namespace Content.Shared.Movement.Systems
             float movementSpeed
         )
         {
-            var minPressedTime = (1.05f / movementSpeed);
+            // minPressedTime will be 1.05x the time it should take for you to go from 1 tile to another. Need to
+            // account for diagonals being sqrt(2) length as well. Max of 10 seconds just in case.
+            var distanceToDestination = (tileMovement.Destination - tileMovement.Origin.Position).Length();
+            var minPressedTime = Math.Min((1.05f / movementSpeed) * distanceToDestination, 20);
             // We need to stop the move once we are close enough. This isn't perfect, since it technically ends the move
             // 1 tick early in some cases. This is because there's a fundamental issue where because this is a physics-based
             // tile movement system, we sometimes find scenarios where on each tick of the physics system, the player is moved
@@ -929,33 +932,6 @@ namespace Content.Shared.Movement.Systems
 
                 PhysicsSystem.WakeBody(uid);
             }
-        }
-
-        /// <summary>
-        /// Instantly snaps/teleports an entity to the center of the tile it is currently standing on based on the
-        /// given grid. Does not trigger collisions.
-        /// </summary>
-        /// <param name="entity">The entity to be snapped.</param>
-        /// <param name="grid">The grid whose tiles will be used to calculate snapping.</param>
-        /// <returns>The EntityCoordinates at the center of the tile.</returns>
-        private EntityCoordinates ForceSnapToTile(Entity<TransformComponent> entity, Entity<TransformComponent> grid)
-        {
-            var localCoordinates = entity.Comp.Coordinates.WithEntityId(grid.Owner, _transform, EntityManager);
-            var tileCoords = new EntityCoordinates(
-                localCoordinates.EntityId,
-                SnapCoordinatesToTile(localCoordinates.Position));
-
-            if (!localCoordinates.Position.EqualsApprox(tileCoords.Position))
-            {
-                if (entity.Comp.ParentUid.IsValid())
-                {
-                    var local2 = tileCoords.WithEntityId(entity.Comp.ParentUid, _transform, EntityManager).Position;
-                    _transform.SetLocalPosition(entity.Owner, local2, entity.Comp);
-                }
-            }
-
-            PhysicsSystem.WakeBody(entity);
-            return tileCoords;
         }
 
         /// <summary>
