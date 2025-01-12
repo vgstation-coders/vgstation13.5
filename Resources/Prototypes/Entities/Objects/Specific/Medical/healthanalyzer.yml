@@ -26,6 +26,7 @@
   - type: HealthAnalyzer
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
+    scanDelay: 0
   - type: Tag
     tags:
       - DiscreteHealthAnalyzer

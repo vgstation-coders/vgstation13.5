@@ -158,8 +158,11 @@ public abstract class SharedLayingDownSystem : EntitySystem
 
         if (!_doAfter.TryStartDoAfter(args))
             return false;
-
-        standingState.CurrentState = StandingState.GettingUp;
+        
+        if (standingState.CurrentState != StandingState.Standing)
+        {
+            standingState.CurrentState = StandingState.GettingUp;
+        }
         layingDown.IsCrawlingUnder = false;
         return true;
     }

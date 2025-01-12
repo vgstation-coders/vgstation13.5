@@ -7,7 +7,7 @@ namespace Content.Shared.Standing;
 public sealed partial class LayingDownComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public TimeSpan StandingUpTime = TimeSpan.FromSeconds(1);
+    public TimeSpan StandingUpTime = TimeSpan.FromSeconds(0);
 
     [DataField, AutoNetworkedField]
     public float LyingSpeedModifier = 0.35f,
