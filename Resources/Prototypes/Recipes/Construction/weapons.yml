@@ -33,6 +33,7 @@
 
 - type: construction
   name: reinforced shiv
+  fuzzyName: reinforced glass shiv
   id: ReinforcedShiv
   graph: ReinforcedShiv
   startNode: start
@@ -44,6 +45,7 @@
 
 - type: construction
   name: plasma shiv
+  fuzzyName: plasma glass shiv
   id: PlasmaShiv
   graph: PlasmaShiv
   startNode: start
@@ -55,6 +57,7 @@
 
 - type: construction
   name: uranium shiv
+  fuzzyName: uranium glass shiv
   id: UraniumShiv
   graph: UraniumShiv
   startNode: start
@@ -110,6 +113,7 @@
 
 - type: construction
   name: makeshift bola
+  fuzzyName: makeshift bolas
   id: Bola
   graph: Bola
   startNode: start
