@@ -177,7 +177,7 @@ namespace Content.Client.Construction.UI
 
                 if (!string.IsNullOrEmpty(search))
                 {
-                    if ( !string.IsNullOrEmpty(recipe.FuzzyName) ? CheckFuzzySearch(recipe.FuzzyName,search) : !recipe.Name.ToLowerInvariant().Contains(search.Trim().ToLowerInvariant()))
+                    if ( !CheckFuzzySearch(string.IsNullOrEmpty(recipe.FuzzyName) ? recipe.Name :recipe.FuzzyName,search) )
                         continue;
                 }
 
