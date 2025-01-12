@@ -160,7 +160,7 @@ public sealed partial class AbsorbentSystem : SharedAbsorbentSystem
                 return;
         }
 
-        TryCleanNearbyFootprints(user, used, (target, component), absorberSoln.Value);
+        TryCleanNearbyFootprints(user, target, (used, component), absorberSoln.Value);
     }
 
     /// <summary>
