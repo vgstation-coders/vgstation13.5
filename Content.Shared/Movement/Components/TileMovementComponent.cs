@@ -49,4 +49,17 @@ public sealed partial class TileMovementComponent : Component
     /// </summary>
     [AutoNetworkedField]
     public bool WasWeightlessLastTick;
+
+    /// <summary>
+    /// Whether the current ongoing slide was initiated due to a failed slide.
+    /// </summary>
+    [AutoNetworkedField]
+    public bool FailureSlideActive;
+
+    /// <summary>
+    /// Coordinates of the moving entity on the last physics tick. Null if the entity was not
+    /// parented to the same entity last tick.
+    /// </summary>
+    [AutoNetworkedField]
+    public Vector2? LastTickLocalCoordinates;
 }

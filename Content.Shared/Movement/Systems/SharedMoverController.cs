@@ -230,6 +230,7 @@ namespace Content.Shared.Movement.Systems
                 {
                     tileMovement.WasWeightlessLastTick = weightless;
                     tileMovement.SlideActive = false;
+                    tileMovement.FailureSlideActive = false;
                 }
             }
 
@@ -622,16 +623,14 @@ namespace Content.Shared.Movement.Systems
         )
         {
             // For smoothness' sake, if we just arrived on a grid after pixel moving in space then initiate a slide
-            // towards the center of the tile we're on. It just ends up feeling better this way.
+            // towards the center of the tile we're on and continue. It feels much nicer this way.
             if (tileMovement.WasWeightlessLastTick)
             {
                 InitializeSlideToCenter(physicsUid, tileMovement);
                 UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
-                return true;
             }
-
-            // If we're not moving, apply friction to existing velocity and then stop.
-            if (StripWalk(inputMover.HeldMoveButtons) == MoveButtons.None && !tileMovement.SlideActive)
+            // If we're not moving, apply friction to existing velocity and then continue.
+            else if (StripWalk(inputMover.HeldMoveButtons) == MoveButtons.None && !tileMovement.SlideActive)
             {
                 var movementVelocity = physicsComponent.LinearVelocity;
 
@@ -643,84 +642,118 @@ namespace Content.Shared.Movement.Systems
 
                 PhysicsSystem.SetLinearVelocity(physicsUid, movementVelocity, body: physicsComponent);
                 PhysicsSystem.SetAngularVelocity(physicsUid, 0, body: physicsComponent);
-                return true;
             }
-
-            // Play step sound.
-            if (MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
-                TryGetSound(false, uid, inputMover, mobMover, targetTransform, out var sound, tileDef: tileDef))
+            // Otherwise, handle typical tile movement.
+            else
             {
-                var soundModifier = inputMover.Sprinting ? 3.5f : 1.5f;
-                var audioParams = sound.Params
-                    .WithVolume(sound.Params.Volume + soundModifier)
-                    .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
-                _audio.PlayPredicted(sound, uid, relayTarget?.Source ?? uid, audioParams);
-            }
-
-            // If we're sliding...
-            if (tileMovement.SlideActive)
-            {
-                var movementSpeed = GetEntityMoveSpeed(uid, inputMover.Sprinting);
-
-                // Check whether we should end the slide. If we end it, also check for immediately starting a new slide.
-                if (CheckForSlideEnd(
-                    StripWalk(inputMover.HeldMoveButtons),
-                    targetTransform,
-                    tileMovement,
-                    movementSpeed))
+                // Play step sound.
+                if (MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
+                    TryGetSound(false, uid, inputMover, mobMover, targetTransform, out var sound, tileDef: tileDef))
                 {
-                    EndSlide(uid, tileMovement);
-                    if (StripWalk(inputMover.HeldMoveButtons) != MoveButtons.None)
+                    var soundModifier = inputMover.Sprinting ? 3.5f : 1.5f;
+                    var volume = sound.Params.Volume + soundModifier;
+
+                    if (_entities.TryGetComponent(uid, out FootstepVolumeModifierComponent? volumeModifier))
                     {
-                        InitializeSlide(physicsUid, tileMovement, inputMover);
-                        UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                        volume += inputMover.Sprinting
+                            ? volumeModifier.SprintVolumeModifier
+                            : volumeModifier.WalkVolumeModifier;
+                    }
+
+                    var audioParams = sound.Params
+                        .WithVolume(volume)
+                        .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
+
+                    // If we're a relay target then predict the sound for all relays.
+                    if (relayTarget != null)
+                    {
+                        _audio.PlayPredicted(sound, uid, relayTarget.Source, audioParams);
                     }
                     else
                     {
-                        ForceSnapToTile(uid, inputMover);
+                        _audio.PlayPredicted(sound, uid, uid, audioParams);
                     }
                 }
-                // Special case: tile movement takes us between two fully adjacent grids seamlessly.
-                // Since we perform tile movement in local coordinates, stop and start the movement
-                // again to realign to new grid.
-                // Improvement suggestion: this is mostly smooth but there is a very tiny bit of
-                // jitter. Instead of being lazy and stopping/starting a new movement, it should
-                // convert the origin into the coordinate system with the new grid as the parent.
-                else if (tileMovement.Origin.EntityId != targetTransform.ParentUid)
+
+                // If we're sliding...
+                if (tileMovement.SlideActive)
                 {
-                    var previousButtons = tileMovement.CurrentSlideMoveButtons;
-                    var previousInitialKeyDownTime = tileMovement.MovementKeyInitialDownTime;
-                    InitializeSlideToCenter(physicsUid, tileMovement);
-                    tileMovement.CurrentSlideMoveButtons = previousButtons;
-                    tileMovement.MovementKeyInitialDownTime = previousInitialKeyDownTime;
-                    UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                    var movementSpeed = GetEntityMoveSpeed(uid, inputMover.Sprinting);
+
+                    // Check whether we should end the slide.
+                    if (CheckForSlideEnd(
+                        StripWalk(inputMover.HeldMoveButtons),
+                        targetTransform,
+                        tileMovement,
+                        movementSpeed))
+                    {
+                        EndSlide(uid, tileMovement);
+
+                        // After ending the slide, check for immediately starting a new slide.
+                        if (StripWalk(inputMover.HeldMoveButtons) != MoveButtons.None)
+                        {
+                            InitializeSlide(physicsUid, tileMovement, inputMover);
+                            UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                            tileMovement.FailureSlideActive = false;
+                        }
+                        // Otherwise if we failed to reach the destination, begin a "failure slide" back to the
+                        // original position.
+                        else if(!tileMovement.FailureSlideActive && !targetTransform.LocalPosition.EqualsApprox(tileMovement.Destination, 0.04))
+                        {
+                            InitializeSlideToTarget(physicsUid, tileMovement, targetTransform.LocalPosition, MoveButtons.None);
+                            UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                            tileMovement.FailureSlideActive = true;
+                        }
+                        // If we reached proper destination or have already done a "failure slide", snap to tile forcefully.
+                        else
+                        {
+                            ForceSnapToTile(uid, inputMover);
+                            tileMovement.FailureSlideActive = false;
+                        }
+                    }
+                    // Special case: tile movement takes us between two fully adjacent grids seamlessly.
+                    // Since we perform tile movement in local coordinates, stop and start the movement
+                    // again to realign to new grid.
+                    // Improvement suggestion: this is mostly smooth but there is a very tiny bit of
+                    // jitter. Instead of being lazy and stopping/starting a new movement, it should
+                    // convert the origin into the coordinate system with the new grid as the parent.
+                    else if (tileMovement.Origin.EntityId != targetTransform.ParentUid)
+                    {
+                        var previousButtons = tileMovement.CurrentSlideMoveButtons;
+                        var previousInitialKeyDownTime = tileMovement.MovementKeyInitialDownTime;
+                        InitializeSlideToCenter(physicsUid, tileMovement);
+                        tileMovement.CurrentSlideMoveButtons = previousButtons;
+                        tileMovement.MovementKeyInitialDownTime = previousInitialKeyDownTime;
+                        UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                    }
+                    // Otherwise, continue slide.
+                    else
+                    {
+                        UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
+                    }
                 }
-                // Otherwise, continue slide.
+                // If we're not sliding, start slide.
                 else
                 {
+                    InitializeSlide(physicsUid, tileMovement, inputMover);
                     UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
                 }
-            }
-            // If we're not sliding, start slide.
-            else
-            {
-                InitializeSlide(physicsUid, tileMovement, inputMover);
-                UpdateSlide(physicsUid, physicsUid, tileMovement, inputMover);
-            }
 
-            // Set WorldRotation so that our character is facing the way we're walking.
-            if (!NoRotateQuery.HasComponent(uid))
-            {
-                if (tileMovement.SlideActive && TryComp(
-                    inputMover.RelativeEntity,
-                    out TransformComponent? parentTransform))
+                // Set WorldRotation so that our character is facing the way we're walking.
+                if (!NoRotateQuery.HasComponent(uid) && !tileMovement.FailureSlideActive)
                 {
-                    var delta = tileMovement.Destination - tileMovement.Origin.Position;
-                    var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
-                    _transform.SetWorldRotation(targetTransform, worldRot);
+                    if (tileMovement.SlideActive && TryComp(
+                        inputMover.RelativeEntity,
+                        out TransformComponent? parentTransform))
+                    {
+                        var delta = tileMovement.Destination - tileMovement.Origin.Position;
+                        var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
+                        _transform.SetWorldRotation(targetTransform, worldRot);
+                    }
                 }
             }
 
+            tileMovement.LastTickLocalCoordinates = targetTransform.LocalPosition;
             Dirty(uid, tileMovement);
             return true;
         }
@@ -742,29 +775,48 @@ namespace Content.Shared.Movement.Systems
 
             var reachedDestination =
                 transform.LocalPosition.EqualsApprox(tileMovement.Destination, destinationTolerance);
-            var stoppedPressing = pressedButtons != tileMovement.CurrentSlideMoveButtons &&
-                CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSeconds(minPressedTime);
-            return reachedDestination || stoppedPressing;
+            var stoppedPressing = pressedButtons != tileMovement.CurrentSlideMoveButtons;
+            var minDurationPassed = CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSeconds(minPressedTime);
+            var noProgress = tileMovement.LastTickLocalCoordinates != null && transform.LocalPosition.EqualsApprox(tileMovement.LastTickLocalCoordinates.Value, destinationTolerance/3);
+            return reachedDestination || (stoppedPressing && (minDurationPassed || noProgress));
         }
 
+
         /// <summary>
-        /// Initializes a slide, setting destination and other variables needed to start a slide to the center of the tile
-        /// the entity is currently on.
+        /// Initializes a slide, setting destination and other variables needed to start a slide to the given
+        /// position (which is a local coordinate relative to the parent of the given uid).
         /// </summary>
         /// <param name="uid">UID of the entity that will be performing the slide.</param>
         /// <param name="tileMovement">TileMovementComponent on the entity represented by UID.</param>
-        private void InitializeSlideToCenter(EntityUid uid, TileMovementComponent tileMovement)
+        /// <param name="localPositionTarget">Target of the slide coordinates local to the parent entity of uid.</param>
+        /// <param name="heldMoveButtons">Buttons used to initiate this slide.</param>
+        private void InitializeSlideToTarget(
+            EntityUid uid,
+            TileMovementComponent tileMovement,
+            Vector2 localPositionTarget,
+            MoveButtons heldMoveButtons)
         {
             var transform = Transform(uid);
             var localPosition = transform.LocalPosition;
 
             tileMovement.SlideActive = true;
             tileMovement.Origin = new EntityCoordinates(transform.ParentUid, localPosition);
-            tileMovement.Destination = SnapCoordinatesToTile(localPosition);
+            tileMovement.Destination = SnapCoordinatesToTile(localPositionTarget);
             tileMovement.MovementKeyInitialDownTime = CurrentTime;
-            tileMovement.CurrentSlideMoveButtons = MoveButtons.None;
+            tileMovement.CurrentSlideMoveButtons = heldMoveButtons;
         }
 
+        /// <summary>
+        /// Initializes a slide, setting destination and other variables needed to start a slide to the center of the
+        /// tile the entity is currently on.
+        /// </summary>
+        /// <param name="uid">UID of the entity that will be performing the slide.</param>
+        /// <param name="tileMovement">TileMovementComponent on the entity represented by UID.</param>
+        private void InitializeSlideToCenter(EntityUid uid, TileMovementComponent tileMovement)
+        {
+            var localPosition = Transform(uid).LocalPosition;
+            InitializeSlideToTarget(uid, tileMovement, SnapCoordinatesToTile(localPosition), MoveButtons.None);
+        }
 
         /// <summary>
         /// Initializes a slide, setting destination and other variables needed to move in the direction currently given by
@@ -780,11 +832,7 @@ namespace Content.Shared.Movement.Systems
             var offset = DirVecForButtons(inputMover.HeldMoveButtons);
             offset = inputMover.TargetRelativeRotation.RotateVec(offset);
 
-            tileMovement.SlideActive = true;
-            tileMovement.Origin = new EntityCoordinates(transform.ParentUid, localPosition);
-            tileMovement.Destination = SnapCoordinatesToTile(localPosition + offset);
-            tileMovement.MovementKeyInitialDownTime = CurrentTime;
-            tileMovement.CurrentSlideMoveButtons = StripWalk(inputMover.HeldMoveButtons);
+            InitializeSlideToTarget(uid, tileMovement, localPosition + offset, StripWalk(inputMover.HeldMoveButtons));
         }
 
         /// <summary>
