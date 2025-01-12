@@ -762,7 +762,7 @@
 
 - type: construction
   id: GasFilterFlipped
-  hide: true
+  hide: false
   name: gas filter (flipped)
   fuzzyName: pipe gas atmos air filter
   description: Very useful for filtering gases.
@@ -799,7 +799,7 @@
 
 - type: construction
   id: GasMixerFlipped
-  hide: true
+  hide: false
   name: gas mixer (flipped)
   fuzzyName: pipe gas atmos air mixer
   description: Very useful for mixing gases.
