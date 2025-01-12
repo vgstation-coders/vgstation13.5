@@ -47,7 +47,7 @@ public sealed partial class PullerComponent : Component
     ///     Does this entity need hands to be able to pull something?
     /// </summary>
     [DataField]
-    public bool NeedsHands = true;
+    public bool NeedsHands = false;
 
     /// <summary>
     ///     The maximum acceleration of pushing, in meters per second squared.
