@@ -207,6 +207,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Puller
+    needsHands: false
   - type: Speech
     speechSounds: Alto
   - type: DamageForceSay
