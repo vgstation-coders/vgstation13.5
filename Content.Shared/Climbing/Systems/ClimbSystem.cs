@@ -16,6 +16,7 @@ using Content.Shared.Stunnable;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
@@ -48,6 +49,7 @@ public sealed partial class ClimbSystem : VirtualController
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<TransformComponent> _xformQuery;
     private EntityQuery<ClimbableComponent> _climbableQuery;
+    private EntityQuery<BonkableComponent> _bonkableQuery;
 
     public override void Initialize()
     {
@@ -55,6 +57,8 @@ public sealed partial class ClimbSystem : VirtualController
 
         _fixturesQuery = GetEntityQuery<FixturesComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
+        _climbableQuery = GetEntityQuery<ClimbableComponent>();
+        _bonkableQuery = GetEntityQuery<BonkableComponent>();
 
         SubscribeLocalEvent<ClimbingComponent, UpdateCanMoveEvent>(OnMoveAttempt);
         SubscribeLocalEvent<ClimbingComponent, EntParentChangedMessage>(OnParentChange);
@@ -186,6 +190,9 @@ public sealed partial class ClimbSystem : VirtualController
         TryClimb(args.User, args.Dragged, uid, out _, component);
     }
 
+    [Dependency] private readonly SharedStunSystem _stun = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly INetManager _net = default!;
     public bool TryClimb(
         EntityUid user,
         EntityUid entityToMove,
@@ -217,6 +224,33 @@ public sealed partial class ClimbSystem : VirtualController
         RaiseLocalEvent(climbable, ref ev);
         if (ev.Cancelled)
             return false;
+
+        if (_bonkableQuery.TryGetComponent(climbable, out var bonkable) && bonkable.RiggedForBonk)
+        {
+            // Improvement suggestion: consolidate this "bonk" function with that in ClumsySystem.
+
+            // Note: the stun has no prediction yet so to avoid double-stun animation let's just make
+            // sure it doesn't attempt to predict this.
+            if (_net.IsServer)
+            {
+                var stunTime = bonkable.BonkTime;
+                _stun.TryParalyze(entityToMove, stunTime, true);
+            }
+
+            _audio.PlayPredicted(bonkable.BonkSound, entityToMove, entityToMove);
+            if (bonkable.BonkDamage != null)
+            {
+                _damageable.TryChangeDamage(entityToMove, bonkable.BonkDamage, true);
+            }
+
+            var selfMessage = Loc.GetString("comp-climbable-rigged-for-bonk", ("climbable", climbable));
+            var othersMessage = Loc.GetString("comp-climbable-rigged-for-bonk-other",
+                ("user", Identity.Entity(entityToMove, EntityManager)),
+                ("climbable", climbable));
+            _popupSystem.PopupPredicted(selfMessage, othersMessage, entityToMove, entityToMove);
+
+            return false;
+        }
 
         var climbDelay = comp.ClimbDelay;
         if (user == entityToMove && TryComp<ClimbDelayModifierComponent>(user, out var delayModifier))

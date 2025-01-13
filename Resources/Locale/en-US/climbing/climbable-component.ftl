@@ -29,3 +29,9 @@ comp-climbable-cant-climb = You are incapable of climbing!
 
 # Shown to you when your character tries to force someone else who can't climb onto a climbable
 comp-climbable-target-cant-climb = { CAPITALIZE(THE($moved-user)) } can't go there!
+
+# Shown when you try to climb something but it's rigged to bonk you
+comp-climbable-rigged-for-bonk = You bang your head on { THE($climbable) }.
+
+# Shown to others when you try to climb something but it's rigged to bonk you
+comp-climbable-rigged-for-bonk-other = { CAPITALIZE(THE($user)) } bangs { POSS-ADJ($user) } head on { THE($climbable) }.
