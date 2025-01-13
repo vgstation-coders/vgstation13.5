@@ -67,7 +67,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     [ValidatePrototypeId<ItemSizePrototype>]
     public const string DefaultStorageMaxItemSize = "Normal";
-
+as
     public const float AreaInsertDelayPerItem = 0.075f;
     private static AudioParams _audioParams = AudioParams.Default
         .WithMaxDistance(7f)
@@ -83,6 +83,7 @@ public abstract class SharedStorageSystem : EntitySystem
     private readonly List<ItemSizePrototype> _sortedSizes = new();
     private FrozenDictionary<string, ItemSizePrototype> _nextSmallest = FrozenDictionary<string, ItemSizePrototype>.Empty;
 
+    private const string DefaultDelayId = "default";
     private const string QuickInsertUseDelayID = "quickInsert";
     private const string OpenUiUseDelayID = "storage";
 
@@ -148,6 +149,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
     private void OnMapInit(Entity<StorageComponent> entity, ref MapInitEvent args)
     {
+        UseDelay.SetLength(entity.Owner, entity.Comp.OpenUiCooldown, DefaultDelayId);
         UseDelay.SetLength(entity.Owner, entity.Comp.QuickInsertCooldown, QuickInsertUseDelayID);
         UseDelay.SetLength(entity.Owner, entity.Comp.OpenUiCooldown, OpenUiUseDelayID);
     }
