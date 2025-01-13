@@ -5,8 +5,8 @@ using Robust.Shared.GameStates;
 namespace Content.Shared.Climbing.Components;
 
 /// <summary>
-///     Adds functionality for entity to damage and stun entities under certain
-///     situations upon DragDrop or Climb interactions.
+///     Adds functionality for a climbable entity to damage and stun entities who attempt to
+///     climb it (DragDrop or Climb interactions) under various circumstances.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BonkableComponent : Component
