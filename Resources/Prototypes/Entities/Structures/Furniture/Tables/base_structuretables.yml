@@ -30,9 +30,12 @@
     base: state_
   - type: Climbable
   - type: Bonkable
+    riggedForBonk: true
     bonkDamage:
       types:
         Blunt: 4
+    bonkSound:
+      collection: TableBonkSounds
   - type: Clickable
   - type: FootstepModifier
     footstepSoundCollection:
@@ -57,3 +60,9 @@
         - TableMask
         layer:
         - TableLayer
+
+- type: soundCollection
+  id: TableBonkSounds
+  files:
+  - /Audio/Effects/table_bonk1.ogg
+  - /Audio/Effects/table_bonk2.ogg
