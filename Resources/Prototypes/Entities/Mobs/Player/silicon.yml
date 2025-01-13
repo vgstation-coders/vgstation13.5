@@ -319,11 +319,13 @@
   - Incorporeal
   - BaseMob
   id: StationAiHolo
-  name: Hologram
-  description: A projection of the AI.
+  name: AI eye
+  description: The AI's viewer.
   categories: [ HideSpawnMenu ]
   suffix: DO NOT MAP
   components:
+  - type: WarpPoint
+    follow: true
   - type: Eye
     pvsScale: 1.5
   - type: Visibility
@@ -331,25 +333,9 @@
   - type: Sprite
     sprite: Mobs/Silicon/station_ai.rsi
     layers:
-    - state: default
+    - state: ai_camera
       shader: unshaded
       map: ["base"]
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - SolCommon
-    - Tradeband
-    - Freespeak
-    - Elyran
-    - RobotTalk
-    understands:
-    - TauCetiBasic
-    - SolCommon
-    - Tradeband
-    - Freespeak
-    - Elyran
-    - RobotTalk
-    - Sign # It's intentional that they don't "Speak" sign language.
 
 # Borgs
 - type: entity

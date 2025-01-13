@@ -319,6 +319,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         if (TryComp(user, out EyeComponent? eyeComp))
         {
+            _eye.SetDrawFov(user, false, eyeComp);
             _eye.SetTarget(user, ent.Comp.RemoteEntity.Value, eyeComp);
         }
 
@@ -349,6 +350,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
         if (TryComp(args.Entity, out EyeComponent? eyeComp))
         {
+            _eye.SetDrawFov(args.Entity, true, eyeComp);
             _eye.SetTarget(args.Entity, null, eyeComp);
         }
     }
