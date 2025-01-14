@@ -259,7 +259,10 @@ namespace Content.Server.Light.EntitySystems
 
             var appearanceComponent = EntityManager.GetComponentOrNull<AppearanceComponent>(uid);
 
-            var fraction = battery.CurrentCharge / battery.MaxCharge;
+            //
+            // Whatever the fuck is going on with this shit results in the LowPower and Dying animations becoming permanent
+            //
+            /*var fraction = battery.CurrentCharge / battery.MaxCharge;
             if (fraction >= 0.30)
             {
                 _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.FullPower, appearanceComponent);
@@ -268,13 +271,17 @@ namespace Content.Server.Light.EntitySystems
             {
                 _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.LowPower, appearanceComponent);
             }
-            else
+            else if (fraction <= 0.10 && fraction > 0)
             {
                 _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.Dying, appearanceComponent);
             }
-
+            else
+            {
+                _appearance.SetData(uid, HandheldLightVisuals.Power, HandheldLightPowerStates.FullPower, appearanceComponent);
+            }
+            */
             if (component.Activated && !_battery.TryUseCharge(batteryUid.Value, component.Wattage * frameTime, battery))
-                TurnOff(uid, false);
+                TurnOff(uid, true);
 
             UpdateLevel(uid);
         }
