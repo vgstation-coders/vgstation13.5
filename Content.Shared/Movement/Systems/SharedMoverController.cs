@@ -15,6 +15,7 @@ using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.TileMovement;
+using Microsoft.Extensions.Logging;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -95,7 +96,7 @@ namespace Content.Shared.Movement.Systems
             XformQuery = GetEntityQuery<TransformComponent>();
             NoRotateQuery = GetEntityQuery<NoRotateOnMoveComponent>();
             CanMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
-            TileMovementQuery = GetEntityQuery<TileMovement.TileMovementComponent>();
+            TileMovementQuery = GetEntityQuery<TileMovementComponent>();
 
             InitializeInput();
             InitializeRelay();
@@ -596,6 +597,9 @@ namespace Content.Shared.Movement.Systems
         /// pixel movement and the rigidity of tiles. Works surprisingly well.
         /// Note: the code is intentionally separated here from everything else to make it easier to port and
         /// to reduce the risk of merge conflicts.
+        /// However, I would also NOT recommend porting it right now unless you're okay with continually updating it.
+        /// For one, a shapecast-based implementation rather than a true physics implementation is in the cards for
+        /// the future. For another, it's not terribly clean and is not integrated too well into existing movement code.
 
         /// <summary>
         /// Runs one tick of tile-based movement on the given inputs.
@@ -607,7 +611,7 @@ namespace Content.Shared.Movement.Systems
         /// <param name="targetTransform">TransformComponent on the entity doing the move.</param>
         /// <param name="inputMover">InputMoverComponent on the entity doing the move.</param>
         /// <param name="tileDef">ContentTileDefinition of the tile underneath the entity doing the move, if there is one.</param>
-        /// <param name="relayTarget"></param>
+        /// <param name="relayTarget">MovementRelayTargetComponent on the relay target, if any.</param>
         /// <param name="frameTime">Time in seconds since the last tick of the physics system.</param>
         /// <returns></returns>
         public bool HandleTileMovement(
@@ -769,6 +773,7 @@ namespace Content.Shared.Movement.Systems
             // account for diagonals being sqrt(2) length as well. Max of 10 seconds just in case.
             var distanceToDestination = (tileMovement.Destination - tileMovement.Origin.Position).Length();
             var minPressedTime = Math.Min((1.05f / movementSpeed) * distanceToDestination, 20);
+
             // We need to stop the move once we are close enough. This isn't perfect, since it technically ends the move
             // 1 tick early in some cases. This is because there's a fundamental issue where because this is a physics-based
             // tile movement system, we sometimes find scenarios where on each tick of the physics system, the player is moved
@@ -781,7 +786,8 @@ namespace Content.Shared.Movement.Systems
             var stoppedPressing = pressedButtons != tileMovement.CurrentSlideMoveButtons;
             var minDurationPassed = CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSeconds(minPressedTime);
             var noProgress = tileMovement.LastTickLocalCoordinates != null && transform.LocalPosition.EqualsApprox(tileMovement.LastTickLocalCoordinates.Value, destinationTolerance/3);
-            return reachedDestination || (stoppedPressing && (minDurationPassed || noProgress));
+            var hardDurationLimitPassed = CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSeconds(minPressedTime) * 3;
+            return reachedDestination || (stoppedPressing && (minDurationPassed || noProgress)) || hardDurationLimitPassed;
         }
 
 
@@ -901,16 +907,6 @@ namespace Content.Shared.Movement.Systems
         }
 
         /// <summary>
-        /// Returns the given local coordinates snapped to the center of the tile it is currently on.
-        /// </summary>
-        /// <param name="input">Given coordinates to snap.</param>
-        /// <returns>The closest tile center to the input.<returns>
-        private Vector2 SnapCoordinatesToTile(Vector2 input)
-        {
-            return new Vector2((int) Math.Floor(input.X) + 0.5f, (int) Math.Floor(input.Y) + 0.5f);
-        }
-
-        /// <summary>
         /// Instantly snaps/teleports an entity to the center of the tile it is currently standing on based on the
         /// given grid. Does not trigger collisions on the way there, but does trigger collisions after the snap.
         /// </summary>
@@ -975,6 +971,16 @@ namespace Content.Shared.Movement.Systems
         private MoveButtons StripWalk(MoveButtons input)
         {
             return input & ~MoveButtons.Walk;
+        }
+
+        /// <summary>
+        /// Returns the given local coordinates snapped to the center of the tile it is currently on.
+        /// </summary>
+        /// <param name="input">Given coordinates to snap.</param>
+        /// <returns>The closest tile center to the input.<returns>
+        public static Vector2 SnapCoordinatesToTile(Vector2 input)
+        {
+            return new Vector2((int) Math.Floor(input.X) + 0.5f, (int) Math.Floor(input.Y) + 0.5f);
         }
     }
 }
