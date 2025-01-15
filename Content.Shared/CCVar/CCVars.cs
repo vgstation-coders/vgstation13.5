@@ -1659,13 +1659,13 @@ namespace Content.Shared.CCVar
         ///     Allows enabling/disabling player-started votes for ultimate authority
         /// </summary>
         public static readonly CVarDef<bool> VoteEnabled =
-            CVarDef.Create("vote.enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("vote.enabled", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     See vote.enabled, but specific to restart votes
         /// </summary>
         public static readonly CVarDef<bool> VoteRestartEnabled =
-            CVarDef.Create("vote.restart_enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("vote.restart_enabled", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Config for when the restart vote should be allowed to be called regardless with less than this amount of players.
@@ -1903,7 +1903,7 @@ namespace Content.Shared.CCVar
         /// How long the emergency shuttle remains docked with the station, in seconds.
         /// </summary>
         public static readonly CVarDef<float> EmergencyShuttleDockTime =
-            CVarDef.Create("shuttle.emergency_dock_time", 240f, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency_dock_time", 180f, CVar.SERVERONLY);
 
         /// <summary>
         /// How long after the console is authorized for the shuttle to early launch.
@@ -1916,13 +1916,13 @@ namespace Content.Shared.CCVar
         /// Actual minimum travel time cannot be less than <see cref="ShuttleSystem.DefaultArrivalTime"/>
         /// </summary>
         public static readonly CVarDef<float> EmergencyShuttleMinTransitTime =
-            CVarDef.Create("shuttle.emergency_transit_time_min", 90f, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency_transit_time_min", 120f, CVar.SERVERONLY);
 
         /// <summary>
         /// The maximum time for the emergency shuttle to arrive at centcomm.
         /// </summary>
         public static readonly CVarDef<float> EmergencyShuttleMaxTransitTime =
-            CVarDef.Create("shuttle.emergency_transit_time_max", 180f, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.emergency_transit_time_max", 120f, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether the emergency shuttle is enabled or should the round just end.
@@ -1941,7 +1941,7 @@ namespace Content.Shared.CCVar
         ///     Time in minutes after round start to auto-call the shuttle. Set to zero to disable.
         /// </summary>
         public static readonly CVarDef<int> EmergencyShuttleAutoCallTime =
-            CVarDef.Create("shuttle.auto_call_time", 120, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.auto_call_time", 0, CVar.SERVERONLY);
 
         /// <summary>
         ///     Time in minutes after the round was extended (by recalling the shuttle) to call
@@ -1996,7 +1996,7 @@ namespace Content.Shared.CCVar
         ///     Controls whether or not Metempsychosis will potentially give people a sex change.
         /// </summary>
         public static readonly CVarDef<bool> CloningPreserveSex =
-            CVarDef.Create("cloning.preserve_sex", false, CVar.SERVERONLY);
+            CVarDef.Create("cloning.preserve_sex", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis preserves Pronouns when reincarnating people.
@@ -2008,19 +2008,19 @@ namespace Content.Shared.CCVar
         ///     Controls whether or not Metempsychosis preserves Age.
         /// </summary>
         public static readonly CVarDef<bool> CloningPreserveAge =
-            CVarDef.Create("cloning.preserve_age", false, CVar.SERVERONLY);
+            CVarDef.Create("cloning.preserve_age", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis preserves height.
         /// </summary>
         public static readonly CVarDef<bool> CloningPreserveHeight =
-            CVarDef.Create("cloning.preserve_height", false, CVar.SERVERONLY);
+            CVarDef.Create("cloning.preserve_height", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis preserves width.
         /// </summary>
         public static readonly CVarDef<bool> CloningPreserveWidth =
-            CVarDef.Create("cloning.preserve_width", false, CVar.SERVERONLY);
+            CVarDef.Create("cloning.preserve_width", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls whether or not Metempsychosis preserves Names. EG: Are you actually a new person?
@@ -2937,11 +2937,7 @@ namespace Content.Shared.CCVar
          */
 
         public static readonly CVarDef<bool> MoodEnabled =
-#if RELEASE
-            CVarDef.Create("mood.enabled", true, CVar.SERVER);
-#else
             CVarDef.Create("mood.enabled", false, CVar.SERVER);
-#endif
 
         public static readonly CVarDef<bool> MoodIncreasesSpeed =
             CVarDef.Create("mood.increases_speed", true, CVar.SERVER);
@@ -3077,10 +3073,10 @@ namespace Content.Shared.CCVar
         ///     you still can't stand up while crit, and you're still more or less helpless.
         /// </summary>
         public static readonly CVarDef<bool> AllowMovementWhileCrit =
-            CVarDef.Create("mobstate.allow_movement_while_crit", true, CVar.REPLICATED);
+            CVarDef.Create("mobstate.allow_movement_while_crit", false, CVar.REPLICATED);
 
         public static readonly CVarDef<bool> AllowTalkingWhileCrit =
-            CVarDef.Create("mobstate.allow_talking_while_crit", true, CVar.REPLICATED);
+            CVarDef.Create("mobstate.allow_talking_while_crit", false, CVar.REPLICATED);
 
         /// <summary>
         ///     Currently does nothing because I would have to figure out WHERE I would even put this check, and the mover controller is fairly complicated.
