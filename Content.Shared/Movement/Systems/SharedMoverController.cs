@@ -750,7 +750,6 @@ namespace Content.Shared.Movement.Systems
                         inputMover.RelativeEntity,
                         out TransformComponent? parentTransform))
                     {
-
                         var delta = tileMovement.Destination - tileMovement.Origin.Position;
                         var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
                         _transform.SetWorldRotation(targetTransform, worldRot);
