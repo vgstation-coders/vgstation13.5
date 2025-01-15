@@ -159,8 +159,6 @@
       - !type:GroupSelector
         children:
         - !type:EntSelector
-          id: ClothingNeckCloakTrans
-        - !type:EntSelector
           id: ClothingNeckCloakAdmin
         - !type:EntSelector
           id: ClothingNeckCloakMoth
@@ -168,22 +166,6 @@
           id: ClothingNeckCloakVoid
         - !type:EntSelector
           id: ClothingNeckCloakGoliathCloak
-        - !type:EntSelector
-          id: ClothingNeckCloakAce
-        - !type:EntSelector
-          id: ClothingNeckCloakAro
-        - !type:EntSelector
-          id: ClothingNeckCloakBi
-        - !type:EntSelector
-          id: ClothingNeckCloakIntersex
-        - !type:EntSelector
-          id: ClothingNeckCloakLesbian
-        - !type:EntSelector
-          id: ClothingNeckCloakGay
-        - !type:EntSelector
-          id: ClothingNeckCloakEnby
-        - !type:EntSelector
-          id: ClothingNeckCloakPan
       - !type:EntSelector
         id: ToySkeleton
       - !type:EntSelector
@@ -236,26 +218,6 @@
       # Pins
       - !type:GroupSelector
         children:
-        - !type:EntSelector
-          id: ClothingNeckLGBTPin
-        - !type:EntSelector
-          id: ClothingNeckAromanticPin
-        - !type:EntSelector
-          id: ClothingNeckAsexualPin
-        - !type:EntSelector
-          id: ClothingNeckBisexualPin
-        - !type:EntSelector
-          id: ClothingNeckGayPin
-        - !type:EntSelector
-          id: ClothingNeckIntersexPin
-        - !type:EntSelector
-          id: ClothingNeckLesbianPin
-        - !type:EntSelector
-          id: ClothingNeckNonBinaryPin
-        - !type:EntSelector
-          id: ClothingNeckPansexualPin
-        - !type:EntSelector
-          id: ClothingNeckTransPin
         - !type:EntSelector
           id: ClothingNeckAutismPin
         - !type:EntSelector

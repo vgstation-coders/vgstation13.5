@@ -143,9 +143,6 @@
         - MobWatcherLavaland
         - MobWatcherIcewing
         - MobWatcherMagmawing
-      rarePrototypes:
-        - MobWatcherPride
-      rareChance: 0.10
 
 - type: entity
   name: Space Creature Spawner

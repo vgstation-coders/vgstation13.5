@@ -266,12 +266,6 @@
     dayOfYear: 256
 
 - type: holiday
-  id: BisexualPrideDay
-  name: holiday-name-bisexual-pride-day
-  beginDay: 23
-  beginMonth: September
-
-- type: holiday
   id: StupidQuestionsDay
   name: holiday-name-stupid-questions-day
   beginDay: 28
@@ -362,12 +356,6 @@
   beginMonth: November
 
 - type: holiday
-  id: TransgenderRemembranceDay
-  name: holiday-name-transgender-remembrance-day
-  beginDay: 20
-  beginMonth: November
-
-- type: holiday
   id: SayingHelloDay
   name: holiday-name-saying-hello-day
   beginDay: 21
@@ -393,6 +381,9 @@
   name: holiday-name-human-rights-day
   beginDay: 10
   beginMonth: December
+  greet:
+    !type:Custom
+    text: holiday-custom-humanityfuckyeah
 
 - type: holiday
   id: MonkeyDay
