@@ -15,6 +15,7 @@ using Content.Shared.StepTrigger.Components;
 using Content.Shared.Tag;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.TileMovement;
+using Microsoft.Extensions.Logging;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -95,7 +96,7 @@ namespace Content.Shared.Movement.Systems
             XformQuery = GetEntityQuery<TransformComponent>();
             NoRotateQuery = GetEntityQuery<NoRotateOnMoveComponent>();
             CanMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
-            TileMovementQuery = GetEntityQuery<TileMovement.TileMovementComponent>();
+            TileMovementQuery = GetEntityQuery<TileMovementComponent>();
 
             InitializeInput();
             InitializeRelay();
@@ -746,6 +747,7 @@ namespace Content.Shared.Movement.Systems
                         inputMover.RelativeEntity,
                         out TransformComponent? parentTransform))
                     {
+
                         var delta = tileMovement.Destination - tileMovement.Origin.Position;
                         var worldRot = _transform.GetWorldRotation(parentTransform).RotateVec(delta).ToWorldAngle();
                         _transform.SetWorldRotation(targetTransform, worldRot);
@@ -769,6 +771,7 @@ namespace Content.Shared.Movement.Systems
             // account for diagonals being sqrt(2) length as well. Max of 10 seconds just in case.
             var distanceToDestination = (tileMovement.Destination - tileMovement.Origin.Position).Length();
             var minPressedTime = Math.Min((1.05f / movementSpeed) * distanceToDestination, 20);
+
             // We need to stop the move once we are close enough. This isn't perfect, since it technically ends the move
             // 1 tick early in some cases. This is because there's a fundamental issue where because this is a physics-based
             // tile movement system, we sometimes find scenarios where on each tick of the physics system, the player is moved
@@ -781,7 +784,8 @@ namespace Content.Shared.Movement.Systems
             var stoppedPressing = pressedButtons != tileMovement.CurrentSlideMoveButtons;
             var minDurationPassed = CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSeconds(minPressedTime);
             var noProgress = tileMovement.LastTickLocalCoordinates != null && transform.LocalPosition.EqualsApprox(tileMovement.LastTickLocalCoordinates.Value, destinationTolerance/3);
-            return reachedDestination || (stoppedPressing && (minDurationPassed || noProgress));
+            var hardDurationLimitPassed = CurrentTime - tileMovement.MovementKeyInitialDownTime >= TimeSpan.FromSecondsa(minPressedTime) * 3;
+            return reachedDestination || (stoppedPressing && (minDurationPassed || noProgress)) || hardDurationLimitPassed;
         }
 
 
