@@ -10,6 +10,7 @@ using Content.Server.NPC.Pathfinding;
 using Content.Shared.CCVar;
 using Content.Shared.Climbing.Systems;
 using Content.Shared.CombatMode;
+using Content.Shared.Gravity;
 using Content.Shared.Interaction;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -65,8 +66,9 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
-    [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] protected readonly SharedPhysicsSystem PhysicsSystem = default!;
+    [Dependency] private readonly IGameTiming Timing = default!;
+    [Dependency] private readonly SharedPhysicsSystem PhysicsSystem = default!;
+    [Dependency] private readonly SharedGravitySystem _gravity = default!;
 
     private EntityQuery<FixturesComponent> _fixturesQuery;
     private EntityQuery<MovementSpeedModifierComponent> _modifierQuery;
@@ -401,7 +403,10 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
 
         steering.LastSteerDirection = resultDirection;
         DebugTools.Assert(!float.IsNaN(resultDirection.X));
-        if (_tileMovementQuery.TryGetComponent(uid, out var tileMovement))
+
+        if (!_gravity.IsWeightless(uid, body, xform) &&
+            body.BodyStatus == BodyStatus.OnGround &&
+            _tileMovementQuery.TryGetComponent(uid, out var tileMovement))
         {
             SetTileMovementDirection(xform, tileMovement, resultDirection);
         }
