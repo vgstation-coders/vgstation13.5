@@ -146,6 +146,17 @@ namespace Content.Client.Construction.UI
             PopulateInfo(_selected);
         }
 
+		private bool CheckFuzzySearch(string hostfield,string searchtext){
+			int matchedtokens=0;
+			char[] str_seps={' ',':','.',',','/'}; //flatten punctuation.
+			string[] searchtokens = searchtext.Split(str_seps); //turn the search into tokens
+
+			foreach (string stoken in searchtokens){
+				if(hostfield.Contains(stoken,StringComparison.OrdinalIgnoreCase)) matchedtokens++; //thanks chatGPT for helping me.
+			}
+			return matchedtokens==searchtokens.Length;
+		}	
+
         private void OnViewPopulateRecipes(object? sender, (string search, string catagory) args)
         {
             var (search, category) = args;
@@ -166,7 +177,7 @@ namespace Content.Client.Construction.UI
 
                 if (!string.IsNullOrEmpty(search))
                 {
-                    if (!recipe.Name.ToLowerInvariant().Contains(search.Trim().ToLowerInvariant()))
+                    if ( !CheckFuzzySearch(string.IsNullOrEmpty(recipe.FuzzyName) ? recipe.Name :recipe.FuzzyName,search) )
                         continue;
                 }
 

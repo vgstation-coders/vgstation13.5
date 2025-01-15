@@ -1,6 +1,7 @@
 # SURVEILLANCE
 - type: construction
   name: camera
+  fuzzyName: cameras surveillance
   id: camera
   graph: SurveillanceCamera
   startNode: start
@@ -15,6 +16,7 @@
 
 - type: construction
   name: telescreen
+  fuzzyName: telescreen cameras monitor surveillance
   id: WallmountTelescreen
   graph: WallmountTelescreen
   startNode: start
@@ -49,6 +51,7 @@
 # POWER
 - type: construction
   name: APC
+  fuzzyName: APC Area Power Controller
   id: APC
   graph: APC
   startNode: start
@@ -64,6 +67,7 @@
 
 - type: construction
   name: solar assembly
+  fuzzyName: solars assembly power
   id: SolarPanel
   graph: SolarPanel
   startNode: start
@@ -82,6 +86,7 @@
 
 - type: construction
   name: cable terminal
+  fuzzyName: cable terminal power
   id: CableTerminal
   graph: CableTerminal
   startNode: start
@@ -97,6 +102,7 @@
 
 - type: construction
   name: wallmount substation
+  fuzzyName: wallmounted substation power
   id: WallmountSubstation
   graph: WallmountSubstation
   startNode: start
@@ -112,6 +118,7 @@
 
 - type: construction
   name: wallmount generator
+  fuzzyName: wallmounted generator power
   id: WallmountGenerator
   graph: WallmountGenerator
   startNode: start
@@ -127,6 +134,7 @@
 
 - type: construction
   name: wallmount APU
+  fuzzyName: wallmounted APU power
   id: WallmountGeneratorAPU
   graph: WallmountGenerator
   startNode: start
@@ -143,6 +151,7 @@
 # DISPOSALS
 - type: construction
   name: disposal unit
+  fuzzyName: disposals unit
   description: A pneumatic waste disposal unit.
   id: DisposalUnit
   graph: DisposalMachine
@@ -157,6 +166,7 @@
 
 - type: construction
   name: mailing unit
+  fuzzyName: mailing unit disposals
   description: A pneumatic mail delivery unit.
   id: MailingUnit
   graph: DisposalMachine
@@ -171,6 +181,7 @@
 
 - type: construction
   name: disposal pipe
+  fuzzyName: disposals pipe
   id: DisposalPipe
   description: A huge pipe segment used for constructing disposal systems.
   graph: DisposalPipe
@@ -185,6 +196,7 @@
 
 - type: construction
   name: disposal tagger
+  fuzzyName: disposals tagger
   description: A pipe that tags entities for routing.
   id: DisposalTagger
   graph: DisposalPipe
@@ -199,6 +211,7 @@
 
 - type: construction
   name: disposal trunk
+  fuzzyName: disposals trunk
   description: A pipe trunk used as an entry point for disposal systems.
   id: DisposalTrunk
   graph: DisposalPipe
@@ -213,6 +226,7 @@
 
 - type: construction
   name: disposal router
+  fuzzyName: disposals router
   description: A three-way router. Entities with matching tags get routed to the side.
   id: DisposalRouter
   graph: DisposalPipe
@@ -227,8 +241,9 @@
   mirror: DisposalRouterFlipped
 
 - type: construction
-  hide: true
-  name: disposal router
+  hide: false
+  name: disposal router (flipped)
+  fuzzyName: disposals router
   description: A three-way router. Entities with matching tags get routed to the side.
   id: DisposalRouterFlipped
   graph: DisposalPipe
@@ -244,6 +259,7 @@
 
 - type: construction
   name: disposal signal router
+  fuzzyName: disposals signal router
   description: A signal-controlled three-way router.
   id: DisposalSignalRouter
   graph: DisposalPipe
@@ -258,8 +274,9 @@
   mirror: DisposalSignalRouterFlipped
 
 - type: construction
-  hide: true
-  name: disposal signal router
+  hide: false
+  name: disposal signal router (flipped)
+  fuzzyName: disposals signal router
   description: A signal-controlled three-way router.
   id: DisposalSignalRouterFlipped
   graph: DisposalPipe
@@ -275,6 +292,7 @@
 
 - type: construction
   name: disposal junction
+  fuzzyName: disposals junction three way
   description: A three-way junction. The arrow indicates where items exit.
   id: DisposalJunction
   graph: DisposalPipe
@@ -289,8 +307,9 @@
   mirror: DisposalJunctionFlipped
 
 - type: construction
-  hide: true
-  name: disposal junction
+  hide: false
+  name: disposal junction (flipped)
+  fuzzyName: disposals junction three way
   description: A three-way junction. The arrow indicates where items exit.
   id: DisposalJunctionFlipped
   graph: DisposalPipe
@@ -306,6 +325,7 @@
 
 - type: construction
   name: disposal Y junction
+  fuzzyName: disposals Y junction three way
   description: A three-way junction with another exit point.
   id: DisposalYJunction
   graph: DisposalPipe
@@ -320,6 +340,7 @@
 
 - type: construction
   name: disposal bend
+  fuzzyName: disposals bend
   description: A tube bent at a 90 degree angle.
   id: DisposalBend
   graph: DisposalPipe
@@ -335,6 +356,7 @@
 # ATMOS
 - type: construction
   name: air alarm
+  fuzzyName: air alarm atmos
   id: AirAlarmFixture
   graph: AirAlarm
   startNode: start
@@ -353,6 +375,7 @@
 
 - type: construction
   name: fire alarm
+  fuzzyName: fire alarm atmos
   id: FireAlarm
   graph: FireAlarm
   startNode: start
@@ -371,6 +394,7 @@
 
 - type: construction
   name: air sensor
+  fuzzyName: pipe gas atmos air sensor
   id: AirSensor
   graph: AirSensor
   startNode: start
@@ -387,6 +411,7 @@
 # ATMOS PIPES
 - type: construction
   name: gas pipe half
+  fuzzyName: pipe gas atmos air half
   id: GasPipeHalf
   description: Half of a gas pipe. No skateboards.
   graph: GasPipe
@@ -401,6 +426,7 @@
 
 - type: construction
   name: gas pipe straight
+  fuzzyName: pipe gas atmos air straight
   id: GasPipeStraight
   description: A straight pipe segment.
   graph: GasPipe
@@ -415,6 +441,7 @@
 
 - type: construction
   name: gas pipe bend
+  fuzzyName: pipe gas atmos air bend
   id: GasPipeBend
   description: A pipe segment bent at a 90 degree angle.
   graph: GasPipe
@@ -429,6 +456,7 @@
 
 - type: construction
   name: gas pipe T junction
+  fuzzyName: pipe gas atmos air t junction three way
   id: GasPipeTJunction
   description: A pipe segment with a T junction.
   graph: GasPipe
@@ -443,6 +471,7 @@
 
 - type: construction
   name: gas pipe fourway
+  fuzzyName: pipe gas atmos air fourway
   id: GasPipeFourway
   description: A pipe segment with a fourway junction.
   graph: GasPipe
@@ -458,6 +487,7 @@
 # ATMOS UNARY
 - type: construction
   name: air vent
+  fuzzyName: pipe gas atmos air vent unary pump
   description: Pumps gas into the room.
   id: GasVentPump
   graph: GasUnary
@@ -479,6 +509,7 @@
 
 - type: construction
   name: passive vent
+  fuzzyName: pipe gas atmos air vent passive
   description: Unpowered vent that equalises gases on both sides.
   id: GasPassiveVent
   graph: GasUnary
@@ -500,6 +531,7 @@
 
 - type: construction
   name: air scrubber
+  fuzzyName: pipe gas atmos air scrubber
   description: Sucks gas into connected pipes.
   id: GasVentScrubber
   graph: GasUnary
@@ -521,6 +553,7 @@
 
 - type: construction
   name: air injector
+  fuzzyName: pipe gas atmos air injector
   description: Injects air into the atmosphere.
   id: GasOutletInjector
   graph: GasUnary
@@ -543,6 +576,7 @@
 # ATMOS BINARY
 - type: construction
   name: gas pump
+  fuzzyName: pipe gas atmos air pump pressure
   id: GasPressurePump
   description: A pump that moves gas by pressure.
   graph: GasBinary
@@ -564,6 +598,7 @@
 
 - type: construction
   name: volumetric gas pump
+  fuzzyName: pipe gas atmos air pump volume
   description: A pump that moves gas by volume.
   id: GasVolumePump
   graph: GasBinary
@@ -586,6 +621,7 @@
 - type: construction
   id: GasPassiveGate
   name: passive gate
+  fuzzyName: pipe gas atmos air passive gate one way
   description: A one-way air valve that does not require power.
   graph: GasBinary
   startNode: start
@@ -607,6 +643,7 @@
 - type: construction
   id: GasValve
   name: manual valve
+  fuzzyName: pipe gas atmos air valve manual
   description: A pipe with a valve that can be used to disable the flow of gas through it.
   graph: GasBinary
   startNode: start
@@ -628,6 +665,7 @@
 - type: construction
   id: SignalControlledValve
   name: signal valve
+  fuzzyName: pipe gas atmos air valve digital signal
   description: Valve controlled by signal inputs.
   graph: GasBinary
   startNode: start
@@ -649,6 +687,7 @@
 - type: construction
   id: GasPort
   name: connector port
+  fuzzyName: pipe gas atmos air canister connector port
   description: For connecting portable devices related to atmospherics control.
   graph: GasBinary
   startNode: start
@@ -670,6 +709,7 @@
 - type: construction
   id: GasDualPortVentPump
   name: dual-port air vent
+  fuzzyName: pipe gas atmos air vent pump dual port
   description: Has a valve and a pump attached to it. There are two ports, one is an input for releasing air, the other is an output when siphoning.
   graph: GasBinary
   startNode: start
@@ -689,6 +729,7 @@
 - type: construction
   id: HeatExchanger
   name: radiator
+  fuzzyName: pipe gas atmos air radiator heat exchanger HE
   description: Transfers heat between the pipe and its surroundings.
   graph: GasBinary
   startNode: start
@@ -704,6 +745,7 @@
 - type: construction
   id: GasFilter
   name: gas filter
+  fuzzyName: pipe gas atmos air filter
   description: Very useful for filtering gases.
   graph: GasTrinary
   startNode: start
@@ -720,8 +762,9 @@
 
 - type: construction
   id: GasFilterFlipped
-  hide: true
-  name: gas filter
+  hide: false
+  name: gas filter (flipped)
+  fuzzyName: pipe gas atmos air filter
   description: Very useful for filtering gases.
   graph: GasTrinary
   startNode: start
@@ -739,6 +782,7 @@
 - type: construction
   id: GasMixer
   name: gas mixer
+  fuzzyName: pipe gas atmos air mixer
   description: Very useful for mixing gases.
   graph: GasTrinary
   startNode: start
@@ -755,8 +799,9 @@
 
 - type: construction
   id: GasMixerFlipped
-  hide: true
-  name: gas mixer
+  hide: false
+  name: gas mixer (flipped)
+  fuzzyName: pipe gas atmos air mixer
   description: Very useful for mixing gases.
   graph: GasTrinary
   startNode: start
@@ -774,6 +819,7 @@
 - type: construction
   id: PressureControlledValve
   name: pneumatic valve
+  fuzzyName: pipe gas atmos air valve pneumatic pressure
   description: Valve controlled by pressure.
   graph: GasTrinary
   startNode: start
@@ -790,6 +836,7 @@
 # INTERCOM
 - type: construction
   name: intercom
+  fuzzyName: intercom radio
   id: IntercomAssembly
   graph: Intercom
   startNode: start
@@ -809,6 +856,7 @@
 # TIMERS
 - type: construction
   name: signal timer
+  fuzzyName: signals timer
   id: SignalTimer
   graph: Timer
   startNode: start
@@ -826,6 +874,7 @@
 
 - type: construction
   name: screen timer
+  fuzzyName: signals timer screen
   id: ScreenTimer
   graph: Timer
   startNode: start
@@ -844,6 +893,7 @@
 
 - type: construction
   name: brig timer
+  fuzzyName: signals timer brig
   id: BrigTimer
   graph: Timer
   startNode: start

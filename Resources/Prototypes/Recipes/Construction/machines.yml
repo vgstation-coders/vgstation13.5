@@ -1,5 +1,6 @@
 ﻿- type: construction
   name: computer
+  fuzzyName: computer frame
   id: Computer
   graph: Computer
   startNode: start
@@ -81,6 +82,7 @@
 
 - type: construction
   name: signal button
+  fuzzyName: signals button
   id: SignalButtonRecipe
   graph: SignalButtonGraph
   startNode: start
@@ -117,6 +119,7 @@
 
 - type: construction
   name: directional signal switch
+  fuzzyName: signals switch directional
   id: SignalSwitchDirectionalRecipe
   graph: SignalSwitchDirectionalGraph
   startNode: start
@@ -135,6 +138,7 @@
 
 - type: construction
   name: directional signal button
+  fuzzyName: signals button directional
   id: SignalButtonDirectionalRecipe
   graph: SignalButtonDirectionalGraph
   startNode: start
