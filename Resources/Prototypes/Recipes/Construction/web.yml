@@ -81,6 +81,7 @@
 
 - type: construction
   name: web crate
+  fuzzyName: web crate storage
   id: CrateWeb
   graph: WebStructures
   startNode: start

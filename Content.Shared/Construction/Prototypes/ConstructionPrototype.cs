@@ -22,6 +22,12 @@ public sealed partial class ConstructionPrototype : IPrototype
     /// </summary>
     [DataField("name")]
     public string Name = string.Empty;
+	
+	/// <summary>
+    ///     The name that is used in searches. If blank, will default to the actual name
+    /// </summary>
+    [DataField("fuzzyName")]
+    public string FuzzyName = string.Empty;
 
     /// <summary>
     ///     "Useful" description displayed in the construction GUI.

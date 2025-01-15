@@ -3,6 +3,7 @@
   parent:
   - BaseMob
   - MobDamageable
+  - MobPolymorphable
   - MobCombat
   id: BaseMobSpecies
   abstract: true
@@ -207,6 +208,7 @@
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
   - type: Puller
+    needsHands: false
   - type: Speech
     speechSounds: Alto
   - type: DamageForceSay

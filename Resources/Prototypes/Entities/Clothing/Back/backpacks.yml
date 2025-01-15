@@ -27,7 +27,7 @@
         type: StorageBoundUserInterface
   # to prevent bag open/honk spam
   - type: UseDelay
-    delay: 0.5
+    delay: 0.1
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: AllowsSleepInside # DeltaV - enable sleeping inside bags

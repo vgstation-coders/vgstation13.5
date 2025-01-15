@@ -28,7 +28,7 @@ namespace Content.Server.Chemistry.TileReactions
 
             environment.Temperature =
                 MathF.Max(MathF.Min(environment.Temperature - (_coolingTemperature * 1000f),
-                        environment.Temperature / _coolingTemperature), Atmospherics.TCMB);
+                        environment.Temperature / _coolingTemperature), 0f);
 
             atmosphereSystem.ReactTile(tile.GridUid, tile.GridIndices);
             atmosphereSystem.HotspotExtinguish(tile.GridUid, tile.GridIndices);

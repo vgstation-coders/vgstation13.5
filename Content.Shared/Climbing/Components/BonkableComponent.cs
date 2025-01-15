@@ -1,15 +1,22 @@
 using Content.Shared.Damage;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Climbing.Components;
 
 /// <summary>
-///     Makes entity do damage and stun entities with ClumsyComponent
-///     upon DragDrop or Climb interactions.
+///     Adds functionality for a climbable entity to damage and stun entities who attempt to
+///     climb it (DragDrop or Climb interactions) under various circumstances.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BonkableComponent : Component
 {
+    /// <summary>
+    ///     Whether every time you try to climb this thing, you just hit your head instead.
+    /// </summary>
+    [DataField("riggedForBonk")]
+    public bool RiggedForBonk = false;
+
     /// <summary>
     ///     How long to stun players on bonk, in seconds.
     /// </summary>
@@ -21,4 +28,10 @@ public sealed partial class BonkableComponent : Component
     /// </summary>
     [DataField]
     public DamageSpecifier? BonkDamage;
+
+    /// <summary>
+    ///     Sound to be played when a bonk happens.
+    /// </summary>
+    [DataField("bonkSound")]
+    public SoundSpecifier? BonkSound = null;
 }
