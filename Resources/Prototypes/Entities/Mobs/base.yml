@@ -9,7 +9,7 @@
     noRot: true
     drawdepth: Mobs
   - type: Physics
-    bodyType: KinematicController
+    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       fix1:
