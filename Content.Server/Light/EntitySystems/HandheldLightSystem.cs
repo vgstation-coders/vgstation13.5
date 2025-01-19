@@ -274,7 +274,7 @@ namespace Content.Server.Light.EntitySystems
             }
 
             if (component.Activated && !_battery.TryUseCharge(batteryUid.Value, component.Wattage * frameTime, battery))
-                TurnOff(uid, false);
+                TurnOff(uid, true);
 
             UpdateLevel(uid);
         }

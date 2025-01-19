@@ -25,7 +25,7 @@
     outputPressure: 21.3
     air:
       # If gas tank volume is changed, adjust MinimumTritiumOxyburnEnergy in Atmospherics.cs by the same proportions
-      volume: 5
+      volume: 20
       temperature: 293.15
     tankLowPressure: 30.0
   - type: Explosive
@@ -103,7 +103,7 @@
     sprite: Objects/Tanks/emergency.rsi
   - type: GasTank
     air:
-      volume: 0.66
+      volume: 1.5
       temperature: 293.15
   - type: Clothing
     sprite: Objects/Tanks/emergency.rsi

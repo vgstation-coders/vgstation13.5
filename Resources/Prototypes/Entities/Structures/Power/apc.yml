@@ -54,8 +54,8 @@
   - type: Appearance
   - type: ApcVisuals
   - type: Battery
-    maxCharge: 50000
-    startingCharge: 0
+    maxCharge: 1800000
+    startingCharge: 100000
   - type: ExaminableBattery
   - type: NodeContainer
     examinable: true
@@ -92,10 +92,10 @@
     graph: APC
     node: apc
   - type: PowerNetworkBattery
-    maxSupply: 10000
-    maxChargeRate: 5000
-    supplyRampTolerance: 1000
-    supplyRampRate: 500
+    maxSupply: 30000
+    maxChargeRate: 60000
+    supplyRampTolerance: 1500
+    supplyRampRate: 1000
   - type: WallMount
   - type: WiresPanel
   - type: WiresVisuals
@@ -202,21 +202,21 @@
 - type: entity
   parent: BaseAPC
   id: APCBasic
-  suffix: Basic, 50kW
+  suffix: Basic, 0.5kWh
   components:
   - type: Battery
-    maxCharge: 50000
-    startingCharge: 50000
+    maxCharge: 1800000
+    startingCharge: 100000
   - type: BatteryDrinkerSource # Parkstation IPCs
     maxAmount: 5000
 
 - type: entity
   parent: BaseAPC
   id: APCHighCapacity
-  suffix: High Capacity, 100kW
+  suffix: High Capacity, 1.2kWh
   components:
   - type: Battery
-    maxCharge: 100000
+    maxCharge: 4320000
     startingCharge: 100000
   - type: BatteryDrinkerSource # Parkstation IPCs
     maxAmount: 12000
@@ -224,21 +224,21 @@
 - type: entity
   parent: BaseAPC
   id: APCSuperCapacity
-  suffix: Super Capacity, 150kW
+  suffix: Super Capacity, 1.8kWh
   components:
   - type: Battery
-    maxCharge: 150000
-    startingCharge: 150000
+    maxCharge: 6480000
+    startingCharge: 100000
   - type: BatteryDrinkerSource # Parkstation IPCs
     maxAmount: 18000
 
 - type: entity
   parent: BaseAPC
   id: APCHyperCapacity
-  suffix: Hyper Capacity, 200kW
+  suffix: Hyper Capacity, 2.6kWh
   components:
   - type: Battery
-    maxCharge: 200000
-    startingCharge: 200000
+    maxCharge: 9360000
+    startingCharge: 100000
   - type: BatteryDrinkerSource # Parkstation IPCs # Parkstation IPCs
     maxAmount: 26000

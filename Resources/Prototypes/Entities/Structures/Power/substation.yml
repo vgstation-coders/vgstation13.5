@@ -19,7 +19,7 @@
       shader: unshaded
   - type: UpgradeBattery
     maxChargeMultiplier: 2
-    baseMaxCharge: 2500000
+    baseMaxCharge: 36000000
   - type: UpgradePowerSupplyRamping
     scaling: Linear
     supplyRampingMultiplier: 1
@@ -52,10 +52,10 @@
   - type: BatteryDischarger
     voltage: Medium
   - type: PowerNetworkBattery
-    maxSupply: 150000
-    maxChargeRate: 5000
-    supplyRampTolerance: 5000
-    supplyRampRate: 1000
+    maxSupply: 100000
+    maxChargeRate: 150000
+    supplyRampTolerance: 20000
+    supplyRampRate: 10000
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: StrongMetallic
@@ -159,7 +159,7 @@
     - state: screen
       shader: unshaded
   - type: Battery
-    maxCharge: 2000000
+    maxCharge: 23400000
     startingCharge: 0
   - type: ExaminableBattery
   - type: NodeContainer
@@ -182,10 +182,10 @@
   - type: BatteryDischarger
     voltage: Medium
   - type: PowerNetworkBattery
-    maxSupply: 150000
-    maxChargeRate: 5000
-    supplyRampTolerance: 5000
-    supplyRampRate: 1000
+    maxSupply: 100000
+    maxChargeRate: 150000
+    supplyRampTolerance: 15000
+    supplyRampRate: 10000
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -224,11 +224,11 @@
 - type: entity
   parent: BaseSubstation
   id: SubstationBasic
-  suffix: Basic, 2.5MJ
+  suffix: Basic, 750kWh
   components:
   - type: Battery
-    maxCharge: 2500000
-    startingCharge: 2500000
+    maxCharge: 36000000
+    startingCharge: 72000000
 
 - type: entity
   parent: SubstationBasic
@@ -241,11 +241,11 @@
 - type: entity
   parent: BaseSubstationWall
   id: SubstationWallBasic
-  suffix: Basic, 2MJ
+  suffix: Basic, 600kWh
   components:
   - type: Battery
-    maxCharge: 2000000
-    startingCharge: 2000000
+    maxCharge: 23400000
+    startingCharge: 4680000
   - type: ContainerFill
     containers:
       board: [ WallmountSubstationElectronics ]

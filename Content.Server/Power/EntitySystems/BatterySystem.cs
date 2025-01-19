@@ -120,10 +120,10 @@ namespace Content.Server.Power.EntitySystems
 
         public float UseCharge(EntityUid uid, float value, BatteryComponent? battery = null)
         {
-            if (value <= 0 ||  !Resolve(uid, ref battery) || battery.CurrentCharge == 0)
+            if (value <= 0 || !Resolve(uid, ref battery) || battery.CurrentCharge == 0)
                 return 0;
 
-            var newValue = Math.Clamp(0, battery.CurrentCharge - value, battery.MaxCharge);
+            var newValue = Math.Clamp(battery.CurrentCharge - value, 0, battery.MaxCharge);
             var delta = newValue - battery.CurrentCharge;
             battery.CurrentCharge = newValue;
 

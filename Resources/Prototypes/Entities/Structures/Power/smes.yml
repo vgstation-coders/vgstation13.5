@@ -31,7 +31,7 @@
     - type: Smes
     - type: UpgradeBattery
       maxChargeMultiplier: 2
-      baseMaxCharge: 8000000
+      baseMaxCharge: 90000000
     - type: UpgradePowerSupplyRamping
       scaling: Linear
       supplyRampingMultiplier: 1     
@@ -62,10 +62,10 @@
       voltage: High
       node: input
     - type: PowerNetworkBattery
-      maxSupply: 150000
-      maxChargeRate: 5000
-      supplyRampTolerance: 5000
-      supplyRampRate: 1000
+      maxSupply: 500000
+      maxChargeRate: 1500000
+      supplyRampTolerance: 20000
+      supplyRampRate: 15000
     - type: PointLight
       radius: 1.5
       energy: 1.6
@@ -100,11 +100,11 @@
 - type: entity
   parent: BaseSMES
   id: SMESBasic
-  suffix: Basic, 8MW
+  suffix: Basic, 25kWh
   components:
   - type: Battery
-    maxCharge: 8000000
-    startingCharge: 8000000
+    maxCharge: 90000000
+    startingCharge: 18000000
 
 - type: entity
   parent: SMESBasic
