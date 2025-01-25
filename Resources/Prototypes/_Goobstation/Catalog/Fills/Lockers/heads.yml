@@ -7,6 +7,7 @@
     contents:
     - id: BoxFolderCentCom
     - id: WeaponDisabler
+    - id: WeaponTaser
     - id: BriefcaseBrownFilled
     - id: BedsheetCentcom
     - id: CaneSheathFilledNanotrasen
@@ -39,6 +40,7 @@
     contents:
     - id: BoxFolderCentCom
     - id: WeaponDisabler
+    - id: WeaponTaser
     - id: BriefcaseBrownFilled
     - id: RubberStampMagistrate
     - id: ClothingHeadHatPwig

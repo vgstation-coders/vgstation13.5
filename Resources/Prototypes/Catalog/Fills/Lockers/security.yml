@@ -7,7 +7,7 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponDisabler
-        prob: 0.3
+      - id: WeaponTaser
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
@@ -37,7 +37,7 @@
     contents:
       - id: FlashlightSeclite
       - id: WeaponDisabler
-        prob: 0.3
+      - id: WeaponTaser
       - id: ClothingBeltSecurityFilled
       - id: Flash
       - id: ClothingEyesGlassesSunglasses
@@ -65,7 +65,8 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-        prob: 0.8
+      - id: WeaponDisabler
+      - id: WeaponTaser
       - id: ClothingUniformJumpsuitSecGrey
         prob: 0.3
       - id: ClothingUniformJumpsuitSecBlue # DeltaV - consistency with other sec uniforms
@@ -89,7 +90,6 @@
         prob: 0.25
       - id: ClothingBeltSecurityFilled
       - id: Flash
-        prob: 0.5
       - id: ClothingEyesGlassesSunglasses
       - id: ClothingHeadsetSecurity
       - id: ClothingHandsGlovesColorBlack
@@ -111,6 +111,7 @@
     contents:
       - id: ClothingEyesHudSecurity
       - id: WeaponDisabler
+      - id: WeaponTaser
       - id: TrackingImplanter
         amount: 2
 ##      - id: ClothingOuterHardsuitCombatCorpsman # DeltaV - ClothingOuterHardsuitBrigmedic replaced in favour of corpsman's combat hardsuit; removing from standard filled locker to place in hardsuit filled locker.
@@ -151,6 +152,7 @@
     contents:
       - id: ClothingEyesHudSecurity
       - id: WeaponDisabler
+      - id: WeaponTaser
       - id: TrackingImplanter
         amount: 2
       - id: ClothingOuterHardsuitCombatCorpsman
@@ -225,6 +227,8 @@
   - type: StorageFill
     contents:
     - id: WeaponDisabler
+      amount: 5
+    - id: WeaponTaser
       amount: 5
 
 - type: entity

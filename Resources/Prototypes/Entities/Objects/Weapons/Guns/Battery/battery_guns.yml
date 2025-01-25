@@ -544,12 +544,13 @@
         - suitStorage
         - Belt
     - type: Gun
-      fireRate: 2
+      cameraRecoilScalar: 0.1
+      fireRate: 3.5
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisabler
-      fireCost: 100
+      fireCost: 83
     - type: MagazineVisuals
       magState: mag
       steps: 5
@@ -587,7 +588,8 @@
         shader: unshaded
   - type: Gun
     selectedMode: FullAuto
-    fireRate: 4
+    cameraRecoilScalar: 0.35
+    fireRate: 8
     availableModes:
       - SemiAuto
       - FullAuto
@@ -632,7 +634,7 @@
       price: 100
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
-      fireCost: 100
+      fireCost: 83
     - type: MeleeWeapon
       damage:
         types:
@@ -664,11 +666,13 @@
     slots:
     - Belt
   - type: Gun
+    cameraRecoilScalar: 0.1
+    projectileSpeed: 12
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletTaser
-    fireCost: 200
+    fireCost: 100
   - type: MagazineVisuals
     magState: mag
     steps: 5
