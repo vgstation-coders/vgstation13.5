@@ -60,6 +60,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         RaiseNetworkEvent(new ChangeLayingDownEvent());
     }
 
+    // MARKAH HERE remove this later
     private void HandleCrawlUnderRequest(ICommonSession? session)
     {
         if (session == null
@@ -69,7 +70,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || !_actionBlocker.CanInteract(uid, null))
             return;
 
-        var newState = !layingDown.IsCrawlingUnder;
+        var newState = true; // MARKAH HERE
         if (standingState.CurrentState is StandingState.Standing)
             newState = false; // If the entity is already standing, this function only serves a fallback method to fix its draw depth
 
@@ -80,7 +81,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return;
         }
 
-        layingDown.IsCrawlingUnder = newState;
+        // layingDown.IsCrawlingUnder = newState; // MARKAH HERE
         _speed.RefreshMovementSpeedModifiers(uid);
         Dirty(uid, layingDown);
     }
@@ -123,7 +124,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (!_standing.IsDown(uid))
             return;
 
-        var modifier = component.LyingSpeedModifier * (component.IsCrawlingUnder ? component.CrawlingUnderSpeedModifier : 1);
+        var modifier = component.LyingSpeedModifier; // MARKAH HERE
         args.ModifySpeed(modifier, modifier);
     }
 
@@ -160,7 +161,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
 
         standingState.CurrentState = StandingState.GettingUp;
-        layingDown.IsCrawlingUnder = false;
+        // layingDown.IsCrawlingUnder = false; // MARKAH HERE
         return true;
     }
 

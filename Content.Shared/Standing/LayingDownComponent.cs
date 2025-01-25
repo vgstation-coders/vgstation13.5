@@ -16,12 +16,6 @@ public sealed partial class LayingDownComponent : Component
     [DataField, AutoNetworkedField]
     public bool AutoGetUp;
 
-    /// <summary>
-    ///     If true, the entity is choosing to crawl under furniture. This is purely visual and has no effect on physics.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool IsCrawlingUnder = false;
-
     [DataField, AutoNetworkedField]
     public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs,
                CrawlingUnderDrawDepth = (int) DrawDepth.DrawDepth.SmallMobs;
