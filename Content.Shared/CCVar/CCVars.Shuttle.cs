@@ -140,7 +140,7 @@ public sealed partial class CCVars
     /// How long the emergency shuttle remains docked with the station, in seconds.
     /// </summary>
     public static readonly CVarDef<float> EmergencyShuttleDockTime =
-        CVarDef.Create("shuttle.emergency_dock_time", 240f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.emergency_dock_time", 180f, CVar.SERVERONLY);
 
     /// <summary>
     /// How long after the console is authorized for the shuttle to early launch.
@@ -153,13 +153,13 @@ public sealed partial class CCVars
     /// Actual minimum travel time cannot be less than <see cref="ShuttleSystem.DefaultArrivalTime"/>
     /// </summary>
     public static readonly CVarDef<float> EmergencyShuttleMinTransitTime =
-        CVarDef.Create("shuttle.emergency_transit_time_min", 90f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.emergency_transit_time_min", 120f, CVar.SERVERONLY);
 
     /// <summary>
     /// The maximum time for the emergency shuttle to arrive at centcomm.
     /// </summary>
     public static readonly CVarDef<float> EmergencyShuttleMaxTransitTime =
-        CVarDef.Create("shuttle.emergency_transit_time_max", 180f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.emergency_transit_time_max", 120f, CVar.SERVERONLY);
 
     /// <summary>
     /// Whether the emergency shuttle is enabled or should the round just end.
@@ -178,7 +178,7 @@ public sealed partial class CCVars
     ///     Time in minutes after round start to auto-call the shuttle. Set to zero to disable.
     /// </summary>
     public static readonly CVarDef<int> EmergencyShuttleAutoCallTime =
-        CVarDef.Create("shuttle.auto_call_time", 120, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.auto_call_time", 480, CVar.SERVERONLY);
 
     /// <summary>
     ///     Time in minutes after the round was extended (by recalling the shuttle) to call
