@@ -30,6 +30,8 @@
     contents:
       - id: WeaponDisabler
         amount: 3
+      - id: WeaponTaser
+        amount: 3
       - id: Stunbaton
         amount: 3
       - id: BoxFlashbang

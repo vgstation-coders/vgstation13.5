@@ -216,6 +216,7 @@
       contents:
         - id: BoxSurvivalEngineering
         - id: WeaponDisabler
+        - id: WeaponTaser
         - id: MedicatedSuture
         - id: RegenerativeMesh
         - id: BoxZiptie
@@ -231,6 +232,7 @@
       contents:
         - id: BoxSurvivalEngineering
         - id: WeaponDisabler
+        - id: WeaponTaser
         - id: MedicatedSuture
         - id: RegenerativeMesh
         - id: BoxZiptie

@@ -874,6 +874,16 @@
     Plastic: 500
 
 - type: latheRecipe
+  id: WeaponTaser
+  result: WeaponTaser
+  category: Weapons
+  completetime: 6
+  materials:
+    Steel: 450
+    Glass: 300
+    Plastic: 500
+
+- type: latheRecipe
   id: MagazineGrenadeEmpty
   result: MagazineGrenadeEmpty
   completetime: 3
