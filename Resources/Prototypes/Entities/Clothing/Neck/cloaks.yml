@@ -191,3 +191,19 @@
   - type: TypingIndicatorClothing
     proto: alien
 
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakRedHood
+  name: Red Cloak
+  components:
+  description: A cloak made for travel and comfort. Slightly smells of cherry pie?
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/redhood.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodRedHood
+    requiredSlot:
+    - neck
+    slot: head
+  - type: ContainerContainer
+      toggleable-clothing: !type:ContainerSlot {}
+    containers:

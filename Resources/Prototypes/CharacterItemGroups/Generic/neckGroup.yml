@@ -10,6 +10,8 @@
     - type: loadout
       id: LoadoutNeckUnathiMantle
     - type: loadout
+      id: LoadoutNeckDogtags
+    - type: loadout
       id: LoadoutNeckScarfStripedRed
     - type: loadout
       id: LoadoutNeckScarfStripedBlue
@@ -28,6 +30,30 @@
     - type: loadout
       id: LoadoutNeckTieWhite
     - type: loadout
+      id: LoadoutNeckTieShort
+    - type: loadout
+      id: LoadoutNeckTieBow
+    - type: loadout
+      id: LoadoutNeckTieBowTie
+    - type: loadout
+      id: LoadoutNeckTieRibbon
+    - type: loadout
+      id: LoadoutNeckCrucifixColor
+    - type: loadout
+      id: LoadoutNeckCrucifixColorSaintPeter
+    - type: loadout
+      id: LoadoutNeckCrucifixGold
+    - type: loadout
+      id: LoadoutNeckCrucifixGoldSaintPeter
+    - type: loadout
+      id: LoadoutNeckCrucifixSilver
+    - type: loadout
+      id: LoadoutNeckCrucifixSilverSaintPeter
+    - type: loadout
+      id: LoadoutNeckScapular
+    - type: loadout
+      id: LoadoutNeckTallit
+    - type: loadout
       id: LoadoutNeckBedsheetCosmos
     - type: loadout
       id: LoadoutNeckBedsheetRainbow
@@ -35,3 +61,27 @@
       id: LoadoutNeckBedsheetWhite
     - type: loadout
       id: LoadoutNeckBedsheetNT
+    - type: loadout
+      id: LoadoutNeckNecklaceStandard
+    - type: loadout
+      id: LoadoutNeckNecklaceLow
+    - type: loadout
+      id: LoadoutNeckNecklaceRound
+    - type: loadout
+      id: LoadoutNeckNecklaceSmall
+    - type: loadout
+      id: LoadoutNeckNecklaceGold
+    - type: loadout
+      id: LoadoutNeckNecklaceSilver
+    - type: loadout
+      id: LoadoutNeckNecklaceChainGold
+    - type: loadout
+      id: LoadoutNeckNecklaceChainSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGold
+    - type: loadout
+      id: LoadoutNeckNecklacePendantGoldLarge
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilver
+    - type: loadout
+      id: LoadoutNeckNecklacePendantSilverLarge

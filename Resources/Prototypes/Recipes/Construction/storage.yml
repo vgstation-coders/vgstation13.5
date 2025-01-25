@@ -19,6 +19,7 @@
 - type: construction
   id: TallCabinet
   name: tall cabinet
+  fuzzyName: filing cabinet tall
   description: A cabinet for all your filing needs.
   graph: FilingCabinet
   startNode: start
@@ -171,6 +172,7 @@
 - type: construction
   id: ShelfBar
   name: bar shelf
+  fuzzyName: bartender shelf
   description: A convenient place for all your extra booze, specifically designed to hold more bottles!
   graph: Shelf
   startNode: start
@@ -187,6 +189,7 @@
 - type: construction
   id: ShelfKitchen
   name: cooking shelf
+  fuzzyName: kitchen shelf cooking cheef
   description: Holds your knifes, spice, and everything nice!
   graph: Shelf
   startNode: start
@@ -203,6 +206,7 @@
 - type: construction
   id: ShelfChemistry
   name: chemical shelf
+  fuzzyName: chemist shelf chemistry chemical
   description: Perfect for keeping the most important chemicals safe, and out of the clumsy clowns hands!
   graph: Shelf
   startNode: start
