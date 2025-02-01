@@ -337,9 +337,9 @@
     speed: 0.55
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/retractor.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/hemostat.ogg
   - type: EmbeddableProjectile
     offset: 0.3,0.0
     removalTime: 0.0

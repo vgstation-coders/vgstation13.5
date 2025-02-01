@@ -65,9 +65,9 @@
     speed: 0.6
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/retractor.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/retractor.ogg
 
 - type: entity
   name: scythe
@@ -143,7 +143,7 @@
     speed: 0.35
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/_Shitmed/Medical/Surgery/circularsaw.ogg
 
 - type: entity
   name: spade

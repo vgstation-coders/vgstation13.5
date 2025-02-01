@@ -100,7 +100,7 @@
       tags:
       - HighRiskItem
     sound:
-      path: /Audio/Effects/saw.ogg
+      path: /Audio/Effects/circularsaw.ogg
       params:
         volume: -3
     cutOffSound: false
