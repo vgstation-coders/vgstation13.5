@@ -51,10 +51,8 @@
     - /Audio/Items/hypospray.ogg
     - /Audio/Items/ratchet.ogg
     - /Audio/Items/welder.ogg
-    - /Audio/Machines/airlock_close.ogg
-    - /Audio/Machines/airlock_ext_close.ogg
-    - /Audio/Machines/airlock_ext_open.ogg
-    - /Audio/Machines/airlock_open.ogg
+    - /Audio/Machines/airlock.ogg
+    - /Audio/Machines/airlock.ogg
     - /Audio/Machines/disposalflush.ogg
     - /Audio/Machines/printer.ogg
     - /Audio/Machines/windoor_open.ogg
@@ -187,11 +185,10 @@
     - /Audio/Effects/RingtoneNotes/gsharp.ogg
     - /Audio/Effects/Arcade/gameover.ogg
     - /Audio/Effects/Arcade/win.ogg
-    - /Audio/Machines/airlock_deny.ogg
+    - /Audio/Machines/denied.ogg
     - /Audio/Machines/alarm.ogg
     - /Audio/Machines/beep.ogg
-    - /Audio/Machines/boltsdown.ogg
-    - /Audio/Machines/boltsup.ogg
+    - /Audio/Machines/door_bolt.ogg
     - /Audio/Machines/custom_deny.ogg
     - /Audio/Machines/high_tech_confirm.ogg
     - /Audio/Machines/microwave_done_beep.ogg
