@@ -953,6 +953,15 @@
 
 - type: entity
   parent: BaseSign
+  id: SignRadioactiveArea
+  name: radioactive area warning sign
+  description: A warning sign which reads 'RADIOACTIVE AREA'
+  components:
+  - type: Sprite
+    state: radioactive
+
+- type: entity
+  parent: BaseSign
   id: SignXenobio
   name: xenobio sign
   description: A sign indicating the xenobiology lab.
