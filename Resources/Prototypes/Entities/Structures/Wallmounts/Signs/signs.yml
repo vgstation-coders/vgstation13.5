@@ -707,6 +707,15 @@
 
 - type: entity
   parent: BaseSign
+  id: SignRedcross
+  name: medbay sign
+  description: The Intergalactic symbol of Medical institutions. You'll probably get help here.
+  components:
+  - type: Sprite
+    state: redcross
+
+- type: entity
+  parent: BaseSign
   id: SignRND
   name: research and development sign
   description: A sign indicating the research and development lab.
