@@ -1,6 +1,7 @@
 - type: entity
   id: FireAlarm
   name: fire alarm
+  suffix: directional
   description: A fire alarm. Spicy!
   components:
   - type: WallMount
