@@ -38,6 +38,8 @@
     lastSignals:
       Status: false
 
+
+
 - type: entity
   id: SignalButton
   name: signal button
@@ -219,7 +221,47 @@
     arc: 175
   - type: Construction
     graph: LightSwitchDirectionalGraph
-    node: LightSwitchDirectionalNode
+    node: LightSwitchDirectionalNode #wow great naming thanks guys this isn't going to get confusing with the below LightSwitchDirectional at all
+
+# /vg/ light switch, possibly some overlap redundancy but *shrug
+- type: entity
+  id: LightSwitchDirectional
+  name: light switch
+  suffix: directional
+  description: It turns lights on and off. What are you, simple?
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
+  components:
+  - type: StationAiWhitelist
+  - type: WallMount
+    arc: 175
+  - type: ApcPowerReceiver # for unlit overlay - maybe a better way of doing it exists?
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    canCollide: false
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: Structures/Wallmounts/switch.rsi
+    state: light-p1
+  - type: SignalSwitch
+  - type: Rotatable
+  #- type: Construction
+  #  graph: SignalSwitchGraph #TODO light switch construction
+  #  node: SignalSwitchNode
+  - type: Fixtures
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSource
+    ports:
+    - On
+    - Off
+    lastSignals:
+      Status: false
 
 # lockable buttons
 
