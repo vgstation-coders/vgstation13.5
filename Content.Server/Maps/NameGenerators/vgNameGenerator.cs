@@ -77,43 +77,19 @@ public sealed partial class vgNameGenerator : StationNameGenerator
     {
         var random = IoCManager.Resolve<IRobustRandom>();
 
-        string prefix;
-
-        if (random.Prob(0.1f))
-        {
-            prefix = random.Pick(RarePrefixes);
-        }
-        else
-        {
-            prefix = random.Pick(Prefixes);
-        }
+        var prefix = random.Pick(random.Prob(0.1f) ? RarePrefixes : Prefixes);
 
         var suffix = random.Pick(Suffixes);
 
-        string number;
-
-        switch(random.Next(1, 5))
+        var number = random.Next(1, 5) switch
         {
-            case 1:
-                number = random.Next(1, 99).ToString();
-                break;
-            case 2:
-                number = random.Pick(Greeks);
-                break;
-            case 3:
-                number = random.Pick(Numerals);
-                break;
-            case 4:
-                number = random.Pick(Phonetics);
-                break;
-            case 5:
-                number = random.Pick(Cardinals);
-                break;
-            default:
-                // This should not appear ever, if it does then have fun fixing it
-                number = "YOU_SHOULD_NOT_SEE_THIS";
-                break;
-        }
+            1 => random.Next(1, 99).ToString(),
+            2 => random.Pick(Greeks),
+            3 => random.Pick(Numerals),
+            4 => random.Pick(Phonetics),
+            5 => random.Pick(Cardinals),
+            _ => "YOU_SHOULD_NOT_SEE_THIS"
+        };
 
         return $"{prefix} {suffix} {number}";
     }
