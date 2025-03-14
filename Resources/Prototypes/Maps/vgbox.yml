@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'vg'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_box.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_vgbox.yml
         - type: StationJobs
           availableJobs:
             #service
