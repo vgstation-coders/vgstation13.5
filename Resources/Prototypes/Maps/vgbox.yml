@@ -15,6 +15,8 @@
             prefixCreator: 'foo'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/emergency_vgbox.yml
+        - type: StationArrivals
+          shuttlePath: /Maps/Shuttles/arrivals_vgbox.yml
         - type: StationJobs
           availableJobs:
             #service
