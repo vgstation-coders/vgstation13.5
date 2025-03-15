@@ -8718,7 +8718,7 @@ entities:
   - uid: 22049
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator Equipment Room Air Alarm
+      name: Station Machine Room Air Alarm
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 65.5,-54.5
@@ -9571,7 +9571,7 @@ entities:
   - uid: 23730
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator Control Room Air Alarm
+      name: Station Machine Room Control Air Alarm
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 74.5,-62.5
@@ -10226,13 +10226,15 @@ entities:
       parent: 2
   - uid: 22034
     components:
+    - type: MetaData
+      name: Station Machine Room
     - type: Transform
       pos: 76.5,-60.5
       parent: 2
   - uid: 22045
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator Storage
+      name: Station Machine Room Storage
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 68.5,-60.5
@@ -11451,6 +11453,12 @@ entities:
     - type: Transform
       pos: 91.5,-34.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -125.1842
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
 - proto: AirlockMaintCargoLocked
   entities:
   - uid: 18347
@@ -12229,6 +12237,12 @@ entities:
     - type: Transform
       pos: 149.5,-29.5
       parent: 2
+    - type: Door
+      secondsUntilStateChange: -2583.115
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 1869
     components:
     - type: MetaData
@@ -14488,14 +14502,14 @@ entities:
   - uid: 6581
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator Storage APC
+      name: Station Machine Room Storage APC
     - type: Transform
       pos: 65.5,-57.5
       parent: 2
   - uid: 6582
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator Control Room APC
+      name: Station Machine Room Control APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 76.5,-58.5
@@ -14503,7 +14517,7 @@ entities:
   - uid: 6583
     components:
     - type: MetaData
-      name: Telecommunications & Gravity Generator APC
+      name: Station Machine Roomr APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 73.5,-55.5
@@ -15489,23 +15503,28 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 90.5,-46.5
       parent: 2
-  - uid: 24508
+  - uid: 24506
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 149.5,-64.5
       parent: 2
-  - uid: 24509
+  - uid: 24507
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 151.5,-84.5
       parent: 2
-  - uid: 24510
+  - uid: 24508
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 148.5,-84.5
+      parent: 2
+  - uid: 24685
+    components:
+    - type: Transform
+      pos: 149.5,-56.5
       parent: 2
 - proto: BarricadeDirectional
   entities:
@@ -15544,13 +15563,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 93.5,-102.5
       parent: 2
-  - uid: 24511
+  - uid: 24509
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 154.5,-73.5
       parent: 2
-  - uid: 24512
+  - uid: 24510
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -34375,6 +34394,31 @@ entities:
     - type: Transform
       pos: 51.5,-71.5
       parent: 2
+  - uid: 24564
+    components:
+    - type: Transform
+      pos: 68.5,-52.5
+      parent: 2
+  - uid: 24565
+    components:
+    - type: Transform
+      pos: 67.5,-52.5
+      parent: 2
+  - uid: 24566
+    components:
+    - type: Transform
+      pos: 67.5,-55.5
+      parent: 2
+  - uid: 24567
+    components:
+    - type: Transform
+      pos: 73.5,-52.5
+      parent: 2
+  - uid: 24568
+    components:
+    - type: Transform
+      pos: 74.5,-52.5
+      parent: 2
 - proto: CableApcStack
   entities:
   - uid: 18173
@@ -37333,11 +37377,6 @@ entities:
     components:
     - type: Transform
       pos: 133.5,-42.5
-      parent: 2
-  - uid: 11097
-    components:
-    - type: Transform
-      pos: 149.5,-55.5
       parent: 2
   - uid: 11098
     components:
@@ -51065,6 +51104,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,0.5
       parent: 2
+  - uid: 17879
+    components:
+    - type: Transform
+      pos: 150.5,-68.5
+      parent: 2
   - uid: 18119
     components:
     - type: Transform
@@ -51088,11 +51132,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 59.5,-9.5
-      parent: 2
-  - uid: 18426
-    components:
-    - type: Transform
-      pos: 150.5,-68.5
       parent: 2
   - uid: 18504
     components:
@@ -51926,12 +51965,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 100.5,-11.5
-      parent: 2
-  - uid: 9944
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 101.5,-11.5
       parent: 2
   - uid: 9945
     components:
@@ -53930,20 +53963,25 @@ entities:
     - type: Transform
       pos: 53.5,41.5
       parent: 2
-  - uid: 24520
+  - uid: 24518
     components:
     - type: Transform
       pos: 144.5,-63.5
       parent: 2
-  - uid: 24521
+  - uid: 24519
     components:
     - type: Transform
       pos: 144.5,-68.5
       parent: 2
-  - uid: 24522
+  - uid: 24520
     components:
     - type: Transform
       pos: 148.5,-61.5
+      parent: 2
+  - uid: 24593
+    components:
+    - type: Transform
+      pos: 64.5,-1.5
       parent: 2
 - proto: Cobweb2
   entities:
@@ -54037,12 +54075,12 @@ entities:
     - type: Transform
       pos: 164.5,-57.5
       parent: 2
-  - uid: 24518
+  - uid: 24516
     components:
     - type: Transform
       pos: 151.5,-65.5
       parent: 2
-  - uid: 24519
+  - uid: 24517
     components:
     - type: Transform
       pos: 154.5,-69.5
@@ -54599,7 +54637,7 @@ entities:
       parent: 2
 - proto: ComputerSurveillanceCameraMonitor
   entities:
-  - uid: 24481
+  - uid: 24479
     components:
     - type: MetaData
       name: Security Cameras
@@ -55355,7 +55393,7 @@ entities:
       fixtures: {}
 - proto: DecorFloorPaper3
   entities:
-  - uid: 17910
+  - uid: 16678
     components:
     - type: Transform
       pos: 146.5,-71.5
@@ -115019,114 +115057,114 @@ entities:
       parent: 2
 - proto: IntercomAll
   entities:
-  - uid: 24495
+  - uid: 24493
     components:
     - type: Transform
       pos: 141.5,-12.5
       parent: 2
-  - uid: 24548
+  - uid: 24546
     components:
     - type: Transform
       pos: 78.5,-24.5
       parent: 2
-  - uid: 24549
+  - uid: 24547
     components:
     - type: Transform
       pos: 82.5,-24.5
       parent: 2
-  - uid: 24550
+  - uid: 24548
     components:
     - type: Transform
       pos: 74.5,-24.5
       parent: 2
 - proto: IntercomCommand
   entities:
-  - uid: 24451
+  - uid: 22926
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 74.5,-75.5
       parent: 2
-  - uid: 24453
+  - uid: 24451
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 84.5,-28.5
       parent: 2
-  - uid: 24454
+  - uid: 24452
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 63.5,4.5
       parent: 2
-  - uid: 24459
+  - uid: 24457
     components:
     - type: Transform
       pos: 75.5,-35.5
       parent: 2
-  - uid: 24460
+  - uid: 24458
     components:
     - type: Transform
       pos: 81.5,-35.5
       parent: 2
-  - uid: 24461
+  - uid: 24459
     components:
     - type: Transform
       pos: 87.5,-34.5
       parent: 2
-  - uid: 24462
+  - uid: 24460
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 86.5,-34.5
       parent: 2
-  - uid: 24472
+  - uid: 24470
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 21.5,-23.5
       parent: 2
-  - uid: 24486
+  - uid: 24484
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 97.5,27.5
       parent: 2
-  - uid: 24506
+  - uid: 24504
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 158.5,-42.5
       parent: 2
-  - uid: 24531
+  - uid: 24529
     components:
     - type: Transform
       pos: 126.5,-41.5
       parent: 2
-  - uid: 24544
+  - uid: 24542
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 67.5,-39.5
       parent: 2
-  - uid: 24545
+  - uid: 24543
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 72.5,-29.5
       parent: 2
-  - uid: 24546
+  - uid: 24544
     components:
     - type: Transform
       pos: 68.5,-21.5
       parent: 2
-  - uid: 24547
+  - uid: 24545
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 74.5,-20.5
       parent: 2
-  - uid: 24551
+  - uid: 24549
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -115218,127 +115256,127 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 64.5,-31.5
       parent: 2
-  - uid: 24452
+  - uid: 24450
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 76.5,-62.5
       parent: 2
-  - uid: 24458
+  - uid: 24456
     components:
     - type: Transform
       pos: 69.5,-39.5
       parent: 2
-  - uid: 24464
+  - uid: 24462
     components:
     - type: Transform
       pos: 85.5,-10.5
       parent: 2
-  - uid: 24465
+  - uid: 24463
     components:
     - type: Transform
       pos: 107.5,5.5
       parent: 2
-  - uid: 24466
+  - uid: 24464
     components:
     - type: Transform
       pos: 66.5,11.5
       parent: 2
-  - uid: 24469
+  - uid: 24467
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 58.5,-69.5
       parent: 2
-  - uid: 24488
+  - uid: 24486
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 82.5,7.5
       parent: 2
-  - uid: 24489
+  - uid: 24487
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 80.5,1.5
       parent: 2
-  - uid: 24490
+  - uid: 24488
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 99.5,-22.5
       parent: 2
-  - uid: 24491
+  - uid: 24489
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 106.5,-8.5
       parent: 2
-  - uid: 24494
+  - uid: 24492
     components:
     - type: Transform
       pos: 143.5,-22.5
       parent: 2
-  - uid: 24496
+  - uid: 24494
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 124.5,-0.5
       parent: 2
-  - uid: 24497
+  - uid: 24495
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 112.5,11.5
       parent: 2
-  - uid: 24498
+  - uid: 24496
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 152.5,-18.5
       parent: 2
-  - uid: 24499
+  - uid: 24497
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 152.5,-17.5
       parent: 2
-  - uid: 24500
+  - uid: 24498
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 143.5,-26.5
       parent: 2
-  - uid: 24538
+  - uid: 24536
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 94.5,-43.5
       parent: 2
-  - uid: 24552
+  - uid: 24550
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 96.5,-21.5
       parent: 2
-  - uid: 24553
+  - uid: 24551
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 60.5,-20.5
       parent: 2
-  - uid: 24554
+  - uid: 24552
     components:
     - type: Transform
       pos: 119.5,-21.5
       parent: 2
-  - uid: 24555
+  - uid: 24553
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 124.5,-26.5
       parent: 2
-  - uid: 24556
+  - uid: 24554
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -115346,47 +115384,47 @@ entities:
       parent: 2
 - proto: IntercomEngineering
   entities:
-  - uid: 24450
+  - uid: 22925
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 92.5,-94.5
       parent: 2
-  - uid: 24457
+  - uid: 24455
     components:
     - type: Transform
       pos: 65.5,-71.5
       parent: 2
-  - uid: 24468
+  - uid: 24466
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 74.5,-76.5
       parent: 2
-  - uid: 24470
+  - uid: 24468
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 75.5,-62.5
       parent: 2
-  - uid: 24540
+  - uid: 24538
     components:
     - type: Transform
       pos: 96.5,-51.5
       parent: 2
-  - uid: 24541
+  - uid: 24539
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 81.5,-56.5
       parent: 2
-  - uid: 24542
+  - uid: 24540
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 80.5,-68.5
       parent: 2
-  - uid: 24543
+  - uid: 24541
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -115394,89 +115432,89 @@ entities:
       parent: 2
 - proto: IntercomMedical
   entities:
-  - uid: 24523
+  - uid: 24521
     components:
     - type: Transform
       pos: 125.5,-32.5
       parent: 2
-  - uid: 24524
+  - uid: 24522
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 126.5,-40.5
       parent: 2
-  - uid: 24525
+  - uid: 24523
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 125.5,-51.5
       parent: 2
-  - uid: 24526
+  - uid: 24524
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 117.5,-36.5
       parent: 2
-  - uid: 24527
+  - uid: 24525
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 96.5,-30.5
       parent: 2
-  - uid: 24528
+  - uid: 24526
     components:
     - type: Transform
       pos: 102.5,-34.5
       parent: 2
-  - uid: 24529
+  - uid: 24527
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 108.5,-42.5
       parent: 2
-  - uid: 24530
+  - uid: 24528
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 112.5,-41.5
       parent: 2
-  - uid: 24532
+  - uid: 24530
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 117.5,-45.5
       parent: 2
-  - uid: 24533
+  - uid: 24531
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 113.5,-49.5
       parent: 2
-  - uid: 24534
+  - uid: 24532
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 113.5,-53.5
       parent: 2
-  - uid: 24535
+  - uid: 24533
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 113.5,-45.5
       parent: 2
-  - uid: 24536
+  - uid: 24534
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 104.5,-48.5
       parent: 2
-  - uid: 24537
+  - uid: 24535
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 102.5,-44.5
       parent: 2
-  - uid: 24539
+  - uid: 24537
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -115484,41 +115522,41 @@ entities:
       parent: 2
 - proto: IntercomScience
   entities:
-  - uid: 24471
+  - uid: 24469
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 139.5,-53.5
       parent: 2
-  - uid: 24501
+  - uid: 24499
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 158.5,-34.5
       parent: 2
-  - uid: 24502
+  - uid: 24500
     components:
     - type: Transform
       pos: 143.5,-39.5
       parent: 2
-  - uid: 24503
+  - uid: 24501
     components:
     - type: Transform
       pos: 140.5,-36.5
       parent: 2
-  - uid: 24504
+  - uid: 24502
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 147.5,-31.5
       parent: 2
-  - uid: 24505
+  - uid: 24503
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 133.5,-31.5
       parent: 2
-  - uid: 24507
+  - uid: 24505
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -115526,87 +115564,87 @@ entities:
       parent: 2
 - proto: IntercomSecurity
   entities:
-  - uid: 18470
+  - uid: 18426
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 22.5,-8.5
       parent: 2
-  - uid: 24455
+  - uid: 24453
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 56.5,25.5
       parent: 2
-  - uid: 24456
+  - uid: 24454
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 71.5,34.5
       parent: 2
-  - uid: 24467
+  - uid: 24465
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 86.5,35.5
       parent: 2
-  - uid: 24475
+  - uid: 24473
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 68.5,11.5
       parent: 2
-  - uid: 24476
+  - uid: 24474
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 66.5,17.5
       parent: 2
-  - uid: 24477
+  - uid: 24475
     components:
     - type: Transform
       pos: 66.5,28.5
       parent: 2
-  - uid: 24478
+  - uid: 24476
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 58.5,37.5
       parent: 2
-  - uid: 24479
+  - uid: 24477
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 61.5,36.5
       parent: 2
-  - uid: 24480
+  - uid: 24478
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 65.5,36.5
       parent: 2
-  - uid: 24482
+  - uid: 24480
     components:
     - type: Transform
       pos: 78.5,28.5
       parent: 2
-  - uid: 24483
+  - uid: 24481
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 78.5,28.5
       parent: 2
-  - uid: 24484
+  - uid: 24482
     components:
     - type: Transform
       pos: 85.5,33.5
       parent: 2
-  - uid: 24485
+  - uid: 24483
     components:
     - type: Transform
       pos: 89.5,38.5
       parent: 2
-  - uid: 24487
+  - uid: 24485
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -115614,55 +115652,55 @@ entities:
       parent: 2
 - proto: IntercomService
   entities:
-  - uid: 24474
+  - uid: 24472
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 52.5,-21.5
       parent: 2
-  - uid: 24492
+  - uid: 24490
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 111.5,-21.5
       parent: 2
-  - uid: 24493
+  - uid: 24491
     components:
     - type: Transform
       pos: 125.5,-8.5
       parent: 2
 - proto: IntercomSupply
   entities:
-  - uid: 18574
+  - uid: 18443
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 46.5,-26.5
       parent: 2
-  - uid: 22922
+  - uid: 18470
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 38.5,-39.5
       parent: 2
-  - uid: 22925
+  - uid: 18574
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 60.5,-40.5
       parent: 2
-  - uid: 22926
+  - uid: 22922
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 50.5,-42.5
       parent: 2
-  - uid: 24463
+  - uid: 24461
     components:
     - type: Transform
       pos: 43.5,-28.5
       parent: 2
-  - uid: 24473
+  - uid: 24471
     components:
     - type: Transform
       pos: 52.5,-29.5
@@ -118043,7 +118081,7 @@ entities:
       parent: 2
 - proto: N14DecorFloorPaper
   entities:
-  - uid: 24513
+  - uid: 24511
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
@@ -118051,7 +118089,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-  - uid: 24514
+  - uid: 24512
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -118059,7 +118097,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-  - uid: 24515
+  - uid: 24513
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -118069,7 +118107,7 @@ entities:
       fixtures: {}
 - proto: N14DecorFloorPaper2
   entities:
-  - uid: 18443
+  - uid: 17910
     components:
     - type: Transform
       pos: 148.5,-66.5
@@ -118096,7 +118134,7 @@ entities:
       fixtures: {}
 - proto: N14DecorFloorTrashbags2
   entities:
-  - uid: 24516
+  - uid: 24514
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -118112,7 +118150,7 @@ entities:
       parent: 2
 - proto: N14DecorFloorTrashbags6
   entities:
-  - uid: 24517
+  - uid: 24515
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -135323,65 +135361,1184 @@ entities:
     - type: Transform
       pos: 57.5,28.5
       parent: 2
-- proto: SurveillanceCameraAssembly
+- proto: SurveillanceCameraCommand
+  entities:
+  - uid: 24573
+    components:
+    - type: MetaData
+      name: Gateway
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,-18.5
+      parent: 2
+  - uid: 24678
+    components:
+    - type: MetaData
+      name: Research Director's Office
+    - type: Transform
+      pos: 153.5,-45.5
+      parent: 2
+  - uid: 24752
+    components:
+    - type: MetaData
+      name: Chief Engineer's Office
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 75.5,-75.5
+      parent: 2
+  - uid: 24773
+    components:
+    - type: MetaData
+      name: Secure Technical Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 67.5,-65.5
+      parent: 2
+  - uid: 24788
+    components:
+    - type: MetaData
+      name: Head of Personnel's Office
+    - type: Transform
+      pos: 67.5,-38.5
+      parent: 2
+  - uid: 24789
+    components:
+    - type: MetaData
+      name: Conference Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 68.5,-22.5
+      parent: 2
+  - uid: 24790
+    components:
+    - type: MetaData
+      name: AI Upload Chamber
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 75.5,-33.5
+      parent: 2
+  - uid: 24791
+    components:
+    - type: MetaData
+      name: AI Upload Access
+    - type: Transform
+      pos: 77.5,-38.5
+      parent: 2
+  - uid: 24792
+    components:
+    - type: Transform
+      pos: 75.5,-38.5
+      parent: 2
+  - uid: 24793
+    components:
+    - type: MetaData
+      name: Cyborg Station
+    - type: Transform
+      pos: 81.5,-38.5
+      parent: 2
+  - uid: 24794
+    components:
+    - type: MetaData
+      name: Teleporter
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 88.5,-35.5
+      parent: 2
+  - uid: 24795
+    components:
+    - type: MetaData
+      name: Captain's Quarters
+    - type: Transform
+      pos: 86.5,-33.5
+      parent: 2
+  - uid: 24796
+    components:
+    - type: MetaData
+      name: Captain's Office
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 91.5,-25.5
+      parent: 2
+  - uid: 24797
+    components:
+    - type: MetaData
+      name: Bridge
+    - type: Transform
+      pos: 77.5,-19.5
+      parent: 2
+- proto: SurveillanceCameraEngineering
+  entities:
+  - uid: 24586
+    components:
+    - type: MetaData
+      name: Fore Port Solar Control
+    - type: Transform
+      pos: 22.5,11.5
+      parent: 2
+  - uid: 24739
+    components:
+    - type: MetaData
+      name: Atmospherics Fore Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 88.5,-53.5
+      parent: 2
+  - uid: 24740
+    components:
+    - type: MetaData
+      name: Atmospherics Monitoring
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 86.5,-53.5
+      parent: 2
+  - uid: 24741
+    components:
+    - type: MetaData
+      name: Atmospherics Fore Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 98.5,-52.5
+      parent: 2
+  - uid: 24742
+    components:
+    - type: MetaData
+      name: Atmospherics Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 90.5,-63.5
+      parent: 2
+  - uid: 24743
+    components:
+    - type: MetaData
+      name: Atmopsherics Access
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 82.5,-60.5
+      parent: 2
+  - uid: 24744
+    components:
+    - type: MetaData
+      name: Atmospherics Central
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 103.5,-70.5
+      parent: 2
+  - uid: 24745
+    components:
+    - type: MetaData
+      name: Atmospherics Aft Starboard
+    - type: Transform
+      pos: 97.5,-73.5
+      parent: 2
+  - uid: 24746
+    components:
+    - type: MetaData
+      name: Atmospherics Aft Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 90.5,-70.5
+      parent: 2
+  - uid: 24747
+    components:
+    - type: MetaData
+      name: Atmospherics Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 103.5,-61.5
+      parent: 2
+  - uid: 24748
+    components:
+    - type: MetaData
+      name: Engineering Access
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 83.5,-71.5
+      parent: 2
+  - uid: 24749
+    components:
+    - type: MetaData
+      name: Engineering Storage
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 81.5,-71.5
+      parent: 2
+  - uid: 24750
+    components:
+    - type: MetaData
+      name: Engineering SMES
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 88.5,-80.5
+      parent: 2
+  - uid: 24751
+    components:
+    - type: MetaData
+      name: Engineering Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 80.5,-77.5
+      parent: 2
+  - uid: 24753
+    components:
+    - type: MetaData
+      name: Engine Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 74.5,-79.5
+      parent: 2
+  - uid: 24754
+    components:
+    - type: MetaData
+      name: Engine Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 65.5,-81.5
+      parent: 2
+  - uid: 24755
+    components:
+    - type: MetaData
+      name: Engineering Secure Storage Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 64.5,-84.5
+      parent: 2
+  - uid: 24756
+    components:
+    - type: MetaData
+      name: Engineering Center
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 76.5,-80.5
+      parent: 2
+  - uid: 24757
+    components:
+    - type: MetaData
+      name: Burn Chamber Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 55.5,-76.5
+      parent: 2
+  - uid: 24758
+    components:
+    - type: MetaData
+      name: Burn Chamber Starboard
+    - type: Transform
+      pos: 60.5,-82.5
+      parent: 2
+  - uid: 24759
+    components:
+    - type: MetaData
+      name: Burn Chamber Aft
+    - type: Transform
+      pos: 53.5,-84.5
+      parent: 2
+  - uid: 24760
+    components:
+    - type: MetaData
+      name: Engineering Secure Storage Aft
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 62.5,-95.5
+      parent: 2
+  - uid: 24761
+    components:
+    - type: MetaData
+      name: Singularity Fore Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 70.5,-87.5
+      parent: 2
+  - uid: 24762
+    components:
+    - type: MetaData
+      name: Singularity Fore Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 86.5,-87.5
+      parent: 2
+  - uid: 24763
+    components:
+    - type: MetaData
+      name: Singularity Aft Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 86.5,-99.5
+      parent: 2
+  - uid: 24764
+    components:
+    - type: MetaData
+      name: Engineering Auxiliary Fore
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 91.5,-87.5
+      parent: 2
+  - uid: 24765
+    components:
+    - type: MetaData
+      name: Singularity Aft Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 70.5,-99.5
+      parent: 2
+  - uid: 24766
+    components:
+    - type: MetaData
+      name: Engineering Auxiliary Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 91.5,-98.5
+      parent: 2
+  - uid: 24767
+    components:
+    - type: MetaData
+      name: Antimatter Engine Room
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 93.5,-96.5
+      parent: 2
+  - uid: 24768
+    components:
+    - type: MetaData
+      name: Auxiliary Engineering Storage
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 91.5,-106.5
+      parent: 2
+  - uid: 24770
+    components:
+    - type: MetaData
+      name: Aft Port Solar Control
+    - type: Transform
+      pos: 52.5,-74.5
+      parent: 2
+  - uid: 24774
+    components:
+    - type: MetaData
+      name: Technical Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,-63.5
+      parent: 2
+  - uid: 24775
+    components:
+    - type: MetaData
+      name: Station Machine Room Control
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 69.5,-59.5
+      parent: 2
+  - uid: 24776
+    components:
+    - type: MetaData
+      name: Station Machine Room Storage
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 67.5,-61.5
+      parent: 2
+  - uid: 24777
+    components:
+    - type: MetaData
+      name: Station Machine Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 70.5,-51.5
+      parent: 2
+- proto: SurveillanceCameraGeneral
   entities:
   - uid: 16638
     components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -5.5,-31.5
-      parent: 2
-  - uid: 16678
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 5.5,-13.5
-      parent: 2
-  - uid: 16679
-    components:
+    - type: MetaData
+      name: Arrivals Auxiliary Docking Fore
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 10.5,-18.5
       parent: 2
-  - uid: 16680
+  - uid: 16679
     components:
+    - type: MetaData
+      name: Arrivals Escape Pods
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 6.5,-31.5
+      pos: 4.5,0.5
       parent: 2
-  - uid: 16681
+  - uid: 16680
     components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 12.5,-27.5
-      parent: 2
-  - uid: 17871
-    components:
-    - type: Transform
-      pos: 6.5,-3.5
-      parent: 2
-  - uid: 17872
-    components:
+    - type: MetaData
+      name: Arrivals North East
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 15.5,-0.5
       parent: 2
-  - uid: 17879
+  - uid: 16681
     components:
+    - type: MetaData
+      name: Arrivals East
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 15.5,-8.5
       parent: 2
+  - uid: 17871
+    components:
+    - type: MetaData
+      name: Arrivals Shuttle Aft
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-13.5
+      parent: 2
+  - uid: 17872
+    components:
+    - type: MetaData
+      name: Arrivals Hallway
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 25.5,-15.5
+      parent: 2
   - uid: 17880
     components:
     - type: Transform
-      pos: 17.5,-7.5
+      rot: 3.141592653589793 rad
+      pos: 22.5,-9.5
       parent: 2
   - uid: 17882
     components:
+    - type: MetaData
+      name: Arrivals Shuttle North
+    - type: Transform
+      pos: 6.5,-3.5
+      parent: 2
+  - uid: 24572
+    components:
+    - type: MetaData
+      name: Arrivals Lounge
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 4.5,0.5
+      pos: 22.5,-9.5
+      parent: 2
+  - uid: 24574
+    components:
+    - type: MetaData
+      name: Arrivals Auxiliary Docking Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-27.5
+      parent: 2
+  - uid: 24575
+    components:
+    - type: MetaData
+      name: Arrivals Auxiliary Docking Aft Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,-31.5
+      parent: 2
+  - uid: 24576
+    components:
+    - type: MetaData
+      name: Arrivals Auxiliary Docking Aft Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -5.5,-31.5
+      parent: 2
+  - uid: 24578
+    components:
+    - type: MetaData
+      name: MoMMI Nest
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,-33.5
+      parent: 2
+  - uid: 24579
+    components:
+    - type: MetaData
+      name: Locker Room Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 42.5,-17.5
+      parent: 2
+  - uid: 24580
+    components:
+    - type: MetaData
+      name: Locker Room Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 42.5,-24.5
+      parent: 2
+  - uid: 24581
+    components:
+    - type: MetaData
+      name: Locker Room Port
+    - type: Transform
+      pos: 34.5,-19.5
+      parent: 2
+  - uid: 24582
+    components:
+    - type: MetaData
+      name: Locker Room Toilets
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 33.5,-26.5
+      parent: 2
+  - uid: 24583
+    components:
+    - type: MetaData
+      name: Port Hallway 3
+    - type: Transform
+      pos: 35.5,-13.5
+      parent: 2
+  - uid: 24584
+    components:
+    - type: MetaData
+      name: Primary Tool Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 36.5,-5.5
+      parent: 2
+  - uid: 24585
+    components:
+    - type: MetaData
+      name: Port Hallway
+    - type: Transform
+      pos: 47.5,-13.5
+      parent: 2
+  - uid: 24587
+    components:
+    - type: MetaData
+      name: Pod Bay
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,6.5
+      parent: 2
+  - uid: 24588
+    components:
+    - type: MetaData
+      name: Vacant Office
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 59.5,-6.5
+      parent: 2
+  - uid: 24589
+    components:
+    - type: MetaData
+      name: Auxiliary Tool Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 58.5,-15.5
+      parent: 2
+  - uid: 24590
+    components:
+    - type: MetaData
+      name: Central Hallway Fore Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 63.5,-11.5
+      parent: 2
+  - uid: 24591
+    components:
+    - type: MetaData
+      name: EVA Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,-1.5
+      parent: 2
+  - uid: 24592
+    components:
+    - type: MetaData
+      name: EVA Aft
+    - type: Transform
+      pos: 72.5,-9.5
+      parent: 2
+  - uid: 24594
+    components:
+    - type: MetaData
+      name: Central Hallway Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 76.5,-9.5
+      parent: 2
+  - uid: 24596
+    components:
+    - type: MetaData
+      name: Fore Primary Hallway
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 77.5,1.5
+      parent: 2
+  - uid: 24597
+    components:
+    - type: MetaData
+      name: Fore Primary Hallway Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 82.5,10.5
+      parent: 2
+  - uid: 24598
+    components:
+    - type: MetaData
+      name: Fore Primary Hallway Port 1
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 67.5,10.5
+      parent: 2
+  - uid: 24599
+    components:
+    - type: MetaData
+      name: Fore Primary Hallway Port 2
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 56.5,10.5
+      parent: 2
+  - uid: 24603
+    components:
+    - type: MetaData
+      name: Brig Lobby
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 79.5,15.5
+      parent: 2
+  - uid: 24631
+    components:
+    - type: MetaData
+      name: Dormitories Central
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 91.5,1.5
+      parent: 2
+  - uid: 24632
+    components:
+    - type: MetaData
+      name: Dormitories Aft
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 87.5,-4.5
+      parent: 2
+  - uid: 24633
+    components:
+    - type: MetaData
+      name: Fitness Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 102.5,4.5
+      parent: 2
+  - uid: 24634
+    components:
+    - type: MetaData
+      name: Fitness Room Aft
+    - type: Transform
+      pos: 103.5,-2.5
+      parent: 2
+  - uid: 24635
+    components:
+    - type: MetaData
+      name: Dormitory Toilets Fore
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 93.5,-4.5
+      parent: 2
+  - uid: 24636
+    components:
+    - type: MetaData
+      name: Dormitory Toilets Aft
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 90.5,-9.5
+      parent: 2
+  - uid: 24642
+    components:
+    - type: MetaData
+      name: Artificial Beach Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 114.5,5.5
+      parent: 2
+  - uid: 24643
+    components:
+    - type: MetaData
+      name: Artificial Beach Aft
+    - type: Transform
+      pos: 114.5,-3.5
+      parent: 2
+  - uid: 24645
+    components:
+    - type: MetaData
+      name: Holodeck
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 122.5,2.5
+      parent: 2
+  - uid: 24646
+    components:
+    - type: MetaData
+      name: Fore Starboard Solar Access
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 128.5,9.5
+      parent: 2
+  - uid: 24653
+    components:
+    - type: MetaData
+      name: Art Storage
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 130.5,-20.5
+      parent: 2
+  - uid: 24654
+    components:
+    - type: MetaData
+      name: Library Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 134.5,-8.5
+      parent: 2
+  - uid: 24655
+    components:
+    - type: MetaData
+      name: Library Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 138.5,-15.5
+      parent: 2
+  - uid: 24656
+    components:
+    - type: MetaData
+      name: Chapel Crematorium
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 139.5,-10.5
+      parent: 2
+  - uid: 24657
+    components:
+    - type: MetaData
+      name: Chapel Office
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 144.5,-7.5
+      parent: 2
+  - uid: 24658
+    components:
+    - type: MetaData
+      name: Chapel Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 151.5,-18.5
+      parent: 2
+  - uid: 24659
+    components:
+    - type: MetaData
+      name: Chapel Fore
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 147.5,-12.5
+      parent: 2
+  - uid: 24660
+    components:
+    - type: MetaData
+      name: Chapel Starboard
+    - type: Transform
+      pos: 153.5,-9.5
+      parent: 2
+  - uid: 24662
+    components:
+    - type: MetaData
+      name: Escape Arm Airlocks
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 159.5,-19.5
+      parent: 2
+  - uid: 24663
+    components:
+    - type: MetaData
+      name: Escape Arm Aft
+    - type: Transform
+      pos: 156.5,-25.5
+      parent: 2
+  - uid: 24664
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Chapel
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 144.5,-23.5
+      parent: 2
+  - uid: 24665
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Library
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 135.5,-23.5
+      parent: 2
+  - uid: 24666
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Robotics
+    - type: Transform
+      pos: 142.5,-25.5
+      parent: 2
+  - uid: 24667
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Hydroponics
+    - type: Transform
+      pos: 124.5,-25.5
+      parent: 2
+  - uid: 24668
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Kitchen
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 118.5,-22.5
+      parent: 2
+  - uid: 24669
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Medbay
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 107.5,-23.5
+      parent: 2
+  - uid: 24670
+    components:
+    - type: MetaData
+      name: Starboard Primary Hallway Bar
+    - type: Transform
+      pos: 102.5,-25.5
+      parent: 2
+  - uid: 24702
+    components:
+    - type: MetaData
+      name: Medbay Lobby Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 111.5,-27.5
+      parent: 2
+  - uid: 24704
+    components:
+    - type: MetaData
+      name: Medbay Lobby Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 107.5,-27.5
+      parent: 2
+  - uid: 24729
+    components:
+    - type: MetaData
+      name: Central Hallway Starboard
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 93.5,-24.5
+      parent: 2
+  - uid: 24730
+    components:
+    - type: MetaData
+      name: Central Hallway Aft Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 95.5,-38.5
+      parent: 2
+  - uid: 24731
+    components:
+    - type: MetaData
+      name: Central Hallway Aft
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 81.5,-40.5
+      parent: 2
+  - uid: 24733
+    components:
+    - type: MetaData
+      name: Central Hallway Aft Port
+    - type: Transform
+      pos: 66.5,-42.5
+      parent: 2
+  - uid: 24734
+    components:
+    - type: MetaData
+      name: Cargo Bay Entrance
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 61.5,-38.5
+      parent: 2
+  - uid: 24735
+    components:
+    - type: MetaData
+      name: Central Hallway Port
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 63.5,-27.5
+      parent: 2
+  - uid: 24736
+    components:
+    - type: MetaData
+      name: Aft Primary Hallway 2
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 77.5,-50.5
+      parent: 2
+  - uid: 24737
+    components:
+    - type: MetaData
+      name: Aft Primary Hallway 3
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 77.5,-58.5
+      parent: 2
+  - uid: 24738
+    components:
+    - type: MetaData
+      name: Aft Primary Hallway 1
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 79.5,-67.5
+      parent: 2
+  - uid: 24769
+    components:
+    - type: MetaData
+      name: Engineering Maintenance Storeroom
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 58.5,-71.5
+      parent: 2
+  - uid: 24771
+    components:
+    - type: MetaData
+      name: Aft Port Solar Access
+    - type: Transform
+      pos: 54.5,-74.5
+      parent: 2
+  - uid: 24772
+    components:
+    - type: MetaData
+      name: Incinerator
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 58.5,-62.5
+      parent: 2
+  - uid: 24779
+    components:
+    - type: MetaData
+      name: Construction Area
+    - type: Transform
+      pos: 72.5,-47.5
+      parent: 2
+- proto: SurveillanceCameraMedical
+  entities:
+  - uid: 24699
+    components:
+    - type: MetaData
+      name: Morgue Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 126.5,-28.5
+      parent: 2
+  - uid: 24700
+    components:
+    - type: MetaData
+      name: Morgue Aft
+    - type: Transform
+      pos: 122.5,-31.5
+      parent: 2
+  - uid: 24701
+    components:
+    - type: MetaData
+      name: Paramedic's Office
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 119.5,-28.5
+      parent: 2
+  - uid: 24703
+    components:
+    - type: MetaData
+      name: Chemistry
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 99.5,-27.5
+      parent: 2
+  - uid: 24705
+    components:
+    - type: MetaData
+      name: Medbay Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 102.5,-35.5
+      parent: 2
+  - uid: 24706
+    components:
+    - type: MetaData
+      name: Medbay Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 119.5,-33.5
+      parent: 2
+  - uid: 24707
+    components:
+    - type: MetaData
+      name: Medbay Cryogenics
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 116.5,-37.5
+      parent: 2
+  - uid: 24708
+    components:
+    - type: MetaData
+      name: Medbay Treatment Center
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 104.5,-39.5
+      parent: 2
+  - uid: 24709
+    components:
+    - type: MetaData
+      name: Surgery Observation
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 98.5,-40.5
+      parent: 2
+  - uid: 24710
+    components:
+    - type: MetaData
+      name: Surgery Operating
+    - type: Transform
+      pos: 97.5,-47.5
+      parent: 2
+  - uid: 24711
+    components:
+    - type: MetaData
+      name: Medical Recovery Room
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 106.5,-46.5
+      parent: 2
+  - uid: 24712
+    components:
+    - type: MetaData
+      name: Medbay Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 110.5,-43.5
+      parent: 2
+  - uid: 24713
+    components:
+    - type: MetaData
+      name: Chief Medical Officer's Office
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 126.5,-44.5
+      parent: 2
+  - uid: 24714
+    components:
+    - type: MetaData
+      name: Medbay Breakroom
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 126.5,-50.5
+      parent: 2
+  - uid: 24715
+    components:
+    - type: MetaData
+      name: Patient Room 1
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 114.5,-49.5
+      parent: 2
+  - uid: 24716
+    components:
+    - type: MetaData
+      name: Patient Room 2
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 114.5,-53.5
+      parent: 2
+  - uid: 24717
+    components:
+    - type: MetaData
+      name: Virology Access Fore
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 120.5,-57.5
+      parent: 2
+  - uid: 24718
+    components:
+    - type: MetaData
+      name: Virology Access Aft
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 120.5,-64.5
+      parent: 2
+  - uid: 24719
+    components:
+    - type: MetaData
+      name: Virology Break Room Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 124.5,-71.5
+      parent: 2
+  - uid: 24720
+    components:
+    - type: MetaData
+      name: Virology Break Room Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 115.5,-71.5
+      parent: 2
+  - uid: 24721
+    components:
+    - type: MetaData
+      name: Virology Isolation 2
+    - type: Transform
+      pos: 126.5,-82.5
+      parent: 2
+  - uid: 24722
+    components:
+    - type: MetaData
+      name: Virology Isolation 1
+    - type: Transform
+      pos: 124.5,-82.5
+      parent: 2
+  - uid: 24723
+    components:
+    - type: MetaData
+      name: Virology Lab
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 116.5,-80.5
+      parent: 2
+  - uid: 24724
+    components:
+    - type: MetaData
+      name: Virology Maintenance
+    - type: Transform
+      pos: 114.5,-82.5
+      parent: 2
+  - uid: 24725
+    components:
+    - type: MetaData
+      name: Genetics Cloning Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 122.5,-33.5
+      parent: 2
+  - uid: 24726
+    components:
+    - type: MetaData
+      name: Genetics 2
+    - type: Transform
+      pos: 126.5,-39.5
+      parent: 2
+  - uid: 24727
+    components:
+    - type: MetaData
+      name: Genetics 1
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 129.5,-37.5
+      parent: 2
+  - uid: 24728
+    components:
+    - type: MetaData
+      name: Genetics Monkey Cage
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 130.5,-33.5
       parent: 2
 - proto: SurveillanceCameraMonitorCircuitboard
   entities:
@@ -135393,6 +136550,750 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: SurveillanceCameraRouterCommand
+  entities:
+  - uid: 24555
+    components:
+    - type: Transform
+      pos: 66.5,-51.5
+      parent: 2
+- proto: SurveillanceCameraRouterConstructed
+  entities:
+  - uid: 24556
+    components:
+    - type: Transform
+      pos: 67.5,-51.5
+      parent: 2
+- proto: SurveillanceCameraRouterEngineering
+  entities:
+  - uid: 24557
+    components:
+    - type: Transform
+      pos: 66.5,-53.5
+      parent: 2
+- proto: SurveillanceCameraRouterGeneral
+  entities:
+  - uid: 24559
+    components:
+    - type: Transform
+      pos: 66.5,-54.5
+      parent: 2
+- proto: SurveillanceCameraRouterMedical
+  entities:
+  - uid: 24560
+    components:
+    - type: Transform
+      pos: 67.5,-54.5
+      parent: 2
+- proto: SurveillanceCameraRouterScience
+  entities:
+  - uid: 24558
+    components:
+    - type: Transform
+      pos: 67.5,-53.5
+      parent: 2
+- proto: SurveillanceCameraRouterSecurity
+  entities:
+  - uid: 24561
+    components:
+    - type: Transform
+      pos: 66.5,-56.5
+      parent: 2
+- proto: SurveillanceCameraRouterService
+  entities:
+  - uid: 24562
+    components:
+    - type: Transform
+      pos: 67.5,-56.5
+      parent: 2
+- proto: SurveillanceCameraRouterSupply
+  entities:
+  - uid: 24563
+    components:
+    - type: Transform
+      pos: 68.5,-51.5
+      parent: 2
+- proto: SurveillanceCameraScience
+  entities:
+  - uid: 9944
+    components:
+    - type: MetaData
+      name: Xenobiology Fore
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 146.5,-64.5
+      parent: 2
+  - uid: 24671
+    components:
+    - type: MetaData
+      name: Mech Bay
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 134.5,-31.5
+      parent: 2
+  - uid: 24672
+    components:
+    - type: MetaData
+      name: Robotics
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 143.5,-28.5
+      parent: 2
+  - uid: 24673
+    components:
+    - type: MetaData
+      name: Research and Development
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 157.5,-32.5
+      parent: 2
+  - uid: 24674
+    components:
+    - type: MetaData
+      name: Research Division Shuttle Access
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 157.5,-37.5
+      parent: 2
+  - uid: 24675
+    components:
+    - type: MetaData
+      name: Research Division Port
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 139.5,-37.5
+      parent: 2
+  - uid: 24676
+    components:
+    - type: MetaData
+      name: Research Division Central Hallway
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 148.5,-39.5
+      parent: 2
+  - uid: 24677
+    components:
+    - type: MetaData
+      name: Research Division Access
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 150.5,-30.5
+      parent: 2
+  - uid: 24679
+    components:
+    - type: MetaData
+      name: Research Division Break Room
+    - type: Transform
+      pos: 146.5,-44.5
+      parent: 2
+  - uid: 24680
+    components:
+    - type: MetaData
+      name: Research Division Server Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 140.5,-40.5
+      parent: 2
+  - uid: 24681
+    components:
+    - type: MetaData
+      name: Research Shuttle Bay
+    - type: Transform
+      pos: 167.5,-40.5
+      parent: 2
+  - uid: 24682
+    components:
+    - type: MetaData
+      name: Misc Test Chamber
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 137.5,-44.5
+      parent: 2
+  - uid: 24683
+    components:
+    - type: MetaData
+      name: Telescience
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 141.5,-49.5
+      parent: 2
+  - uid: 24684
+    components:
+    - type: MetaData
+      name: Research Division Aft
+    - type: Transform
+      pos: 147.5,-51.5
+      parent: 2
+  - uid: 24686
+    components:
+    - type: MetaData
+      name: Xenobiology Module Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 147.5,-65.5
+      parent: 2
+  - uid: 24687
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 144.5,-73.5
+      parent: 2
+  - uid: 24688
+    components:
+    - type: MetaData
+      name: Habitat Air Supply Center
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 142.5,-75.5
+      parent: 2
+  - uid: 24689
+    components:
+    - type: MetaData
+      name: Habitat Air Supply Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 137.5,-68.5
+      parent: 2
+  - uid: 24690
+    components:
+    - type: MetaData
+      name: Xenobiology Maintenance
+    - type: Transform
+      pos: 142.5,-61.5
+      parent: 2
+  - uid: 24691
+    components:
+    - type: MetaData
+      name: Habitat Air Supply Aft
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 147.5,-81.5
+      parent: 2
+  - uid: 24692
+    components:
+    - type: MetaData
+      name: Xeno Cell 4
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 144.5,-79.5
+      parent: 2
+  - uid: 24693
+    components:
+    - type: MetaData
+      name: Xeno Cell 5
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 148.5,-79.5
+      parent: 2
+  - uid: 24694
+    components:
+    - type: MetaData
+      name: Xeno Cell 6
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 152.5,-79.5
+      parent: 2
+  - uid: 24695
+    components:
+    - type: MetaData
+      name: Xeno Cell 1
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 140.5,-63.5
+      parent: 2
+  - uid: 24696
+    components:
+    - type: MetaData
+      name: Xeno Cell 2
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 140.5,-67.5
+      parent: 2
+  - uid: 24697
+    components:
+    - type: MetaData
+      name: Xeno Cell 3
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 140.5,-71.5
+      parent: 2
+  - uid: 24698
+    components:
+    - type: MetaData
+      name: Xenobiology Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 151.5,-72.5
+      parent: 2
+  - uid: 24732
+    components:
+    - type: MetaData
+      name: Central Hallway Fore Starboard
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 90.5,-11.5
+      parent: 2
+- proto: SurveillanceCameraSecurity
+  entities:
+  - uid: 24571
+    components:
+    - type: MetaData
+      name: Security Checkpoint
+    - type: Transform
+      pos: 17.5,-7.5
+      parent: 2
+  - uid: 24595
+    components:
+    - type: MetaData
+      name: Vault
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 64.5,4.5
+      parent: 2
+  - uid: 24600
+    components:
+    - type: MetaData
+      name: Detective Fore
+    - type: Transform
+      pos: 52.5,12.5
+      parent: 2
+  - uid: 24601
+    components:
+    - type: MetaData
+      name: Interrogation
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 65.5,12.5
+      parent: 2
+  - uid: 24602
+    components:
+    - type: MetaData
+      name: Interrogation Observation
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 64.5,18.5
+      parent: 2
+  - uid: 24604
+    components:
+    - type: MetaData
+      name: Brig Medbay Storage
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 57.5,20.5
+      parent: 2
+  - uid: 24605
+    components:
+    - type: MetaData
+      name: Prison Wing Hallway Aft
+    - type: Transform
+      pos: 61.5,28.5
+      parent: 2
+  - uid: 24606
+    components:
+    - type: MetaData
+      name: Security E.V.A.
+    - type: Transform
+      pos: 56.5,28.5
+      parent: 2
+  - uid: 24607
+    components:
+    - type: MetaData
+      name: Prison Wing Hallway Fore
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 62.5,36.5
+      parent: 2
+  - uid: 24608
+    components:
+    - type: MetaData
+      name: Security Processing
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 69.5,27.5
+      parent: 2
+  - uid: 24609
+    components:
+    - type: MetaData
+      name: Brig Evidence Storage
+    - type: Transform
+      pos: 67.5,29.5
+      parent: 2
+  - uid: 24610
+    components:
+    - type: MetaData
+      name: Brig Center
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 79.5,22.5
+      parent: 2
+  - uid: 24611
+    components:
+    - type: MetaData
+      name: Prison Hydroponics
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 68.5,54.5
+      parent: 2
+  - uid: 24612
+    components:
+    - type: MetaData
+      name: Prison Cafeteria Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 70.5,49.5
+      parent: 2
+  - uid: 24613
+    components:
+    - type: MetaData
+      name: Prison Bedroom
+    - type: Transform
+      pos: 62.5,46.5
+      parent: 2
+  - uid: 24614
+    components:
+    - type: MetaData
+      name: Prison Cafeteria Aft
+    - type: Transform
+      pos: 68.5,43.5
+      parent: 2
+  - uid: 24615
+    components:
+    - type: MetaData
+      name: Secure Armory
+    - type: Transform
+      pos: 75.5,34.5
+      parent: 2
+  - uid: 24616
+    components:
+    - type: MetaData
+      name: Secure Armory
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 71.5,40.5
+      parent: 2
+  - uid: 24617
+    components:
+    - type: MetaData
+      name: Secure Armory
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 79.5,40.5
+      parent: 2
+  - uid: 24618
+    components:
+    - type: MetaData
+      name: Firing Range
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 84.5,38.5
+      parent: 2
+  - uid: 24619
+    components:
+    - type: MetaData
+      name: Armory
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 75.5,32.5
+      parent: 2
+  - uid: 24620
+    components:
+    - type: MetaData
+      name: Security Equipment
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 80.5,28.5
+      parent: 2
+  - uid: 24621
+    components:
+    - type: MetaData
+      name: Security Office Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 91.5,27.5
+      parent: 2
+  - uid: 24622
+    components:
+    - type: MetaData
+      name: HoS Office Aft
+    - type: Transform
+      pos: 93.5,27.5
+      parent: 2
+  - uid: 24623
+    components:
+    - type: MetaData
+      name: Brig Port
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 67.5,16.5
+      parent: 2
+  - uid: 24624
+    components:
+    - type: MetaData
+      name: Brig Cell 1
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,18.5
+      parent: 2
+  - uid: 24625
+    components:
+    - type: MetaData
+      name: Brig Cell 2
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 71.5,14.5
+      parent: 2
+  - uid: 24626
+    components:
+    - type: MetaData
+      name: Brig Cell 3
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 81.5,18.5
+      parent: 2
+  - uid: 24627
+    components:
+    - type: MetaData
+      name: Brig Cell 4
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 81.5,14.5
+      parent: 2
+  - uid: 24628
+    components:
+    - type: MetaData
+      name: Brig Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 85.5,16.5
+      parent: 2
+  - uid: 24629
+    components:
+    - type: MetaData
+      name: Security Disposals Belt
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 101.5,21.5
+      parent: 2
+  - uid: 24630
+    components:
+    - type: MetaData
+      name: Brig Atmospherics
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 105.5,19.5
+      parent: 2
+  - uid: 24661
+    components:
+    - type: MetaData
+      name: Escape Holding Cells
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 155.5,-11.5
+      parent: 2
+- proto: SurveillanceCameraService
+  entities:
+  - uid: 24577
+    components:
+    - type: MetaData
+      name: Recycling
+    - type: Transform
+      pos: 21.5,-29.5
+      parent: 2
+  - uid: 24637
+    components:
+    - type: MetaData
+      name: Kitchen Aft
+    - type: Transform
+      pos: 118.5,-20.5
+      parent: 2
+  - uid: 24638
+    components:
+    - type: MetaData
+      name: Bar Backroom
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 111.5,-10.5
+      parent: 2
+  - uid: 24639
+    components:
+    - type: MetaData
+      name: Hydroponics Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 124.5,-13.5
+      parent: 2
+  - uid: 24640
+    components:
+    - type: MetaData
+      name: Hydroponics Aft
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 128.5,-20.5
+      parent: 2
+  - uid: 24641
+    components:
+    - type: MetaData
+      name: Hydroponics Storage
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 125.5,-9.5
+      parent: 2
+  - uid: 24644
+    components:
+    - type: MetaData
+      name: Kitchen Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 113.5,-15.5
+      parent: 2
+  - uid: 24647
+    components:
+    - type: MetaData
+      name: Kitchen Cold Room
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 117.5,-9.5
+      parent: 2
+  - uid: 24648
+    components:
+    - type: MetaData
+      name: Bar Starboard
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 109.5,-11.5
+      parent: 2
+  - uid: 24649
+    components:
+    - type: MetaData
+      name: Bar Aft Starboard
+    - type: Transform
+      pos: 107.5,-21.5
+      parent: 2
+  - uid: 24650
+    components:
+    - type: MetaData
+      name: Bar Aft Port
+    - type: Transform
+      pos: 99.5,-21.5
+      parent: 2
+  - uid: 24651
+    components:
+    - type: MetaData
+      name: Theatre
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 101.5,-4.5
+      parent: 2
+  - uid: 24652
+    components:
+    - type: MetaData
+      name: Bar Fore
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 104.5,-7.5
+      parent: 2
+  - uid: 24798
+    components:
+    - type: MetaData
+      name: Custodial Closet
+    - type: Transform
+      pos: 54.5,-23.5
+      parent: 2
+- proto: SurveillanceCameraSupply
+  entities:
+  - uid: 24778
+    components:
+    - type: MetaData
+      name: Abandoned Warehouse
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 57.5,-53.5
+      parent: 2
+  - uid: 24780
+    components:
+    - type: MetaData
+      name: Quartermaster's Office
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 59.5,-41.5
+      parent: 2
+  - uid: 24781
+    components:
+    - type: MetaData
+      name: Mining Dock External
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,-46.5
+      parent: 2
+  - uid: 24782
+    components:
+    - type: MetaData
+      name: Mining Dock
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 51.5,-42.5
+      parent: 2
+  - uid: 24783
+    components:
+    - type: MetaData
+      name: Cargo Office
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 50.5,-35.5
+      parent: 2
+  - uid: 24784
+    components:
+    - type: MetaData
+      name: Cargo Delivery Office
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,-25.5
+      parent: 2
+  - uid: 24785
+    components:
+    - type: MetaData
+      name: Cargo Bay Aft
+    - type: Transform
+      pos: 45.5,-38.5
+      parent: 2
+  - uid: 24786
+    components:
+    - type: MetaData
+      name: Cargo Bay Fore
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 44.5,-29.5
+      parent: 2
+  - uid: 24787
+    components:
+    - type: MetaData
+      name: Cargo Receiving Dock
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 37.5,-36.5
+      parent: 2
+- proto: SurveillanceCameraWirelessRouterConstructed
+  entities:
+  - uid: 24569
+    components:
+    - type: Transform
+      pos: 75.5,-53.5
+      parent: 2
+- proto: SurveillanceCameraWirelessRouterEntertainment
+  entities:
+  - uid: 24570
+    components:
+    - type: Transform
+      pos: 75.5,-54.5
+      parent: 2
+- proto: SurveillanceWirelessCameraAnchoredEntertainment
+  entities:
+  - uid: 11097
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 101.5,-11.5
+      parent: 2
 - proto: SyringeInaprovaline
   entities:
   - uid: 19433
@@ -159906,7 +161807,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -55611.184
+      secondsUntilStateChange: -61918.33
       state: Opening
   - uid: 18397
     components:
