@@ -359,6 +359,9 @@
   id: CartridgeHeavyRifle
 
 - type: Tag
+  id: CartridgeMinigun
+
+- type: Tag
   id: CartridgeLightRifle
 
 - type: Tag
@@ -416,6 +419,9 @@
 
 - type: Tag
   id: ClothMade
+
+- type: Tag
+  id: ClothingHeadHelmetBasic
 
 - type: Tag
   id: ClownMask
@@ -596,6 +602,9 @@
 
 - type: Tag
   id: EmitterBolt
+
+- type: Tag
+  id: Envirohelm
 
 - type: Tag
   id: Enzyme
@@ -885,6 +894,9 @@
   id: MagazineHeavyRifleBox
 
 - type: Tag
+  id: MagazineBoxRifleMinigun
+
+- type: Tag
   id: MagazineLightRifle
 
 - type: Tag
@@ -1008,6 +1020,9 @@
   id: Oneirophage
 
 - type: Tag
+  id: Oni
+
+- type: Tag
   id: Ore
 
 - type: Tag
@@ -1068,7 +1083,13 @@
   id: PlantSampleTaker
 
 - type: Tag
+  id: HydroponicsToolClippers
+
+- type: Tag
   id: PlasmaGlassShard
+
+- type: Tag
+  id: PlasmamanSafe
 
 - type: Tag
   id: Plastic
@@ -1078,6 +1099,12 @@
 
 - type: Tag
   id: PlushieGhost
+
+- type: Tag
+  id: SiliconMob
+
+- type: Tag
+  id: WeldbotFixableStructure
 
 - type: Tag
   id: PlushieSharkBlue
@@ -1163,6 +1190,9 @@
 
 - type: Tag
   id: RollingPin
+
+- type: Tag
+  id: RPD
 
 - type: Tag
   id: SaltShaker
@@ -1270,6 +1300,9 @@
   id: Steak
 
 - type: Tag
+  id: Stunbaton
+
+- type: Tag
   id: SubdermalImplant
 
 - type: Tag
@@ -1369,6 +1402,9 @@
   id: WeaponAntiqueLaser
 
 - type: Tag
+  id: WeaponDisabler
+
+- type: Tag
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
@@ -1376,6 +1412,9 @@
 
 - type: Tag
   id: WeldingMask
+
+- type: Tag
+  id: WeldingTool
 
 - type: Tag
   id: WetFloorSign
