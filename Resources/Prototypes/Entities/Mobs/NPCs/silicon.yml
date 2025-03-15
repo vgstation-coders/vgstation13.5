@@ -16,7 +16,7 @@
   - type: Damageable
     damageContainer: Inorganic
   - type: InteractionOutline
-  - type: Fixturesml
+  - type: Fixtures
     fixtures:
       fix1:
         shape:

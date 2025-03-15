@@ -116,16 +116,15 @@
       "name": "diamond"
     },
     {
-<<<<<<< HEAD
       "name": "diamond-inhand-left",
       "directions": 4
     },
     {
       "name": "diamond-inhand-right",
       "directions": 4
-=======
+    },
+    {
       "name": "tungsten"
->>>>>>> e674f782e24da7a7825520ca650473f155e9e4c1
     }
   ]
 }
