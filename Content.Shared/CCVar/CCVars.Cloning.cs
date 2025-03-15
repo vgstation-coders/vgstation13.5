@@ -20,7 +20,7 @@ public sealed partial class CCVars
     ///     Controls whether or not Metempsychosis will potentially give people a sex change.
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveSex =
-        CVarDef.Create("cloning.preserve_sex", false, CVar.SERVERONLY);
+        CVarDef.Create("cloning.preserve_sex", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls whether or not Metempsychosis preserves Pronouns when reincarnating people.
@@ -32,19 +32,19 @@ public sealed partial class CCVars
     ///     Controls whether or not Metempsychosis preserves Age.
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveAge =
-        CVarDef.Create("cloning.preserve_age", false, CVar.SERVERONLY);
+        CVarDef.Create("cloning.preserve_age", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls whether or not Metempsychosis preserves height.
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveHeight =
-        CVarDef.Create("cloning.preserve_height", false, CVar.SERVERONLY);
+        CVarDef.Create("cloning.preserve_height", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls whether or not Metempsychosis preserves width.
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveWidth =
-        CVarDef.Create("cloning.preserve_width", false, CVar.SERVERONLY);
+        CVarDef.Create("cloning.preserve_width", true, CVar.SERVERONLY);
 
     /// <summary>
     ///     Controls whether or not Metempsychosis preserves Names. EG: Are you actually a new person?
@@ -57,4 +57,10 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> CloningPreserveFlavorText =
         CVarDef.Create("cloning.preserve_flavor_text", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Controls whether or not living people can be cloned.
+    /// </summary>
+    public static readonly CVarDef<bool> CloningAllowLivingPeople =
+        CVarDef.Create("cloning.allow_living_people", true, CVar.SERVERONLY);
 }
