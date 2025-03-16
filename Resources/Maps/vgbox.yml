@@ -11438,7 +11438,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6354.5273
+      secondsUntilStateChange: -7224.258
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12222,7 +12222,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8812.458
+      secondsUntilStateChange: -9682.188
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16044,6 +16044,16 @@ entities:
       parent: 2
 - proto: BlastDoor
   entities:
+  - uid: 1155
+    components:
+    - type: MetaData
+      name: Supply Dock Loading Door
+    - type: Transform
+      pos: 36.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 18435
   - uid: 4166
     components:
     - type: MetaData
@@ -16074,6 +16084,36 @@ entities:
     - type: DeviceLinkSink
       links:
       - 23685
+  - uid: 7497
+    components:
+    - type: MetaData
+      name: Supply Dock Loading Door
+    - type: Transform
+      pos: 34.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 18435
+  - uid: 11977
+    components:
+    - type: MetaData
+      name: Supply Dock Loading Door
+    - type: Transform
+      pos: 34.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24811
+  - uid: 11979
+    components:
+    - type: MetaData
+      name: Supply Dock Loading Door
+    - type: Transform
+      pos: 36.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24811
   - uid: 14340
     components:
     - type: MetaData
@@ -16218,34 +16258,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 12166
-  - uid: 24808
-    components:
-    - type: MetaData
-      name: Supply Dock Loading Door
-    - type: Transform
-      pos: 34.5,-34.5
-      parent: 2
-  - uid: 24809
-    components:
-    - type: MetaData
-      name: Supply Dock Loading Door
-    - type: Transform
-      pos: 36.5,-34.5
-      parent: 2
-  - uid: 24810
-    components:
-    - type: MetaData
-      name: Supply Dock Loading Door
-    - type: Transform
-      pos: 36.5,-38.5
-      parent: 2
-  - uid: 24811
-    components:
-    - type: MetaData
-      name: Supply Dock Loading Door
-    - type: Transform
-      pos: 34.5,-38.5
-      parent: 2
 - proto: BlastDoorFrame
   entities:
   - uid: 23059
@@ -55604,6 +55616,192 @@ entities:
       rot: 3.141592653589793 rad
       pos: 62.5,-94.5
       parent: 2
+- proto: ConveyorBelt
+  entities:
+  - uid: 24848
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 34.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24849
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 35.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24850
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 36.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24851
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 37.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24852
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 38.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24853
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 39.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24868
+  - uid: 24854
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,-34.5
+      parent: 2
+  - uid: 24855
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 40.5,-33.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24869
+  - uid: 24856
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 40.5,-32.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24869
+  - uid: 24857
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 40.5,-34.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24869
+  - uid: 24858
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 34.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24859
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 35.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24860
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 36.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24861
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 37.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24862
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 38.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24863
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 39.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24864
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 40.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24870
+      - 24871
+  - uid: 24865
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 41.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24871
+  - uid: 24866
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 42.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24871
+  - uid: 24867
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 43.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24871
 - proto: CorporateCircuitBoard
   entities:
   - uid: 21372
@@ -72903,7 +73101,7 @@ entities:
       color: '#4285F4FF'
 - proto: GasPipeSensorDistribution
   entities:
-  - uid: 11979
+  - uid: 18434
     components:
     - type: Transform
       pos: 101.5,-52.5
@@ -72932,7 +73130,7 @@ entities:
       color: '#B70000FF'
 - proto: GasPipeSensorWaste
   entities:
-  - uid: 11977
+  - uid: 13564
     components:
     - type: Transform
       pos: 99.5,-52.5
@@ -80511,13 +80709,6 @@ entities:
     components:
     - type: Transform
       pos: 41.5,-33.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0000B7FF'
-  - uid: 13564
-    components:
-    - type: Transform
-      pos: 41.5,-34.5
       parent: 2
     - type: AtmosPipeColor
       color: '#0000B7FF'
@@ -110496,12 +110687,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 34.5,-36.5
       parent: 2
-  - uid: 7497
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 35.5,-36.5
-      parent: 2
   - uid: 7498
     components:
     - type: Transform
@@ -120233,21 +120418,6 @@ entities:
     - type: Transform
       pos: 52.5,-19.5
       parent: 2
-  - uid: 18434
-    components:
-    - type: Transform
-      pos: 34.5,-34.5
-      parent: 2
-  - uid: 18435
-    components:
-    - type: Transform
-      pos: 36.5,-34.5
-      parent: 2
-  - uid: 18436
-    components:
-    - type: Transform
-      pos: 36.5,-38.5
-      parent: 2
   - uid: 18437
     components:
     - type: Transform
@@ -120262,6 +120432,21 @@ entities:
     components:
     - type: Transform
       pos: 92.5,24.5
+      parent: 2
+  - uid: 24808
+    components:
+    - type: Transform
+      pos: 36.5,-38.5
+      parent: 2
+  - uid: 24809
+    components:
+    - type: Transform
+      pos: 34.5,-34.5
+      parent: 2
+  - uid: 24810
+    components:
+    - type: Transform
+      pos: 36.5,-34.5
       parent: 2
 - proto: PlasticFlapsClear
   entities:
@@ -126043,12 +126228,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 34.5,-36.5
-      parent: 2
-  - uid: 1155
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 35.5,-36.5
       parent: 2
   - uid: 1156
     components:
@@ -131963,6 +132142,21 @@ entities:
         23397:
         - On: Toggle
         - Off: Toggle
+  - uid: 18435
+    components:
+    - type: MetaData
+      name: Loading Doors
+    - type: Transform
+      pos: 35.5,-36.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        7497:
+        - On: Toggle
+        - Off: Toggle
+        1155:
+        - On: Toggle
+        - Off: Toggle
   - uid: 22297
     components:
     - type: Transform
@@ -132789,6 +132983,22 @@ entities:
         - On: Toggle
         - Off: Toggle
         13760:
+        - On: Toggle
+        - Off: Toggle
+  - uid: 24811
+    components:
+    - type: MetaData
+      name: Loading Doors
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 35.5,-36.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        11977:
+        - On: Toggle
+        - Off: Toggle
+        11979:
         - On: Toggle
         - Off: Toggle
   - uid: 24813
@@ -142563,6 +142773,140 @@ entities:
     - type: Transform
       pos: 86.5,-50.5
       parent: 2
+- proto: TwoWayLever
+  entities:
+  - uid: 24868
+    components:
+    - type: Transform
+      pos: 37.5,-33.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24849:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24851:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24852:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24853:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24848:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24850:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+  - uid: 24869
+    components:
+    - type: Transform
+      pos: 39.5,-33.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24857:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24855:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+        24856:
+        - Left: Reverse
+        - Right: Forward
+        - Middle: Off
+  - uid: 24870
+    components:
+    - type: Transform
+      pos: 38.5,-37.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24858:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24859:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24860:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24861:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24862:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24863:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24864:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+  - uid: 24871
+    components:
+    - type: Transform
+      pos: 43.5,-37.5
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24858:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24859:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24860:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24861:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24862:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24863:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24864:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24865:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24866:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
+        24867:
+        - Left: Forward
+        - Right: Reverse
+        - Middle: Off
 - proto: UnfinishedMachineFrame
   entities:
   - uid: 11229
@@ -162530,6 +162874,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 16.5,-30.5
       parent: 2
+  - uid: 18436
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 35.5,-36.5
+      parent: 2
   - uid: 19671
     components:
     - type: Transform
@@ -163138,7 +163488,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -68147.68
+      secondsUntilStateChange: -69017.41
       state: Opening
   - uid: 18397
     components:
