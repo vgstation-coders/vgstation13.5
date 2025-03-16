@@ -49,6 +49,19 @@
       - MobCorgiIanPup
 
 - type: entity
+  name: Ian Spawner
+  id: SpawnMobCorgiIan
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCorgiIan
+
+- type: entity
   name: Possum Morty Spawner
   id: SpawnMobPossumMorty
   parent: MarkerBase
