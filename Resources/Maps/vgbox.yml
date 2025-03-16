@@ -11431,7 +11431,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6077.3184
+      secondsUntilStateChange: -6277.079
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12215,7 +12215,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8535.249
+      secondsUntilStateChange: -8735.01
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15547,7 +15547,7 @@ entities:
       parent: 2
 - proto: BarSign
   entities:
-  - uid: 24846
+  - uid: 24847
     components:
     - type: Transform
       pos: 103,-22.5
@@ -72894,6 +72894,15 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#4285F4FF'
+- proto: GasPipeSensorDistribution
+  entities:
+  - uid: 11979
+    components:
+    - type: Transform
+      pos: 101.5,-52.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#0000B7FF'
 - proto: GasPipeSensorTEGCold
   entities:
   - uid: 16529
@@ -72911,6 +72920,15 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 63.5,-81.5
+      parent: 2
+    - type: AtmosPipeColor
+      color: '#B70000FF'
+- proto: GasPipeSensorWaste
+  entities:
+  - uid: 11977
+    components:
+    - type: Transform
+      pos: 99.5,-52.5
       parent: 2
     - type: AtmosPipeColor
       color: '#B70000FF'
@@ -73334,14 +73352,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0000B7FF'
-  - uid: 11977
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 99.5,-52.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#B70000FF'
   - uid: 11978
     components:
     - type: Transform
@@ -73350,14 +73360,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#B70000FF'
-  - uid: 11979
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 101.5,-52.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0000B7FF'
   - uid: 11980
     components:
     - type: Transform
@@ -143087,6 +143089,12 @@ entities:
     - type: Transform
       pos: 62.5,50.5
       parent: 2
+  - uid: 24846
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 88.5,-33
+      parent: 2
 - proto: WallReinforced
   entities:
   - uid: 3
@@ -163123,7 +163131,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -67870.47
+      secondsUntilStateChange: -68070.23
       state: Opening
   - uid: 18397
     components:
