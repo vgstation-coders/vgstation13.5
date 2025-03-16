@@ -11431,7 +11431,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -5320.8384
+      secondsUntilStateChange: -5948.902
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12215,7 +12215,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -7778.769
+      secondsUntilStateChange: -8406.832
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17419,6 +17419,9 @@ entities:
     - type: Transform
       pos: 135.5,-27.5
       parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
   - uid: 23216
     components:
     - type: MetaData
@@ -18088,6 +18091,169 @@ entities:
     - type: DeviceLinkSink
       links:
       - 24813
+  - uid: 24819
+    components:
+    - type: Transform
+      pos: 144.5,-27.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24820
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 146.5,-27.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24821
+    components:
+    - type: Transform
+      pos: 149.5,-32.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24822
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 153.5,-26.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24823
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 154.5,-26.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24824
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 155.5,-26.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24828
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 158.5,-37.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24829
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 158.5,-38.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24830
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 134.5,-38.5
+      parent: 2
+  - uid: 24831
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 133.5,-50.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24832
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      pos: 149.5,-53.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24837
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 135.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
+  - uid: 24838
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 136.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
+  - uid: 24839
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 137.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
+  - uid: 24840
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 138.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
+  - uid: 24841
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 139.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
+  - uid: 24842
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 140.5,-48.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24836
 - proto: BlockGameArcade
   entities:
   - uid: 12435
@@ -18831,6 +18997,17 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 154.68161,-75.592354
+      parent: 2
+  - uid: 24834
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 152.23172,-41.703648
+      parent: 2
+  - uid: 24835
+    components:
+    - type: Transform
+      pos: 135.74216,-49.133503
       parent: 2
 - proto: ButtonFrameCautionSecurity
   entities:
@@ -131332,6 +131509,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 22863
+      - 24843
   - uid: 4696
     components:
     - type: MetaData
@@ -131342,6 +131520,7 @@ entities:
     - type: DeviceLinkSink
       links:
       - 22863
+      - 24843
   - uid: 22358
     components:
     - type: Transform
@@ -131509,6 +131688,36 @@ entities:
       links:
       - 7511
       - 7510
+  - uid: 24825
+    components:
+    - type: Transform
+      pos: 145.5,-27.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24826
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 151.5,-27.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
+  - uid: 24827
+    components:
+    - type: MetaData
+      name: Biohazard Shutter
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 151.5,-28.5
+      parent: 2
+    - type: DeviceLinkSink
+      links:
+      - 24833
 - proto: shuttle_manipulator
   entities:
   - uid: 24449
@@ -132589,6 +132798,99 @@ entities:
         - On: Toggle
         - Off: Toggle
         24814:
+        - On: Toggle
+        - Off: Toggle
+  - uid: 24833
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 152.23172,-41.703648
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        22861:
+        - On: Toggle
+        - Off: Toggle
+        24819:
+        - On: Toggle
+        - Off: Toggle
+        24825:
+        - On: Toggle
+        - Off: Toggle
+        24820:
+        - On: Toggle
+        - Off: Toggle
+        24821:
+        - On: Toggle
+        - Off: Toggle
+        24827:
+        - On: Toggle
+        - Off: Toggle
+        24826:
+        - On: Toggle
+        - Off: Toggle
+        24822:
+        - On: Toggle
+        - Off: Toggle
+        24823:
+        - On: Toggle
+        - Off: Toggle
+        24824:
+        - On: Toggle
+        - Off: Toggle
+        24828:
+        - On: Toggle
+        - Off: Toggle
+        24829:
+        - On: Toggle
+        - Off: Toggle
+        24831:
+        - On: Toggle
+        - Off: Toggle
+        24832:
+        - On: Toggle
+        - Off: Toggle
+  - uid: 24836
+    components:
+    - type: MetaData
+      name: Test Chamber Blast Doors
+    - type: Transform
+      pos: 135.74216,-49.133503
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        24837:
+        - On: Toggle
+        - Off: Toggle
+        24838:
+        - On: Toggle
+        - Off: Toggle
+        24839:
+        - On: Toggle
+        - Off: Toggle
+        24840:
+        - On: Toggle
+        - Off: Toggle
+        24841:
+        - On: Toggle
+        - Off: Toggle
+        24842:
+        - On: Toggle
+        - Off: Toggle
+  - uid: 24843
+    components:
+    - type: MetaData
+      name: Mech Bay Door Control
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 152.23608,-41.231674
+      parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        4345:
+        - On: Toggle
+        - Off: Toggle
+        4696:
         - On: Toggle
         - Off: Toggle
 - proto: SignEscapePods
@@ -162221,6 +162523,20 @@ entities:
     - type: Transform
       pos: 153.5,-6.5
       parent: 2
+- proto: WallWeaponCapacitorRecharger
+  entities:
+  - uid: 24844
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 112.5,-41.5
+      parent: 2
+  - uid: 24845
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 101.5,-39.5
+      parent: 2
 - proto: WardrobeBlack
   entities:
   - uid: 21877
@@ -162800,7 +163116,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -67113.99
+      secondsUntilStateChange: -67742.055
       state: Opening
   - uid: 18397
     components:
