@@ -952,7 +952,7 @@
   - type: SpeakOnUIClosed
     pack: NutriMaxGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/nutri_green.rsi
+    sprite: Structures/Machines/VendingMachines/nutri.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1034,7 +1034,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/seeds_green.rsi
+    sprite: Structures/Machines/VendingMachines/seeds.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
