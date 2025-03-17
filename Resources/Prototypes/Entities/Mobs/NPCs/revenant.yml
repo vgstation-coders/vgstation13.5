@@ -56,7 +56,9 @@
     makeSentient: true
     name: ghost-role-information-revenant-name
     description: ghost-role-information-revenant-description
-    rules: ghost-role-information-revenant-rules
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -98,6 +100,7 @@
     speechVerb: Ghost
   - type: Psionic
     removable: false
+    roller: false
     psychognomicDescriptors:
       - p-descriptor-vampiric
   - type: InnatePsionicPowers

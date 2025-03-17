@@ -56,7 +56,7 @@ namespace Content.Shared.Storage
         /// Minimum delay between quick/area insert actions.
         /// </summary>
         /// <remarks>Used to prevent autoclickers spamming server with individual pickup actions.</remarks>
-        public TimeSpan QuickInsertCooldown = TimeSpan.FromSeconds(0.5);
+        public TimeSpan QuickInsertCooldown = TimeSpan.FromSeconds(0.1);
 
         /// <summary>
         /// Minimum delay between UI open actions.
@@ -139,6 +139,19 @@ namespace Content.Shared.Storage
     }
 
     [Serializable, NetSerializable]
+    public sealed class OpenNestedStorageEvent : EntityEventArgs
+    {
+        public readonly NetEntity InteractedItemUid;
+        public readonly NetEntity StorageUid;
+
+        public OpenNestedStorageEvent(NetEntity interactedItemUid, NetEntity storageUid)
+        {
+            InteractedItemUid = interactedItemUid;
+            StorageUid = storageUid;
+        }
+    }
+
+    [Serializable, NetSerializable]
     public sealed class StorageInteractWithItemEvent : EntityEventArgs
     {
         public readonly NetEntity InteractedItemUid;
@@ -170,16 +183,22 @@ namespace Content.Shared.Storage
     }
 
     [Serializable, NetSerializable]
-    public sealed class StorageRemoveItemEvent : EntityEventArgs
+    public sealed class StorageTransferItemEvent : EntityEventArgs
     {
         public readonly NetEntity ItemEnt;
 
+        /// <summary>
+        /// Target storage to receive the transfer.
+        /// </summary>
         public readonly NetEntity StorageEnt;
 
-        public StorageRemoveItemEvent(NetEntity itemEnt, NetEntity storageEnt)
+        public readonly ItemStorageLocation Location;
+
+        public StorageTransferItemEvent(NetEntity itemEnt, NetEntity storageEnt, ItemStorageLocation location)
         {
             ItemEnt = itemEnt;
             StorageEnt = storageEnt;
+            Location = location;
         }
     }
 

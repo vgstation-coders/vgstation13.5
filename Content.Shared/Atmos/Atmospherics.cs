@@ -41,15 +41,6 @@ namespace Content.Shared.Atmos
         public const float T20C = 293.15f;
 
         /// <summary>
-        ///     Do not allow any gas mixture temperatures to exceed this number. It is occasionally possible
-        ///     to have very small heat capacity (e.g. room that was just unspaced) and for large amounts of
-        ///     energy to be transferred to it, even for a brief moment. However, this messes up subsequent
-        ///     calculations and so cap it here. The physical interpretation is that at this temperature, any
-        ///     gas that you would have transforms into plasma.
-        /// </summary>
-        public const float Tmax = 262144; // 1/64 of max safe integer, any values above will result in a ~0.03K epsilon
-
-        /// <summary>
         ///     Liters in a cell.
         /// </summary>
         public const float CellVolume = 2500f;
@@ -145,6 +136,22 @@ namespace Content.Shared.Atmos
         /// </summary>
         public const float SpaceHeatCapacity = 7000f;
 
+        /// <summary>
+        ///     Dictionary of chemical abbreviations for <see cref="Gas"/>
+        /// </summary>
+        public static Dictionary<Gas, string> GasAbbreviations = new Dictionary<Gas, string>()
+        {
+            [Gas.Ammonia] = Loc.GetString("gas-ammonia-abbreviation"),
+            [Gas.CarbonDioxide] = Loc.GetString("gas-carbon-dioxide-abbreviation"),
+            [Gas.Frezon] = Loc.GetString("gas-frezon-abbreviation"),
+            [Gas.Nitrogen] = Loc.GetString("gas-nitrogen-abbreviation"),
+            [Gas.NitrousOxide] = Loc.GetString("gas-nitrous-oxide-abbreviation"),
+            [Gas.Oxygen] = Loc.GetString("gas-oxygen-abbreviation"),
+            [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
+            [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
+            [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
+        };
+
         #region Excited Groups
 
         /// <summary>
@@ -202,7 +209,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     This is calculated to help prevent singlecap bombs (Overpowered tritium/oxygen single tank bombs)
         /// </summary>
-        public const float MinimumTritiumOxyburnEnergy = 143000f;
+        public const float MinimumTritiumOxyburnEnergy = 429000f;
 
         public const float TritiumBurnOxyFactor = 100f;
         public const float TritiumBurnTritFactor = 10f;

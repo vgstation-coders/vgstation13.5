@@ -8,6 +8,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
@@ -28,14 +29,16 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] NoSpawnMaps =
         {
-            "CentComm",
+            "CentCommMain",
+            "CentCommHarmony",
             "Dart",
             "NukieOutpost"
         };
 
         private static readonly string[] Grids =
         {
-            "/Maps/centcomm.yml",
+            "/Maps/CentralCommand/main.yml",
+            "/Maps/CentralCommand/harmony.yml", // Harmony CC version
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
@@ -45,26 +48,32 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "CentComm",
+            "CentCommMain",
+            "CentCommHarmony",
             "MeteorArena",
             "NukieOutpost",
-            "Core",
-            "Pebble", //DeltaV
-            "Edge", //DeltaV
-            "Saltern",
-            "Shoukou", //DeltaV
-            "Tortuga", //DeltaV
-            "Arena", //DeltaV
-            "Asterisk", //DeltaV
-            "Glacier", //DeltaV
-            "TheHive", //DeltaV
-            "Hammurabi", //DeltaV
-            "Lighthouse", //DeltaV
-            "Submarine", //DeltaV
-            "Gax",
-            "Rad",
-            "Europa",
-            "Meta"
+            "Core", // No current maintainer. In need of a rework...
+            "Pebble", // Maintained by Plyushune
+            // "Edge", // De-rotated, no current maintainer.
+            "Saltern", // Maintained by the Sin Mapping Team, ODJ, and TCJ.
+            "Shoukou", // Maintained by Violet
+            // "Tortuga", // De-rotated, no current maintainer.
+            "Arena", // Maintained by astriloqua.
+            // "Asterisk", // De-rotated, no current maintainer.
+            "Glacier", // Maintained by Violet
+            // "TheHive", // De-rotated, no current maintainer.
+            // "Hammurabi", // De-rotated, maintained by Ichai.
+            "Lighthouse", // Maintained by Violet
+            // "Submarine", // De-rotated, no current maintainer.
+            "Gax", // Maintained by Ichaai
+            "Lavatest", // Lavaland Change
+            "Rad", // Maintained by Ichai
+            // "Europa", // De-rotated, has significant issues.
+            "Meta", // Maintained by Ichai
+            "Cyberiad", // Maintained by Ichai
+            "Lambda", // Maintained by Ichai
+            "Bagel", // Maintained by Ichai
+            "Northway" // Maintained by Violet
         };
 
         /// <summary>
@@ -252,10 +261,21 @@ namespace Content.IntegrationTests.Tests
                     // This is done inside gamemap test because loading the map takes ages and we already have it.
                     var spawnPoints = entManager.EntityQuery<SpawnPointComponent>()
                         .Where(x => x.SpawnType == SpawnPointType.Job)
-                        .Where(x => x.Job!.JobEntity == null)
                         .Select(x => x.Job!.ID);
 
                     jobs.ExceptWith(spawnPoints);
+
+                    foreach (var jobId in jobs)
+                    {
+                        var exists = protoManager.TryIndex<JobPrototype>(jobId, out var jobPrototype);
+
+                        if (!exists)
+                            continue;
+
+                        if (jobPrototype.JobEntity != null)
+                            jobs.Remove(jobId);
+                    }
+
                     Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 

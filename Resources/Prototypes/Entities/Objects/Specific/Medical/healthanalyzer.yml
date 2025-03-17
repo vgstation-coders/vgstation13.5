@@ -26,6 +26,7 @@
   - type: HealthAnalyzer
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
+    scanDelay: 0
   - type: Tag
     tags:
       - DiscreteHealthAnalyzer
@@ -51,6 +52,7 @@
   components:
   - type: PowerCellDraw
     drawRate: 1.2 #Calculated for 5 minutes on a small cell
+  - type: ToggleCellDraw
   - type: ActivatableUIRequiresPowerCell
 
 - type: entity

@@ -5,6 +5,7 @@
   description: Just add capitalism!
   abstract: true
   components:
+  - type: StationAiWhitelist
   - type: AmbientOnPowered
   - type: AmbientSound
     volume: -9
@@ -1565,6 +1566,14 @@
   - type: GuideHelp
     guides:
     - Salvage
+  - type: MiningVendor # Lavaland Change
+    kits:
+    - MiningCrusher
+    - MiningExtraction
+    #- MiningResonator
+    #- MiningSurvival
+    #- MiningDrone
+    - MiningConscription
 
 - type: entity
   parent: VendingMachine
@@ -1722,7 +1731,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Lawyer"]]
+    access: [["Justice"]]
 
 - type: entity
   parent: VendingMachine

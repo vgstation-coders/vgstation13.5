@@ -18,6 +18,7 @@
 
 - type: construction
   name: stool
+  fuzzyName: chair stool
   id: Stool
   graph: Seat
   startNode: start
@@ -35,6 +36,7 @@
 
 - type: construction
   name: bar stool
+  fuzzyName: chair stool bar
   id: StoolBar
   graph: Seat
   startNode: start
@@ -376,6 +378,7 @@
 
 - type: construction
   name: wood table
+  fuzzyName: wooden table
   id: TableWood
   graph: Table
   startNode: start
@@ -580,6 +583,7 @@
 
 - type: construction
   name: wood counter
+  fuzzyName: wooden counter
   id: TableCounterWood
   graph: Table
   startNode: start
@@ -616,6 +620,7 @@
 
 - type: construction
   name: toilet
+  fuzzyName: chair toilet
   id: ToiletEmpty
   graph: Toilet
   startNode: start
@@ -652,6 +657,7 @@
 - type: construction
   id: MedicalBed
   name: medical bed
+  fuzzyName: medbay medical bed
   description: A hospital bed for patients to recover in. Resting here provides fairly slow healing.
   graph: bed
   startNode: start
@@ -669,6 +675,7 @@
 - type: construction
   id: DogBed
   name: dog bed
+  fuzzyName: dog pet bed
   description: A comfy-looking dog bed. You can even strap your pet in, in case the gravity turns off.
   graph: bed
   startNode: start
@@ -686,6 +693,7 @@
 - type: construction
   id: Dresser
   name: dresser
+  fuzzyName: wooden dresser
   description: Wooden dresser, can store things inside itself.
   graph: Dresser
   startNode: start
@@ -889,6 +897,7 @@
 - type: construction
   id: Bookshelf
   name: bookshelf
+  fuzzyName: books shelf library
   description: Mostly filled with books.
   graph: Bookshelf
   startNode: start

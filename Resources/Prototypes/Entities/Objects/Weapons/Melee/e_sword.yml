@@ -21,6 +21,7 @@
   - type: ItemToggleHot
   - type: ItemToggleSize
     activatedSize: Huge
+  - type: ItemTogglePointLight
   - type: ItemToggleMeleeWeapon
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -37,14 +38,11 @@
         variation: 0.125
     activatedDamage:
         types:
-            Slash: 8
-            Heat: 10
-            Structural: 20
+            Slash: 12
+            Heat: 15 # Should be significantly stronger than other variants, no clue why it's so weak rn
+            Structural: 45 # its a damn laser sword, let people star wars their way through walls
   - type: ItemToggleDamageOtherOnHit
     activatedStaminaCost: 6
-  - type: ItemToggleEmbedPassiveDamage
-  - type: ItemToggleEmbeddableProjectile
-    activatedEmbedOnThrow: true
   - type: ItemToggleThrowingAngle
     activatedAngle: 225
     deleteOnDeactivate: true
@@ -64,12 +62,9 @@
       types:
         Blunt: 4.5
   - type: DamageOtherOnHit
-  - type: EmbeddableProjectile
-    embedOnThrow: false
-  - type: EmbedPassiveDamage
   - type: Item
     size: Small
-    sprite: DeltaV/Objects/Weapons/Melee/e_sword.rsi # Delta-V
+    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
   - type: UseDelay
     delay: 1.0
   - type: PointLight
@@ -183,8 +178,6 @@
     damage:
       types:
         Blunt: 0
-  - type: ThrowingAngle
-    angle: 315
   - type: Item
     size: Tiny
     sprite: Objects/Weapons/Melee/e_dagger.rsi
@@ -273,6 +266,24 @@
         shader: unshaded
 
 - type: entity
+  name: energy cutlass
+  parent: EnergyCutlass
+  id: EnergyCutlassSecurity
+  description: A sleek energy weapon, its blade hums with volatile plasma, expertly contained to cut through nearly any material. The serial number on the hilt marks this gun as belonging to an NT Security Officer. # how do I make the text blue
+  suffix: Security Loadouts
+  components:
+  - type: MeleeWeapon
+    attackRate: 0.6666
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+        types:
+            Slash: 6
+            Heat: 12
+            Structural: 20 # "expertly contained to cut through nearly any material" yet it had no structural damage
+  - type: GuideHelp  
+    guides: [ SecurityWeapons ]  
+
+- type: entity
   name: double-bladed energy sword
   parent: EnergySword
   id: EnergySwordDouble
@@ -296,9 +307,9 @@
         variation: 0.250
     activatedDamage:
         types:
-            Slash: 8
-            Heat: 13
-            Structural: 15
+            Slash: 12
+            Heat: 15
+            Structural: 30
   - type: ItemToggleActiveSound
     activeSound:
       path: /Audio/Weapons/ebladehum.ogg

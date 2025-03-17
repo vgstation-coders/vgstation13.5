@@ -60,7 +60,7 @@ public sealed partial class FoodComponent : Component
     /// How long it takes to eat the food personally.
     /// </summary>
     [DataField]
-    public float Delay = 1;
+    public float Delay = 0;
 
     /// <summary>
     ///     This is how many seconds it takes to force feed someone this food.
@@ -68,6 +68,12 @@ public sealed partial class FoodComponent : Component
     /// </summary>
     [DataField]
     public float ForceFeedDelay = 3;
+
+    /// <summary>
+    /// Shitmed Change: Whether to show a popup to everyone in range when attempting to eat this food, and upon successful eating.
+    /// </summary>
+    [DataField]
+    public bool PopupOnEat;
 
     /// <summary>
     /// For mobs that are food, requires killing them before eating.
