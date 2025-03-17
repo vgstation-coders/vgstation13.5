@@ -31,4 +31,4 @@
     speed: 0.75
   - type: SurgeryTool
     startSound:
-      path: /Audio/Medical/Surgery/saw.ogg
+      path: /Audio/Medical/Surgery/circularsaw.ogg

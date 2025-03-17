@@ -156,7 +156,7 @@
     startSound:
       collection: Screwdriver
     endSound:
-      path: /Audio/Medical/Surgery/retractor2.ogg
+      path: /Audio/Medical/Surgery/retractor.ogg
 
 - type: entity
   name: wrench

@@ -11,8 +11,8 @@
       types:
         Blunt: 30 #if the 2 ton vault door breaking every bone in your body doesn't kill you, the suffocation will
     openSound:
-      path: /Audio/Machines/airlock_ext_open.ogg
+      path: /Audio/Machines/airlock.ogg
     closeSound:
-      path: /Audio/Machines/airlock_ext_close.ogg
+      path: /Audio/Machines/airlock.ogg
     denySound:
-      path: /Audio/Machines/airlock_deny.ogg
+      path: /Audio/Machines/denied.ogg
