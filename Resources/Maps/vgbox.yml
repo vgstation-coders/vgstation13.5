@@ -11488,7 +11488,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8985.143
+      secondsUntilStateChange: -9806.787
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12272,7 +12272,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11443.073
+      secondsUntilStateChange: -12264.718
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15394,18 +15394,6 @@ entities:
     components:
     - type: Transform
       pos: 75.5,-30.5
-      parent: 2
-- proto: AtmosFixBlockerMarker
-  entities:
-  - uid: 24960
-    components:
-    - type: Transform
-      pos: 69.5,-87.5
-      parent: 2
-  - uid: 24961
-    components:
-    - type: Transform
-      pos: 87.5,-87.5
       parent: 2
 - proto: Autolathe
   entities:
@@ -55846,6 +55834,25 @@ entities:
     components:
     - type: Transform
       pos: 73.5,-15.5
+      parent: 2
+- proto: ComputerId
+  entities:
+  - uid: 24960
+    components:
+    - type: Transform
+      pos: 20.5,-5.5
+      parent: 2
+  - uid: 24961
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 67.5,-34.5
+      parent: 2
+  - uid: 24962
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 87.5,-28.5
       parent: 2
 - proto: ComputerMassMedia
   entities:
@@ -164240,7 +164247,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -70778.29
+      secondsUntilStateChange: -71599.93
       state: Opening
   - uid: 18397
     components:
