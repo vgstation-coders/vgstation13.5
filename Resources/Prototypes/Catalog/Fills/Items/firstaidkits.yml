@@ -63,6 +63,18 @@
       - id: PillCanisterDexalin
 
 - type: entity
+  id: MedkitVoxFilled
+  suffix: Filled
+  parent: MedkitAdvanced
+  components:
+  - type: StorageFill
+    contents:
+    - id: PillCanisterDexalin
+    - id: EmergencyMedipen
+    # - id: SyringeNitrogen
+    # - id: HealthAnalyzer?
+
+- type: entity
   id: MedkitRadiationFilled
   suffix: Filled
   parent: MedkitRadiation
