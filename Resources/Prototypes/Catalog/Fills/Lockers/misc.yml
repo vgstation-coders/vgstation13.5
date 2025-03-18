@@ -34,6 +34,46 @@
     - id: BoxMRE
       prob: 0.1
 
+# /vg/ emergency locker fills
+
+- type: entityTable
+  id: FillLockerEmergencySmall
+  table: !type:AllSelector
+    children:
+    - id: ClothingMaskBreath
+    - id: ClothingMaskBreath
+    - id: EmergencyOxygenTankFilled
+    - id: EmergencyOxygenTankFilled
+    - id: ToolboxEmergencyFilled
+
+- type: entityTable
+  id: FillLockerEmergencyAid
+  table: !type:AllSelector
+    children:
+    - id: EmergencyOxygenTankFilled
+    - id: ToolboxEmergencyFilled
+    - id: ClothingMaskBreath
+    - id: MedkitOxygenFilled
+
+- type: entityTable
+  id: FillLockerEmergencyTank
+  table: !type:AllSelector
+    children:
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: ClothingMaskBreath
+    - id: ClothingMaskBreath
+    - id: MedkitOxygenFilled
+
+- type: entityTable
+  id: FillLockerEmergencyBoth
+  table: !type:AllSelector
+    children:
+    - id: ToolboxEmergencyFilled
+    - id: ExtendedEmergencyOxygenTankFilled
+    - id: ClothingMaskBreath
+    - id: MedkitOxygenFilled
+
 - type: entity
   id: ClosetEmergencyFilledRandom
   parent: ClosetEmergency
@@ -41,8 +81,20 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillLockerEmergencyStandard
+      entity_storage: !type:GroupSelector
+        children:
+          - !type:NestedSelector
+            tableId: FillLockerEmergencySmall
+            weight: 55
+          - !type:NestedSelector
+            tableId: FillLockerEmergencyAid
+            weight: 25
+          - !type:NestedSelector
+            tableId: FillLockerEmergencyTank
+            weight: 10
+          - !type:NestedSelector
+            tableId: FillLockerEmergencyBoth
+            weight: 10
 
 - type: entity
   id: ClosetWallEmergencyFilledRandom
