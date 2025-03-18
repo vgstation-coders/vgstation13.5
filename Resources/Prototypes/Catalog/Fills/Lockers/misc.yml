@@ -177,13 +177,7 @@
       children:
       - id: EmergencyOxygenTankFilled
       - id: OxygenTankFilled
-    - id: CrowbarRed
-    - !type:GroupSelector
-      children:
-      - id: FireExtinguisher
-        weight: 98
-      - id: SprayBottleWater #It's just budget cut after budget cut man
-        weight: 2
+    - id: FireExtinguisher
 
 - type: entity
   id: ClosetFireFilled
@@ -192,8 +186,11 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        tableId: FillLockerFireStandard
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: FillLockerFireStandard
+        - id: FlashlightLantern
 
 - type: entity
   id: ClosetWallFireFilledRandom
