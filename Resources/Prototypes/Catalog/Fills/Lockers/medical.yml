@@ -5,16 +5,15 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSyringe
-      - id: EpinephrineChemistryBottle
-        amount: 1
-      - id: Brutepack
-        amount: 2
-      - id: Ointment
-        amount: 2
-      - id: Bloodpack
-        amount: 2
-      - id: Gauze
+    - id: BoxSyringe
+    - id: Dropper
+      amount: 2
+    - id: GlassBeaker
+      amount: 2
+    - id: SyringeInaprovaline
+      amount: 2
+    - id: AntiPoisonMedipen
+      amount: 2
 
 - type: entity
   id: LockerWallMedicalFilled
@@ -24,94 +23,85 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSyringe
-      - id: EpinephrineChemistryBottle
-        amount: 1
-      - id: Brutepack
-        amount: 2
-      - id: Ointment
-        amount: 2
-      - id: Bloodpack
-        amount: 2
-      - id: Gauze
+    - id: BoxSyringe
+    - id: Dropper
+      amount: 2
+    - id: GlassBeaker
+      amount: 2
+    - id: SyringeInaprovaline
+      amount: 2
+    - id: AntiPoisonMedipen
+      amount: 2
 
+- type: entityTable
+  id: SurgicalScrubsSetGreen
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapGreen
+    - id: UniformScrubsColorGreen
+
+- type: entityTable
+  id: SurgicalScrubsSetPurple
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapPurple
+    - id: UniformScrubsColorPurple
+
+- type: entityTable
+  id: SurgicalScrubsSetBlue
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapBlue
+    - id: UniformScrubsColorBlue
+
+- type: entityTable
+  id: SurgicalScrubsSetBlack
+  table: !type:AllSelector
+    children:
+    - id: ClothingHeadHatSurgcapBlack
+    - id: UniformScrubsColorBlack
 
 - type: entity
   id: LockerMedicalFilled
   suffix: Filled
   parent: LockerMedical
   components:
-  - type: StorageFill
-    contents:
-      - id: HandheldHealthAnalyzer
-        prob: 0.6
-      - id: ClothingHeadMirror
-        prob: 0.1
-      - id: ClothingHandsGlovesLatex
-      - id: ClothingHeadsetMedical
-      - id: ClothingEyesHudMedical
-      - id: ClothingBeltMedical
-#Yea. Those probs are fucked. Nothing I can do about orGroup behavior. Everything below this line is DeltaV.
-#If Wizden ever adds new Probs, throw their probs out, but keep new items if added
-      - id: ClothingHeadHatSurgcapGreen
-        prob: 0.1
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapPurple
-        prob: 0.11
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapBlue
-        prob: 0.12
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapCyan
-        prob: 0.13
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapBlack
-        prob: 0.15
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapPink
-        prob: 0.16
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapRainbow
-        prob: 0.18
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapWhite
-        prob: 0.19
-        orGroup: Surgcaps
-      - id: ClothingHeadHatSurgcapCybersun
-        prob: 0.02
-        orGroup: Surgcaps
-      - id: UniformScrubsColorBlue
-        prob: 0.1
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorGreen
-        prob: 0.11
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorPurple
-        prob: 0.12
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorCyan
-        prob: 0.13
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorBlack
-        prob: 0.15
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorPink
-        prob: 0.16
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorRainbow
-        prob: 0.18
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorWhite
-        prob: 0.19
-        orGroup: Surgshrubs
-      - id: UniformScrubsColorCybersun
-        prob: 0.02
-        orGroup: Surgshrubs
-      - id: NitrousOxideTankFilled
-        prob: 0.3
-      - id: ClothingMaskSterile
-      - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetGreen
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetPurple
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetBlue
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetBlack
+        - !type:GroupSelector
+          children:
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetGreen
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetPurple
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetBlue
+          - !type:NestedSelector
+            tableId: SurgicalScrubsSetBlack
+        - !type:GroupSelector
+          children:
+          - id: ClothingBackpackMedical
+          - id: ClothingBackpackSatchelMedical
+        - id: ClothingUniformJumpsuitMedicalDoctor
+        - id: ClothingUniformJumpskirtNurse
+        - id: ClothingHeadNurseHat
+        - id: ClothingOuterCoatLab
+        - id: ClothingShoesColorWhite
+        - id: ClothingHeadsetMedical
+        - id: ClothingEyesHudMedical
+        - id: ClothingEyesHudMedical
 
 - type: entity
   parent: LockerWallMedical
@@ -147,7 +137,7 @@
         orGroup: Surgshrubs
       - id: ClothingMaskSterile
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
 
 - type: entity
   id: LockerChemistryFilled
@@ -156,19 +146,10 @@
   components:
   - type: StorageFill
     contents:
-      - id: BoxSyringe
       - id: BoxBeaker
-      - id: BoxBeaker
-        prob: 0.3
       - id: BoxPillCanister
-      - id: BoxBottle
+        amount: 2
       - id: BoxVial
-      - id: ChemBag
-      - id: ClothingHandsGlovesLatex
-      - id: ClothingHeadsetMedical
-      - id: ClothingMaskSterile
-      - id: HandLabeler
-        prob: 0.5
 
 - type: entity
   id: LockerParamedicFilled #Delta V - Paramedic locker without suit
@@ -189,7 +170,7 @@
       - id: MedkitFilled
         prob: 0.3
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
 
 - type: entity
   id: LockerParamedicFilledHardsuit #Delta V - Paramedic locker with suit
@@ -213,4 +194,4 @@
       - id: MedkitFilled
         prob: 0.3
       - id: LunchboxMedicalFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3 
+        prob: 0.3
