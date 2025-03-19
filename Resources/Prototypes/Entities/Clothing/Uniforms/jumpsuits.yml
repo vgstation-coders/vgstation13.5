@@ -1927,3 +1927,14 @@
     sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTourist
+  name: tourist uniform
+  description: A bright cyan shirt and a pair of brown shorts. Looks old.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/tourist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/tourist.rsi

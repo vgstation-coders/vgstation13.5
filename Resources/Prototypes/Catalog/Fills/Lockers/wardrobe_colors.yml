@@ -6,16 +6,11 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorGrey
-        amount: 2
-      - id: ClothingUniformJumpskirtColorGrey
-        amount: 2
+        amount: 3
       - id: ClothingShoesColorBlack
         amount: 3
       - id: ClothingHeadHatGreysoft
-      - id: ClothingBackpackDuffel
-        prob: 0.5
-      - id: ClothingOuterCoatBomber
-        prob: 0.3
+        amount: 3
 
 - type: entity
   id: WardrobeMixedFilled
@@ -24,26 +19,36 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingShoesColorBlack
+      - id: ClothingUniformJumpsuitColorBlue
         amount: 1
-      - id: ClothingShoesColorBrown
+      - id: ClothingUniformJumpsuitColorYellow
         amount: 1
-      - id: ClothingShoesColorWhite
+      - id: ClothingUniformJumpsuitColorGreen
         amount: 1
-      - id: ClothingOuterCoatBomber
-        prob: 0.4
-      - id: ClothingOuterCoatGentle
-        prob: 0.3
-      - id: ClothingUniformRandomShorts
-        amount: 3
-      - id: ClothingUniformRandomArmless
-        amount: 5
-      - id: ClothingUniformRandomStandard
-        amount: 5
-      - id: ClothingUniformRandomBra
-        amount: 5
-      - id: ClothingUniformRandomShirt
-        amount: 4
+      - id: ClothingUniformJumpsuitColorOrange
+        amount: 1
+      - id: ClothingUniformJumpsuitColorPink
+        amount: 1
+      - id: ClothingUniformJumpskirtDressPlaidBlue
+        amount: 1
+      - id: ClothingUniformJumpskirtDressPlaidRed
+        amount: 1
+      - id: ClothingUniformJumpskirtDressPlaidPurple
+        amount: 1
+      - id: ClothingShoesColorBlue
+        amount: 1
+      - id: ClothingShoesColorYellow
+        amount: 1
+      - id: ClothingShoesColorGreen
+        amount: 1
+      - id: ClothingShoesColorOrange
+        amount: 1
+      - id: ClothingShoesColorPurple
+        amount: 1
+      - id: ClothingShoesLeather
+        amount: 1
+      - id: ClothingUniformJumpsuitTourist
+        amount: 1
 
 - type: entity
   id: WardrobeYellowFilled
