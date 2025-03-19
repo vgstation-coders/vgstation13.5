@@ -76,7 +76,7 @@
       - id: ClothingUniformJumpsuitJanitor
       - id: FlashlightLantern
       - id: ClothingShoesGaloshes
-      - id: ClothingOuterApron
+      - id: ClothingOuterSuitOveralls
       - id: ClothingHandsGlovesColorBlack
       - id: ClothingHeadHatPurplesoft
       - id: WetFloorSign
@@ -108,27 +108,24 @@
   suffix: Filled
   parent: LockerBotanist
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesLeather
-      - id: ClothingOuterApronBotanist
-      - id: ClothingHeadBandBotany
-      - id: HydroponicsToolClippers
-      - id: HydroponicsToolSpade
-      - id: HydroponicsToolMiniHoe
-      - id: RobustHarvestChemistryBottle
-        prob: 0.3
-      - id: ClothingBeltPlant
-      - id: PlantBag ##Some maps don't have nutrivend
-      - id: PlantAnalyzer
-      - id: BoxMouthSwab
-      - id: Dropper
-      - id: HandLabeler
-      - id: ClothingUniformOveralls
-      - id: ClothingHeadHatTrucker
-        prob: 0.1
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: ClothingOuterApronBotanist
+          - id: ClothingOuterSuitOveralls
+        - !type:GroupSelector
+          children:
+          - id: ClothingBackpackHydroponics
+          - id: ClothingBackpackSatchelHydroponics
+        - id: ClothingUniformJumpsuitHydroponics
+        - id: PlantAnalyzer
+        - id: ClothingHeadBandBotany
+        - id: HydroponicsToolMiniHoe
+        - id: HydroponicsToolHatchet
+        - id: ClothingBeltPlant
 
 - type: entity
   id: LockerBotanistLoot
