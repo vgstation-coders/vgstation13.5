@@ -100,9 +100,14 @@
   components:
   - type: StorageFill
     contents:
-      - id: BriefcaseBrownFilled
-        prob: 0.80
-      - id: ClothingOuterRobesJudge
+      - id: ClothingUniformJumpsuitJournalist
+      - id: ClothingUniformJumpsuitLawyerBlack
+      - id: ClothingUniformJumpsuitLawyerRed
+      - id: ClothingUniformJumpsuitLawyerBlue
+      - id: ClothingUniformBluesuit
+      - id: ClothingUniformPurpsuit
+      - id: ClothingShoesColorBlack
+      - id: ClothingShoesColorBrown
 
 - type: entity
   id: LockerBotanistFilled
