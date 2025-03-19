@@ -22,7 +22,7 @@
       - id: Multitool
         prob: 0.2
       - id: trayScanner
-        prob: 0.7
+        prob: 0.2
       - id: GasAnalyzer
         prob: 0.7
       - id: ClothingBeltUtility
@@ -48,15 +48,13 @@
   - type: StorageFill
     contents:
       - id: ToolboxElectricalFilled
-        prob: 0.7
-      - id: FirelockElectronics
-        prob: 0.05
+        amount: 3
       - id: APCElectronics
-        prob: 0.1
+        amount: 3
+      - id: ClothingHandsGlovesColorYellow
+        amount: 2
       - id: CableMVStack
-        prob: 0.2
       - id: CableApcStack
-        prob: 0.3
 
 - type: entity
   id: LockerWeldingSuppliesFilled
@@ -66,19 +64,9 @@
   - type: StorageFill
     contents:
       - id: ClothingHeadHatWelding
-      - id: ClothingHeadHatWelding
-      - id: ClothingHeadHatWelding
-        prob: 0.5
-      - id: Welder
-      - id: Welder
-      - id: WelderMini
-        orGroup: thirdWelder
-      - id: Welder
-        prob: 0.33
-        orGroup: thirdWelder
+        amount: 3
       - id: WelderIndustrial
-        prob: 0.33
-        orGroup: thirdWelder
+        amount: 3
 
 - type: entity
   id: LockerAtmosphericsFilledHardsuit
