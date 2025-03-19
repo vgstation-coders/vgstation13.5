@@ -73,25 +73,19 @@
   components:
   - type: StorageFill
     contents:
-      - id: MopItem
-        amount: 2
-      - id: BoxMousetrap
-        amount: 2
+      - id: ClothingUniformJumpsuitJanitor
+      - id: FlashlightLantern
+      - id: ClothingShoesGaloshes
+      - id: ClothingOuterApron
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHeadHatPurplesoft
       - id: WetFloorSign
-        amount: 3
+        amount: 6
       - id: TrashBag
-        amount: 2
       - id: LightReplacer
       - id: BoxLightMixed
-      - id: Holoprojector
-      - id: SoapNT
-        amount: 2
-      - id: FlashlightLantern
         amount: 2
       - id: Plunger
-        amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: ClosetLegalFilled
