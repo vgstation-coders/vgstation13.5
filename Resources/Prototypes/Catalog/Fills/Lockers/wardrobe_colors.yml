@@ -58,11 +58,9 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorYellow
-      - id: ClothingUniformJumpskirtColorYellow
-      - id: ClothingShoesColorOrange
-        amount: 2
-      - id: ClothingHeadBandGold
-
+        amount: 3
+      - id: ClothingShoesColorYellow
+        amount: 3
 
 - type: entity
   id: WardrobeWhiteFilled
@@ -72,10 +70,9 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorWhite
-      - id: ClothingUniformJumpskirtColorWhite
+        amount: 3
       - id: ClothingShoesColorWhite
-        amount: 2
-      - id: ClothingHeadHatMimesoft
+        amount: 3
 
 - type: entity
   id: WardrobeBlueFilled
@@ -85,9 +82,9 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorBlue
-      - id: ClothingUniformJumpskirtColorBlue
+        amount: 3
       - id: ClothingShoesColorBrown
-        amount: 2
+        amount: 3
 
 - type: entity
   id: WardrobePinkFilled
@@ -97,9 +94,9 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorPink
-      - id: ClothingUniformJumpskirtColorPink
+        amount: 3
       - id: ClothingShoesColorBrown
-        amount: 2
+        amount: 3
 
 - type: entity
   id: WardrobeBlackFilled
@@ -109,12 +106,11 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorBlack
-      - id: ClothingUniformJumpskirtColorBlack
+        amount: 3
       - id: ClothingShoesColorBlack
-        amount: 2
-      - id: ClothingHeadBandBlack
-      - id: ClothingHeadBandSkull
-        prob: 0.4
+        amount: 3
+      - id: ClothingHeadHatTophat
+        amount: 3
 
 - type: entity
   id: WardrobeGreenFilled
@@ -124,7 +120,6 @@
   - type: StorageFill
     contents:
       - id: ClothingUniformJumpsuitColorGreen
-      - id: ClothingUniformJumpskirtColorGreen
+        amount: 3
       - id: ClothingShoesColorBlack
-        amount: 2
-      - id: ClothingHeadBandGreen
+        amount: 3
