@@ -37,6 +37,12 @@ reagent-desc-lithium = A soft, silvery-white alkali metal. It's highly reactive,
 reagent-name-mercury = mercury
 reagent-desc-mercury = A silver metal which is liquid at room temperature. It's highly toxic to humans.
 
+reagent-name-nitrogen = nitrogen
+reagent-desc-nitrogen = A colorless, odorless, tasteless gas.
+
+reagent-name-oxygen = oxygen
+reagent-desc-oxygen = A colorless, odorless gas.
+
 reagent-name-potassium = potassium
 reagent-desc-potassium = A soft, shiny grey metal. Even more reactive than lithium.
 
@@ -65,4 +71,4 @@ reagent-name-bananium = bananium
 reagent-desc-bananium = A yellow radioactive organic solid.
 
 reagent-name-zinc = zinc
-reagent-desc-zinc = A silvery, brittle metal, often used in batteries to carry charge. 
+reagent-desc-zinc = A silvery, brittle metal, often used in batteries to carry charge.

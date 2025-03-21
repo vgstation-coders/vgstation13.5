@@ -318,7 +318,7 @@
   group: Toxins
   desc: reagent-desc-lexorin
   physicalDesc: reagent-physical-desc-pungent
-  color: "#6b0007"
+  color: "#C8A5DC"
   metabolisms:
     Poison:
       effects:

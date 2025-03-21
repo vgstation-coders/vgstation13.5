@@ -478,3 +478,14 @@
         type: Add
         time: 5
         refresh: false
+
+- type: reagent
+  id: Hyperzine
+  name: reagent-name-hyperzine
+  group: Narcotics
+  desc: reagent-desc-hyperzine
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: bitter
+  color: "#DCDCDC"
+  boilingPoint: 100.0
+  meltingPoint: 0.0

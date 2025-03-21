@@ -5,7 +5,7 @@
   desc: reagent-desc-aluminium # -we use real words here.
   physicalDesc: reagent-physical-desc-metallic
   flavor: metallic
-  color: "#848789"
+  color: "#A8A8A8"
   boilingPoint: 2327.0
   meltingPoint: 660.0
 
@@ -16,7 +16,7 @@
   desc: reagent-desc-carbon
   physicalDesc: reagent-physical-desc-crystalline
   flavor: bitter
-  color: "#22282b"
+  color: "#1C1300"
   boilingPoint: 4200.0
   meltingPoint: 3550.0
 
@@ -27,18 +27,14 @@
   desc: reagent-desc-chlorine
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
-  color: "#a2ff00"
+  color: "#808080"
   meltingPoint: -101.5
   boilingPoint: -34.04
   plantMetabolism:
-    - !type:PlantAdjustWater
-      amount: -0.5
     - !type:PlantAdjustToxins
-      amount: 15
+      amount: 8
     - !type:PlantAdjustWeeds
-      amount: -3
-    - !type:PlantAdjustHealth
-      amount: -1
+      amount: -2
   metabolisms:
     Poison:
       effects:
@@ -54,7 +50,7 @@
   desc: reagent-desc-copper
   physicalDesc: reagent-physical-desc-metallic
   flavor: metallic
-  color: "#b05b3c"
+  color: "#6E3B08"
   boilingPoint: 2595.0
   meltingPoint: 1083.0
   metabolisms:
@@ -85,7 +81,7 @@
   desc: reagent-desc-fluorine
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
-  color: "#ba85cc"
+  color: "#808080"
   boilingPoint: -188.11
   meltingPoint: -219.67
   plantMetabolism:
@@ -123,7 +119,7 @@
   desc: reagent-desc-hydrogen
   physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
-  color: "#cccccc"
+  color: "#808080"
   boilingPoint: -253.0
   meltingPoint: -259.2
 
@@ -176,7 +172,7 @@
   desc: reagent-desc-lithium
   physicalDesc: reagent-physical-desc-shiny
   flavor: metallic
-  color: "#d6c0a7"
+  color: "#808080"
   meltingPoint: 180.5
   boilingPoint: 1330.0
   metabolisms:
@@ -203,7 +199,7 @@
   desc: reagent-desc-mercury
   physicalDesc: reagent-physical-desc-shiny
   flavor: metallic
-  color: "#929296"
+  color: "#484848"
   meltingPoint: -38.83
   boilingPoint: 356.73
   metabolisms:
@@ -224,7 +220,7 @@
   desc: reagent-desc-potassium
   physicalDesc: reagent-physical-desc-shiny
   flavor: metallic
-  color: "#c6c8cc"
+  color: "#A0A0A0"
   meltingPoint: 65.5
   boilingPoint: 759.0
 
@@ -235,7 +231,7 @@
   desc: reagent-desc-phosphorus
   physicalDesc: reagent-physical-desc-powdery
   flavor: metallic
-  color: "#f5da9a"
+  color: "#832828"
   meltingPoint: 44.2
   boilingPoint: 280.5
   plantMetabolism:
@@ -254,9 +250,13 @@
   desc: reagent-desc-radium
   physicalDesc: reagent-physical-desc-glowing
   flavor: metallic
-  color: "#00ff04"
+  color: "#61F09A"
   meltingPoint: 700.0
   boilingPoint: 1737.0
+  plantMetabolism:
+    - !type:PlantAdjustToxins
+      amount: 2
+      # TODO the great hydroponics genetics implementation
 
 - type: reagent
   id: Silicon
@@ -265,7 +265,7 @@
   desc: reagent-desc-silicon
   physicalDesc: reagent-physical-desc-crystalline
   flavor: metallic
-  color: "#364266"
+  color: "#A8A8A8"
   boilingPoint: 3265.0
   meltingPoint: 1414.0
   metabolisms:
@@ -294,7 +294,7 @@
   desc: reagent-desc-sulfur
   physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
-  color: "#fff385"
+  color: "#BF8C00"
   boilingPoint: 445.0
   meltingPoint: 120.0
   metabolisms:
@@ -312,7 +312,7 @@
   desc: reagent-desc-sodium
   physicalDesc: reagent-physical-desc-metallic
   flavor: bitter
-  color: "#a7b3d6"
+  color: "#808080"
   meltingPoint: 97.8
   boilingPoint: 883.0
 
@@ -323,26 +323,16 @@
   desc: reagent-desc-uranium
   physicalDesc: reagent-physical-desc-metallic
   flavor: metallic
-  color: "#8fa191"
+  color: "#B8B8C0"
   meltingPoint: 1133.0
   boilingPoint: 4131.0
-  plantMetabolism:
-  - !type:PlantAdjustMutationLevel
-    amount: 0.6
-  - !type:PlantAdjustToxins
-    amount: 4
-  - !type:PlantAdjustHealth
-    amount: -1.5
-  - !type:PlantAdjustMutationMod
-    probability: 0.2
-    amount: 0.1
   metabolisms:
     Poison:
       effects:
       - !type:HealthChange
         damage:
           types:
-            Radiation: 2
+            Radiation: 1
 
 - type: reagent
   id: Zinc
