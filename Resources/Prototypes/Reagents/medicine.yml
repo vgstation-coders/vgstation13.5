@@ -1553,13 +1553,148 @@
   color: "#969696"
 
 - type: reagent
+  id: Oxycodone
+  name: reagent-name-oxycodone
+  group: Medicine
+  desc: reagent-desc-oxycodone
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C805DC"
+
+- type: reagent
+  id: Paracetamol
+  name: reagent-name-paracetamol
+  group: Medicine
+  desc: reagent-desc-paracetamol
+  physicalDesc: reagent-physical-desc-chalky
+  flavor: medicine
+  color: "#C855DC"
+
+- type: reagent
+  id: Paroxetine
+  name: reagent-name-paroxetine
+  group: Medicine
+  desc: reagent-desc-paroxetine
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Peptobismol
+  name: reagent-name-peptobismol
+  group: Medicine
+  desc: reagent-desc-peptobismol
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Peridaxon
+  name: reagent-name-peridaxon
+  group: Medicine
+  desc: reagent-desc-peridaxon
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Piccolyn
+  name: reagent-name-piccolyn
+  group: Medicine
+  desc: reagent-desc-piccolyn
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#00FF00"
+
+- type: reagent
+  id: Preslomite
+  name: reagent-name-preslomite
+  group: Medicine
+  desc: reagent-desc-preslomite
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#FFFFFF"
+
+- type: reagent
+  id: Priaxate
+  name: reagent-name-priaxate
+  group: Medicine
+  desc: reagent-desc-priaxate
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: medicine
+  color: "#CD8471"
+
+- type: reagent
+  id: Rezadone
+  name: reagent-name-rezadone
+  group: Medicine
+  desc: reagent-desc-rezadone
+  physicalDesc: reagent-physical-desc-inky
+  flavor: medicine
+  color: "#669900"
+
+- type: reagent
+  id: Ryetalyn
+  name: reagent-name-ryetalyn
+  group: Medicine
+  desc: reagent-desc-ryetalyn
+  physicalDesc: reagent-physical-desc-odorless
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Simpolinol
+  name: reagent-name-simpolinol
+  group: Medicine
+  desc: reagent-desc-simpolinol
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#A5A5FF"
+
+- type: reagent
+  id: SoporificRejuvenant
+  name: reagent-name-soporificrejuvenant
+  group: Medicine
+  desc: reagent-desc-soporificrejuvenant
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
   id: Spaceacillin
   name: reagent-name-spaceacillin
   group: Medicine
-  desc: reagent-name-spaceacillin
+  desc: reagent-desc-spaceacillin
   physicalDesc: reagent-physical-desc-grainy
   flavor: medicine
   color: "#C81040"
+
+- type: reagent
+  id: Stabilizine
+  name: reagent-name-stabilizine
+  group: Medicine
+  desc: reagent-desc-stabilizine
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#833484"
+
+- type: reagent
+  id: Sterilizine
+  name: reagent-name-sterilizine
+  group: Medicine
+  desc: reagent-desc-sterilizine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Synthocarisol
+  name: reagent-name-synthocarisol
+  group: Medicine
+  desc: reagent-desc-synthocarisol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#580082"
 
 - type: reagent
   id: Tramadol
@@ -1569,3 +1704,12 @@
   physicalDesc: reagent-physical-desc-translucent
   flavor: medicine
   color: "#C8A5DC"
+
+- type: reagent
+  id: Trinitrine
+  name: reagent-name-trinitrine
+  group: Medicine
+  desc: reagent-desc-trinitrine
+  physicalDesc: reagent-physical-desc-oily
+  flavor: medicine
+  color: "#CED7D5"

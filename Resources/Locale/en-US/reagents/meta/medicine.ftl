@@ -155,7 +155,7 @@ reagent-name-tramadol = tramadol
 reagent-desc-tramadol = A simple, yet effective, painkiller.
 
 reagent-name-alkysine = alkysine
-reagent-name-alkysine = Alkysine is a drug used to lessen the damage to neurological tissue after a catastrophic injury. Can heal brain tissue.
+reagent-desc-alkysine = Alkysine is a drug used to lessen the damage to neurological tissue after a catastrophic injury. Can heal brain tissue.
 
 reagent-name-alkycosine = alkycosine
 reagent-desc-alkycosine = A mind-stablizing brain bleach.
@@ -205,3 +205,50 @@ reagent-desc-methylin = An intelligence enhancer, also used in the treatment of 
 reagent-name-nanobots = nanobots
 reagent-desc-nanobots = Microscopic robots intended for use in humans. Must be loaded with further chemicals to be useful.
 
+reagent-name-oxycodone = oxycodone
+reagent-desc-oxycodone = An effective and very addictive painkiller.
+
+reagent-name-paracetamol = paracetamol
+reagent-desc-paracetamol = Most commonly know this as Tylenol, but this chemical is a mild, simple painkiller.
+
+reagent-name-paroxetine = paroxetine
+reagent-desc-paroxetine = Stabilizes the mind greatly, but has a chance of adverse effects.
+
+reagent-name-peptobismol = peptobismol
+reagent-desc-peptobismol = Jesus juice.
+
+reagent-name-peridaxon = peridaxon
+reagent-desc-peridaxon = Used to encourage recovery of internal organs and nervous systems. Medicate cautiously.
+
+reagent-name-piccolyn = piccolyn
+reagent-desc-piccolyn = Prescribed daily.
+
+reagent-name-preslomite = preslomite
+reagent-desc-preslomite = A stabilizing chemical used in industrial relief efforts.
+
+reagent-name-priaxate = priaxate
+reagent-desc-priaxate = Priaxate is a broad spectrum medication formulated for the unique biology of vox. While still effective on other species, some of its effects are less potent.
+
+reagent-name-rezadone = rezadone
+reagent-desc-rezadone = A powder derived from fish toxin, this substance can effectively treat genetic damage in humanoids, though excessive consumption has side effects.
+
+reagent-name-ryetalyn = ryetalyn
+reagent-desc-ryetalyn = Ryetalyn can cure all genetic abnomalities.
+
+reagent-name-simpolinol = simpolinol
+reagent-desc-simpolinol = An experimental medication which has shown promising results in animal tests. Has not yet advanced to human trials.
+
+reagent-name-soporificrejuvenant = soporific rejuvenant
+reagent-desc-soporificrejuvenant = Puts people to sleep while healing them.
+
+reagent-name-stabilizine = stabilizine
+reagent-desc-stabilizine = A stabilizing chemical produced by alien nests to keep their occupants barely alive.
+
+reagent-name-sterilizine = sterilizine
+reagent-desc-sterilizine = Sterilizes wounds in preparation for surgery.
+
+reagent-name-synthocarisol = synthocarisol
+reagent-desc-synthocarisol = Synthocarisol is a synthetic version of Carisol, a powerful analgesic that used to be found in traditional medicines made from the horn of the now-extinct Space African Rhino. Tragically, the horns also contained an equal amount of Anticarisol, which led to the medical community dismissing the remedies as nothing more than placebo and overlooking this reagent for several centuries.
+
+reagent-name-trinitrine = trinitrine
+reagent-desc-trinitrine = Glyceryl Trinitrate, also known as diluted nitroglycerin, is a medication used for heart failure and to treat and prevent chest pain due to hyperzine.

@@ -687,8 +687,7 @@
     Dylovene:
       amount: 1
   products:
-    Alkycosine:
-      amount: 4
+    Alkycosine: 4
 
 - type: reaction
   id: Alkysine
@@ -700,8 +699,7 @@
     Dylovene:
       amount: 1
   products:
-    Alkysine:
-      amount: 2
+    Alkysine: 2
   minTemp: 40
 
 - type: reaction
@@ -712,8 +710,7 @@
     Carbon:
       amount: 1
   products:
-    Citalopram:
-      amount: 3
+    Citalopram: 3
 
 - type: reaction
   id: Clonexadone
@@ -726,8 +723,7 @@
       amount: 5
       catalyst: true
   products:
-    Clonexadone:
-      amount: 2
+    Clonexadone: 2
 
 - type: reaction
   id: CombatNanobots
@@ -741,8 +737,7 @@
     Iron:
       amount: 10
   products:
-    CombatNanobots:
-      amount: 2.5
+    CombatNanobots: 2.5
 
 - type: reaction
   id: DegenerateCalcium
@@ -752,8 +747,7 @@
     UnstableMutagen:
       amount: 1
   products:
-    DegenerateCalcium:
-      amount: 1
+    DegenerateCalcium: 1
   minTemp: 88
 
 - type: reaction
@@ -768,8 +762,7 @@
     WeldingFuel:
       amount: 1
   products:
-    Dietine:
-      amount: 1
+    Dietine: 1
 
 - type: reaction
   id: Imidazoline
@@ -781,8 +774,7 @@
     Dylovene:
       amount: 1
   products:
-    Imidazoline:
-      amount: 2
+    Imidazoline: 2
 
 - type: reaction
   id: Lithotorcrazine
@@ -794,8 +786,7 @@
     Uranium:
       amount: 1
   products:
-    Lithotorcrazine:
-      amount: 5
+    Lithotorcrazine: 5
 
 - type: reaction
   id: MedicalNanobots
@@ -805,8 +796,7 @@
     DoctorsDelight:
       amount: 5
   products:
-    MedicalNanobots:
-      amount: 2.5
+    MedicalNanobots: 2.5
 
 - type: reaction
   id: Methylin
@@ -821,8 +811,7 @@
       amount: 5
       catalyst: true
   products:
-    Methylin:
-      amount: 1
+    Methylin: 1
 
 - type: reaction
   id: Nanobots
@@ -838,8 +827,7 @@
     Silicon:
       amount: 10
   products:
-    Nanobots:
-      amount: 2
+    Nanobots: 2
 
 - type: reaction
   id: Nanobots2
@@ -849,8 +837,7 @@
     Cryoxadone:
       amount: 2
   products:
-    Nanobots:
-      amount: 1
+    Nanobots: 1
 
 - type: reaction
   id: Nanofloxacin
@@ -862,8 +849,95 @@
     Fluorine:
       amount: 1
   products:
-    Nanofloxacin:
-      amount: 2.5
+    Nanofloxacin: 2.5
+
+- type: reaction
+  id: Oxycodone
+  reactants:
+    Ethanol:
+      amount: 1
+    Tramadol:
+      amount: 1
+    Plasma:
+      amount: 1
+  products:
+    Oxycodone: 3
+
+- type: reaction
+  id: Paroxetine
+  reactants:
+    MindbreakerToxin:
+      amount: 1
+    Oxygen:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+  products:
+    Paroxetine: 3
+
+- type: reaction
+  id: Peptobismol
+  reactants:
+    Dylovene:
+      amount: 1
+    DiscountDansSpecialSauce:
+      amount: 1
+  products:
+    Peptobismol: 2
+
+- type: reaction
+  id: Piccolyn
+  reactants:
+    Copper:
+      amount: 1
+    Tungsten:
+      amount: 1
+    Fluorine:
+      amount: 1
+  products:
+    Piccolyn: 1
+
+- type: reaction
+  id: Priaxate
+  reactants:
+    Gravy:
+      amount: 1
+    Tricordrazine:
+      amount: 1
+  products:
+    Priaxate: 2
+
+- type: reaction
+  id: Rezadone
+  reactants:
+    CarpoToxin:
+      amount: 1
+    Cryptobiolin:
+      amount: 1
+    Copper:
+      amount: 1
+  products:
+    Rezadone: 3
+
+- type: reaction
+  id: Ryetalyn
+  reactants:
+    Arithrazine:
+      amount: 1
+    Carbon:
+      amount: 1
+  products:
+    Ryetalyn: 2
+
+- type: reaction
+  id: Simpolinol
+  reactants:
+    Methylin:
+      amount: 20
+    Silver:
+      amount: 20
+  products:
+    Simpolinol: 40
 
 - type: reaction
   id: Spaceacillin
@@ -873,8 +947,30 @@
     Inaprovaline:
       amount: 1
   products:
-    Spaceacillin:
-      amount: 2
+    Spaceacillin: 2
+
+- type: reaction
+  id: Sterilizine
+  reactants:
+    Ethanol:
+      amount: 1
+    Dylovene:
+      amount: 1
+    Chlorine:
+      amount: 1
+  products:
+    Sterilizine: 3
+
+- type: reaction
+  id: Synthocarisol
+  reactants:
+    Bicaridine:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+  products:
+    Synthocarisol: 2
+  minTemp: 77
 
 - type: reaction
   id: Tramadol
@@ -886,5 +982,19 @@
     Oxygen:
       amount: 1
   products:
-    Tramadol:
+    Tramadol: 3
+
+- type: reaction
+  id: Trinitrine
+  reactants:
+    Glycerol:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+    Water:
       amount: 3
+    Nitrogen:
+      amount: 5
+      catalyst: true
+  products:
+    Trinitrine: 5
