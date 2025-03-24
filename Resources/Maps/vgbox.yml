@@ -10724,16 +10724,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 34.5,-37.5
       parent: 2
-- proto: AirlockExternalGlassShuttleCargoShuttleFilled
-  entities:
   - uid: 5043
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 34.5,-35.5
       parent: 2
-    - type: GridFill
-      path: /Maps/Shuttles/cargo_vgbox.yml
 - proto: AirlockExternalGlassShuttleEmergencyLocked
   entities:
   - uid: 3002
@@ -11488,7 +11484,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9806.787
+      secondsUntilStateChange: -9839.613
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12272,7 +12268,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12264.718
+      secondsUntilStateChange: -12297.544
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -164247,7 +164243,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -71599.93
+      secondsUntilStateChange: -71632.76
       state: Opening
   - uid: 18397
     components:
