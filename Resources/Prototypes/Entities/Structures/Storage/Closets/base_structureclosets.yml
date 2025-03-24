@@ -49,11 +49,11 @@
         - MachineLayer
   - type: EntityStorage
     closeSound:
-      path: /Audio/Effects/closet_close.ogg
+      path: /Audio/Effects/click.ogg
       params:
         volume: -4
     openSound:
-      path: /Audio/Effects/closet_open.ogg
+      path: /Audio/Effects/click.ogg
       params:
         volume: -4
   - type: ContainerContainer
