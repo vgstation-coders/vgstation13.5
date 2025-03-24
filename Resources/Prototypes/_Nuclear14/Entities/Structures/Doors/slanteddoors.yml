@@ -292,7 +292,7 @@
     closeSound:
       path: /Audio/_Nuclear14/Effects/Doors/DRS_Metal_Jail_Swing_Close_01.ogg
     denySound:
-      path: /Audio/Machines/airlock_deny.ogg
+      path: /Audio/Machines/denied.ogg
   - type: Destructible
     thresholds:
     - trigger:
