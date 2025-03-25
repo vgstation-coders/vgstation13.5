@@ -21,6 +21,7 @@
   - type: ActivatableUIRequiresPower
   - type: Sprite
     sprite: Structures/Machines/computers.rsi
+    snapCardinals: true
     layers:
     - map: ["computerLayerBody"]
       state: computer
