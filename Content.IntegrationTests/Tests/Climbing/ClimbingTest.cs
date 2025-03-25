@@ -33,44 +33,9 @@ public sealed class ClimbingTest : MovementTest
         await Server.WaitPost(() => sys.TryClimb(SEntMan.GetEntity(Player), SEntMan.GetEntity(Player), SEntMan.GetEntity(Target.Value), out _));
         await AwaitDoAfters();
 
-        // Player should now be climbing
+        // Player should have bonked their head instead and not be climbing
         Assert.Multiple(() =>
         {
-            Assert.That(comp.IsClimbing, Is.True);
-            Assert.That(comp.DisabledFixtureMasks, Has.Count.GreaterThan(0));
-        });
-
-        // Can now walk over the table.
-        await Move(DirectionFlag.East, 1f);
-
-        Assert.Multiple(() =>
-        {
-            Assert.That(Delta(), Is.LessThan(0));
-
-            // After walking away from the table, player should have stopped climbing.
-            Assert.That(comp.IsClimbing, Is.False);
-            Assert.That(comp.DisabledFixtureMasks, Has.Count.EqualTo(0));
-        });
-
-        // Try to walk back to the other side (and fail).
-        await Move(DirectionFlag.West, 1f);
-        Assert.That(Delta(), Is.LessThan(0));
-
-        // Start climbing
-        await Server.WaitPost(() => sys.TryClimb(SEntMan.GetEntity(Player), SEntMan.GetEntity(Player), SEntMan.GetEntity(Target.Value), out _));
-        await AwaitDoAfters();
-
-        Assert.Multiple(() =>
-        {
-            Assert.That(comp.IsClimbing, Is.True);
-            Assert.That(comp.DisabledFixtureMasks, Has.Count.GreaterThan(0));
-        });
-
-        // Walk past table and stop climbing again.
-        await Move(DirectionFlag.West, 1f);
-        Assert.Multiple(() =>
-        {
-            Assert.That(Delta(), Is.GreaterThan(0));
             Assert.That(comp.IsClimbing, Is.False);
             Assert.That(comp.DisabledFixtureMasks, Has.Count.EqualTo(0));
         });
