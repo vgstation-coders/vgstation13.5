@@ -42,7 +42,8 @@ namespace Content.Client.Chemistry.UI
 
             ReagentList.Children.Clear();
             //Sort inventory by reagentLabel
-            inventory.Sort((x, y) => x.ReagentLabel.CompareTo(y.ReagentLabel));
+            //inventory.Sort((x, y) => x.ReagentLabel.CompareTo(y.ReagentLabel));
+            // default order is that of creation, ie. mirror prototype for default entities
 
             foreach (var item in inventory)
             {

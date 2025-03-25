@@ -281,7 +281,7 @@
   desc: reagent-desc-diethylamine
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: bitter
-  color: "#a1000b"
+  color: "#604030"
   boilingPoint: 55.5
   meltingPoint: -50.0
   plantMetabolism:

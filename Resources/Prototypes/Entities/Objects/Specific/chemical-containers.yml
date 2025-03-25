@@ -418,3 +418,31 @@
           reagents:
             - ReagentId: WeldingFuel
               Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugSulfuricAcid
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Label
+      currentLabel: reagent-name-sulfuric-acid
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: SulfuricAcid
+              Quantity: 200
+
+- type: entity
+  parent: Jug
+  id: JugWater
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Label
+      currentLabel: reagent-name-water
+    - type: SolutionContainerManager
+      solutions:
+        beaker:
+          reagents:
+            - ReagentId: Water
+              Quantity: 200

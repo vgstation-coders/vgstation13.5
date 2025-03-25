@@ -36,7 +36,7 @@
   desc: reagent-desc-dylovene
   physicalDesc: reagent-physical-desc-translucent
   flavor: medicine
-  color: "#3a1d8a"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -108,7 +108,7 @@
   desc: reagent-desc-ethylredoxrazine
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
-  color: "#2d5708"
+  color: "#605048"
   metabolisms:
     Medicine:
       effects:
@@ -128,7 +128,7 @@
   desc: reagent-desc-arithrazine
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#bd5902"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -146,7 +146,7 @@
   desc: reagent-desc-bicaridine
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
-  color: "#ffaa00"
+  color: "#5962F8"
   metabolisms:
     Medicine:
       effects:
@@ -180,7 +180,7 @@
   desc: reagent-desc-cryoxadone
   physicalDesc: reagent-physical-desc-fizzy
   flavor: medicine
-  color: "#0091ff"
+  color: "#C8A5DC"
   worksOnTheDead: true
   plantMetabolism:
   - !type:PlantAdjustToxins
@@ -232,7 +232,7 @@
   desc: reagent-desc-dermaline
   physicalDesc: reagent-physical-desc-translucent
   flavor: medicine
-  color: "#215263"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -264,7 +264,7 @@
   desc: reagent-desc-dexalin
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
-  color: "#0041a8"
+  color: "#4CE9FF"
   metabolisms:
     Medicine:
       effects:
@@ -289,7 +289,7 @@
   desc: reagent-desc-dexalin-plus
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#4da0bd"
+  color: "#4CE9FF"
   metabolisms:
     Medicine:
       effects:
@@ -383,7 +383,7 @@
   desc: reagent-desc-hyronalin
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
-  color: "#4cb580"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -429,7 +429,7 @@
   desc: reagent-desc-inaprovaline
   physicalDesc: reagent-physical-desc-opaque
   flavor: medicine
-  color: "#731024"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -451,7 +451,7 @@
   desc: reagent-desc-kelotane
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: medicine
-  color: "#bf3d19"
+  color: "#C2733F"
   metabolisms:
     Medicine:
       effects:
@@ -484,7 +484,7 @@
   desc: reagent-desc-leporazine
   physicalDesc: reagent-physical-desc-pungent
   flavor: medicine
-  color: "#ff7db5"
+  color: "#C8A5DC"
   metabolisms:
     Medicine:
       effects:
@@ -1397,3 +1397,319 @@
   - !type:PlantAdjustHealth
     amount: 0.1
 
+# /vg/med
+
+- type: reagent
+  id: Albuterol
+  name: reagent-name-albuterol
+  group: Medicine
+  desc: reagent-desc-albuterol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Alkycosine
+  name: reagent-name-alkycosine
+  group: Medicine
+  desc: reagent-desc-alkycosine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Alkysine
+  name: reagent-name-alkysine
+  group: Medicine
+  desc: reagent-desc-alkysine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Biofoam
+  name: reagent-name-biofoam
+  group: Medicine
+  desc: reagent-desc-biofoam
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: medicine
+  color: "#D9C0E7"
+
+- type: reagent
+  id: Citalopram
+  name: reagent-name-citalopram
+  group: Medicine
+  desc: reagent-desc-citalopram
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Clonexadone
+  name: reagent-name-clonexadone
+  group: Medicine
+  desc: reagent-desc-clonexadone
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: ClottingAgent
+  name: reagent-name-clottingagent
+  group: Medicine
+  desc: reagent-desc-clottingagent
+  physicalDesc: reagent-physical-desc-grainy
+  flavor: medicine
+  color: "#a00000"
+
+- type: reagent
+  id: CombatNanobots
+  name: reagent-name-combatnanobots
+  group: Medicine
+  desc: reagent-desc-combatnanobots
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: medicine
+  color: "#343F42"
+
+- type: reagent
+  id: DegenerateCalcium
+  name: reagent-name-degeneratecalcium
+  group: Medicine
+  desc: reagent-desc-degeneratecalcium
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#ccffb3"
+
+- type: reagent
+  id: Dietine
+  name: reagent-name-dietine
+  group: Medicine
+  desc: reagent-desc-dietine
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#BBEDA4"
+
+- type: reagent
+  id: Imidazoline
+  name: reagent-name-imidazoline
+  group: Medicine
+  desc: reagent-desc-imidazoline
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Inacusiate
+  name: reagent-name-inacusiate
+  group: Medicine
+  desc: reagent-desc-inacusiate
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#6600FF"
+
+- type: reagent
+  id: Lithotorcrazine
+  name: reagent-name-lithotorcrazine
+  group: Medicine
+  desc: reagent-desc-lithotorcrazine
+  physicalDesc: reagent-physical-desc-thick-and-grainy
+  flavor: medicine
+  color: "#C0C0C0"
+
+- type: reagent
+  id: MedicalNanobots
+  name: reagent-name-medicalnanobots
+  group: Medicine
+  desc: reagent-desc-medicalnanobots
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: medicine
+  color: "#593948"
+
+- type: reagent
+  id: Methylin
+  name: reagent-name-methylin
+  group: Medicine
+  desc: reagent-desc-methylin
+  physicalDesc: reagent-physical-desc-oily
+  flavor: medicine
+  color: "#CC1122"
+
+- type: reagent
+  id: Nanobots
+  name: reagent-name-nanobots
+  group: Medicine
+  desc: reagent-desc-nanobots
+  physicalDesc: reagent-physical-desc-shiny
+  flavor: medicine
+  color: "#3E3959"
+
+- type: reagent
+  id: Nanofloxacin
+  name: reagent-name-nanofloxacin
+  group: Medicine
+  desc: reagent-desc-nanofloxacin
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#969696"
+
+- type: reagent
+  id: Oxycodone
+  name: reagent-name-oxycodone
+  group: Medicine
+  desc: reagent-desc-oxycodone
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C805DC"
+
+- type: reagent
+  id: Paracetamol
+  name: reagent-name-paracetamol
+  group: Medicine
+  desc: reagent-desc-paracetamol
+  physicalDesc: reagent-physical-desc-chalky
+  flavor: medicine
+  color: "#C855DC"
+
+- type: reagent
+  id: Paroxetine
+  name: reagent-name-paroxetine
+  group: Medicine
+  desc: reagent-desc-paroxetine
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Peptobismol
+  name: reagent-name-peptobismol
+  group: Medicine
+  desc: reagent-desc-peptobismol
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Peridaxon
+  name: reagent-name-peridaxon
+  group: Medicine
+  desc: reagent-desc-peridaxon
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Piccolyn
+  name: reagent-name-piccolyn
+  group: Medicine
+  desc: reagent-desc-piccolyn
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#00FF00"
+
+- type: reagent
+  id: Preslomite
+  name: reagent-name-preslomite
+  group: Medicine
+  desc: reagent-desc-preslomite
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#FFFFFF"
+
+- type: reagent
+  id: Priaxate
+  name: reagent-name-priaxate
+  group: Medicine
+  desc: reagent-desc-priaxate
+  physicalDesc: reagent-physical-desc-pungent
+  flavor: medicine
+  color: "#CD8471"
+
+- type: reagent
+  id: Rezadone
+  name: reagent-name-rezadone
+  group: Medicine
+  desc: reagent-desc-rezadone
+  physicalDesc: reagent-physical-desc-inky
+  flavor: medicine
+  color: "#669900"
+
+- type: reagent
+  id: Ryetalyn
+  name: reagent-name-ryetalyn
+  group: Medicine
+  desc: reagent-desc-ryetalyn
+  physicalDesc: reagent-physical-desc-odorless
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Simpolinol
+  name: reagent-name-simpolinol
+  group: Medicine
+  desc: reagent-desc-simpolinol
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#A5A5FF"
+
+- type: reagent
+  id: SoporificRejuvenant
+  name: reagent-name-soporificrejuvenant
+  group: Medicine
+  desc: reagent-desc-soporificrejuvenant
+  physicalDesc: reagent-physical-desc-cloudy
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Spaceacillin
+  name: reagent-name-spaceacillin
+  group: Medicine
+  desc: reagent-desc-spaceacillin
+  physicalDesc: reagent-physical-desc-grainy
+  flavor: medicine
+  color: "#C81040"
+
+- type: reagent
+  id: Stabilizine
+  name: reagent-name-stabilizine
+  group: Medicine
+  desc: reagent-desc-stabilizine
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#833484"
+
+- type: reagent
+  id: Sterilizine
+  name: reagent-name-sterilizine
+  group: Medicine
+  desc: reagent-desc-sterilizine
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Synthocarisol
+  name: reagent-name-synthocarisol
+  group: Medicine
+  desc: reagent-desc-synthocarisol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#580082"
+
+- type: reagent
+  id: Tramadol
+  name: reagent-name-tramadol
+  group: Medicine
+  desc: reagent-desc-tramadol
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#C8A5DC"
+
+- type: reagent
+  id: Trinitrine
+  name: reagent-name-trinitrine
+  group: Medicine
+  desc: reagent-desc-trinitrine
+  physicalDesc: reagent-physical-desc-oily
+  flavor: medicine
+  color: "#CED7D5"

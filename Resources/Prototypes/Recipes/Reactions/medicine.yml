@@ -108,10 +108,10 @@
     Oxygen:
       amount: 2
     Plasma:
-      amount: 1
+      amount: 5
       catalyst: true
   products:
-    Dexalin: 3
+    Dexalin: 1
 
 - type: reaction
   id: DexalinPlus
@@ -186,10 +186,10 @@
   reactants:
     Copper:
       amount: 1
-    Fersilicite:
+    Silicon:
       amount: 1
     Plasma:
-      amount: 1
+      amount: 5
       catalyst: true
   products:
     Leporazine: 2
@@ -279,14 +279,12 @@
   id: Lexorin
   impact: High
   reactants:
-    HeartbreakerToxin:
-      amount: 1
     Plasma:
-      amount: 3
-    Impedrezene:
-      amount: 3
+      amount: 1
+    Ammonia:
+      amount: 1
   products:
-    Lexorin: 2
+    Lexorin: 3
 
 - type: reaction
   id: Lipozine
@@ -666,3 +664,337 @@
       amount: 1
   products:
     Haloperidol: 5
+
+# /vg/med
+
+- type: reaction
+  id: Albuterol
+  reactants:
+    Tramadol:
+      amount: 1
+    Hyperzine:
+      amount: 1
+  products:
+    Albuterol: 2
+
+- type: reaction
+  id: Alkycosine
+  reactants:
+    Alkysine:
+      amount: 1
+    Bleach:
+      amount: 1
+    Dylovene:
+      amount: 1
+  products:
+    Alkycosine: 4
+
+- type: reaction
+  id: Alkysine
+  reactants:
+    Chlorine:
+      amount: 1
+    Nitrogen:
+      amount: 1
+    Dylovene:
+      amount: 1
+  products:
+    Alkysine: 2
+  minTemp: 40
+
+- type: reaction
+  id: Citalopram
+  reactants:
+    MindbreakerToxin:
+      amount: 1
+    Carbon:
+      amount: 1
+  products:
+    Citalopram: 3
+
+- type: reaction
+  id: Clonexadone
+  reactants:
+    Cryoxadone:
+      amount: 1
+    Sodium:
+      amount: 1
+    Plasma:
+      amount: 5
+      catalyst: true
+  products:
+    Clonexadone: 2
+
+- type: reaction
+  id: CombatNanobots
+  reactants:
+    Nanobots:
+      amount: 1
+    UnstableMutagen:
+      amount: 5
+    Silicate:
+      amount: 5
+    Iron:
+      amount: 10
+  products:
+    CombatNanobots: 2.5
+
+- type: reaction
+  id: DegenerateCalcium
+  reactants:
+    Milk:
+      amount: 1
+    UnstableMutagen:
+      amount: 1
+  products:
+    DegenerateCalcium: 1
+  minTemp: 88
+
+- type: reaction
+  id: Dietine
+  reactants:
+    TableSalt:
+      amount: 1
+    Coffee:
+      amount: 3
+    Lithium:
+      amount: 1
+    WeldingFuel:
+      amount: 1
+  products:
+    Dietine: 1
+
+- type: reaction
+  id: Imidazoline
+  reactants:
+    Carbon:
+      amount: 1
+    Hydrogen:
+      amount: 1
+    Dylovene:
+      amount: 1
+  products:
+    Imidazoline: 2
+
+- type: reaction
+  id: Lithotorcrazine
+  reactants:
+    Lithium:
+      amount: 1
+    Arithrazine:
+      amount: 3
+    Uranium:
+      amount: 1
+  products:
+    Lithotorcrazine: 5
+
+- type: reaction
+  id: MedicalNanobots
+  reactants:
+    Nanobots:
+      amount: 1
+    DoctorsDelight:
+      amount: 5
+  products:
+    MedicalNanobots: 2.5
+
+- type: reaction
+  id: Methylin
+  reactants:
+    Hydrogen:
+      amount: 1
+    Chlorine:
+      amount: 1
+    Ethanol:
+      amount: 1
+    Fluorine:
+      amount: 5
+      catalyst: true
+  products:
+    Methylin: 1
+
+- type: reaction
+  id: Nanobots
+  reactants:
+    Nanites:
+      amount: 1
+    Uranium:
+      amount: 10
+    Gold:
+      amount: 10
+    Nutriment:
+      amount: 10
+    Silicon:
+      amount: 10
+  products:
+    Nanobots: 2
+
+- type: reaction
+  id: Nanobots2
+  reactants:
+    MedicalNanobots:
+      amount: 2.5
+    Cryoxadone:
+      amount: 2
+  products:
+    Nanobots: 1
+
+- type: reaction
+  id: Nanofloxacin
+  reactants:
+    Nanobots:
+      amount: 1
+    Spaceacillin:
+      amount: 5
+    Fluorine:
+      amount: 1
+  products:
+    Nanofloxacin: 2.5
+
+- type: reaction
+  id: Oxycodone
+  reactants:
+    Ethanol:
+      amount: 1
+    Tramadol:
+      amount: 1
+    Plasma:
+      amount: 1
+  products:
+    Oxycodone: 3
+
+- type: reaction
+  id: Paroxetine
+  reactants:
+    MindbreakerToxin:
+      amount: 1
+    Oxygen:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+  products:
+    Paroxetine: 3
+
+- type: reaction
+  id: Peptobismol
+  reactants:
+    Dylovene:
+      amount: 1
+    DiscountDansSpecialSauce:
+      amount: 1
+  products:
+    Peptobismol: 2
+
+- type: reaction
+  id: Piccolyn
+  reactants:
+    Copper:
+      amount: 1
+    Tungsten:
+      amount: 1
+    Fluorine:
+      amount: 1
+  products:
+    Piccolyn: 1
+
+- type: reaction
+  id: Priaxate
+  reactants:
+    Gravy:
+      amount: 1
+    Tricordrazine:
+      amount: 1
+  products:
+    Priaxate: 2
+
+- type: reaction
+  id: Rezadone
+  reactants:
+    CarpoToxin:
+      amount: 1
+    Cryptobiolin:
+      amount: 1
+    Copper:
+      amount: 1
+  products:
+    Rezadone: 3
+
+- type: reaction
+  id: Ryetalyn
+  reactants:
+    Arithrazine:
+      amount: 1
+    Carbon:
+      amount: 1
+  products:
+    Ryetalyn: 2
+
+- type: reaction
+  id: Simpolinol
+  reactants:
+    Methylin:
+      amount: 20
+    Silver:
+      amount: 20
+  products:
+    Simpolinol: 40
+
+- type: reaction
+  id: Spaceacillin
+  reactants:
+    Cryptobiolin:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+  products:
+    Spaceacillin: 2
+
+- type: reaction
+  id: Sterilizine
+  reactants:
+    Ethanol:
+      amount: 1
+    Dylovene:
+      amount: 1
+    Chlorine:
+      amount: 1
+  products:
+    Sterilizine: 3
+
+- type: reaction
+  id: Synthocarisol
+  reactants:
+    Bicaridine:
+      amount: 1
+    Inaprovaline:
+      amount: 1
+  products:
+    Synthocarisol: 2
+  minTemp: 77
+
+- type: reaction
+  id: Tramadol
+  reactants:
+    Inaprovaline:
+      amount: 1
+    Ethanol:
+      amount: 1
+    Oxygen:
+      amount: 1
+  products:
+    Tramadol: 3
+
+- type: reaction
+  id: Trinitrine
+  reactants:
+    Glycerol:
+      amount: 1
+    SulfuricAcid:
+      amount: 1
+    Water:
+      amount: 3
+    Nitrogen:
+      amount: 5
+      catalyst: true
+  products:
+    Trinitrine: 5

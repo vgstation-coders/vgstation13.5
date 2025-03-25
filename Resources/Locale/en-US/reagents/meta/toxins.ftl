@@ -32,7 +32,7 @@ reagent-name-heartbreaker-toxin = heartbreaker toxin
 reagent-desc-heartbreaker-toxin = A hallucinogenic compound derived from mindbreaker toxin. it blocks neurological signals to the respiratory system, causing asphyxiation. Dexalin plus and epinephrine will filter it out, however.
 
 reagent-name-lexorin = lexorin
-reagent-desc-lexorin = A fast-acting chemical used to asphyxiate people rapidly.
+reagent-desc-lexorin = Lexorin temporarily stops respiration. Causes tissue damage.
 
 reagent-name-mindbreaker-toxin = mindbreaker toxin
 reagent-desc-mindbreaker-toxin = A potent, brain damaging poison that can remove psionics.
@@ -77,7 +77,7 @@ reagent-name-tazinide = tazinide
 reagent-desc-tazinide = A highly dangerous metallic mixture which can interfere with most movement through an electrifying current.
 
 reagent-name-lipolicide = lipolicide
-reagent-desc-lipolicide = A powerful toxin that will destroy fat cells, massively reducing body weight in a short time. Deadly to those without nutriment in their body.
+reagent-desc-lipolicide = A chemical compound that causes a powerful fat-burning reaction.
 
 reagent-name-soulbreaker-toxin = soulbreaker toxin
 reagent-desc-soulbreaker-toxin = An anti-psionic about 4 times as powerful as mindbreaker toxin.
