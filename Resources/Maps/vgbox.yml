@@ -11550,7 +11550,7 @@ entities:
       pos: 91.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18627.57
+      secondsUntilStateChange: -18679.465
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12336,7 +12336,7 @@ entities:
       pos: 149.5,-29.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21085.502
+      secondsUntilStateChange: -21137.396
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -131850,6 +131850,13 @@ entities:
     - type: Transform
       pos: 93.50755,-44.486813
       parent: 2
+- proto: ReverseEngineeringMachine
+  entities:
+  - uid: 25022
+    components:
+    - type: Transform
+      pos: 152.5,-30.5
+      parent: 2
 - proto: RiotShield
   entities:
   - uid: 19307
@@ -164595,7 +164602,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -80420.72
+      secondsUntilStateChange: -80472.61
       state: Opening
   - uid: 18397
     components:
