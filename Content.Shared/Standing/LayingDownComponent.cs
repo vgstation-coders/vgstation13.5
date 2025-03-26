@@ -10,8 +10,7 @@ public sealed partial class LayingDownComponent : Component
     public TimeSpan StandingUpTime = TimeSpan.FromSeconds(0.2);
 
     [DataField, AutoNetworkedField]
-    public float LyingSpeedModifier = 0.35f,
-                 CrawlingUnderSpeedModifier = 0.5f;
+    public float LyingSpeedModifier = 0.30f;
 
     [DataField, AutoNetworkedField]
     public bool AutoGetUp;
