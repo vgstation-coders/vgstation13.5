@@ -240,6 +240,19 @@
       types:
         Blunt: 8
     bonkTime: 3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 55
+        mask: # tables should collide with other tables
+        - TableMask
+        layer:
+        - TableLayer
+        - BulletImpassable
+        - LowImpassable
 
 - type: entity
   id: TableGlass
