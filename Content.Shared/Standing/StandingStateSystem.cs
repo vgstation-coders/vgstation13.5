@@ -10,6 +10,9 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Systems;
 using System.Linq;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Popups;
+
 
 namespace Content.Shared.Standing;
 
@@ -22,9 +25,10 @@ public sealed class StandingStateSystem : EntitySystem
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly ClimbSystem _climb = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     // If StandingCollisionLayer value is ever changed to more than one layer, the logic needs to be edited.
-    private const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
+    public const int StandingCollisionLayer = (int) CollisionGroup.MidImpassable;
 
     public bool IsDown(EntityUid uid, StandingStateComponent? standingState = null)
     {
@@ -78,7 +82,12 @@ public sealed class StandingStateSystem : EntitySystem
             foreach (var (key, fixture) in fixtureComponent.Fixtures)
             {
                 if ((fixture.CollisionMask & StandingCollisionLayer) == 0)
-                    continue;
+                {
+                    // TODO: This assumes all climbing entities originally started with StandingCollisionLayer.
+                    // A more sophisticated way to keep track of an entity's "original fixture flags" is needed.
+                    if(!TryComp(uid, out ClimbingComponent? climbingComponent) || !climbingComponent.IsClimbing)
+                        continue;
+                }
 
                 standingState.ChangedFixtures.Add(key);
                 _physics.SetCollisionMask(uid, key, fixture, fixture.CollisionMask & ~StandingCollisionLayer, manager: fixtureComponent);
