@@ -788,13 +788,13 @@ public sealed class PullingSystem : EntitySystem
         {
             // Joint startup
             var union = _physics.GetHardAABB(pullerUid).Union(_physics.GetHardAABB(pullableUid, body: pullablePhysics));
-            var length = Math.Max(union.Size.X, union.Size.Y) * 0.75f;
+            var length = Math.Max(union.Size.X, union.Size.Y) * 0.65f;
 
             var joint = _joints.CreateDistanceJoint(pullableUid, pullerUid, id: pullableComp.PullJointId);
-            joint.CollideConnected = false;
+            joint.CollideConnected = true;
             // This maximum has to be there because if the object is constrained too closely, the clamping goes backwards and asserts.
             joint.MaxLength = Math.Max(1.0f, length);
-            joint.Length = length * 0.75f;
+            joint.Length = length * 0.65f;
             joint.MinLength = 0f;
             joint.Stiffness = 1f;
 
