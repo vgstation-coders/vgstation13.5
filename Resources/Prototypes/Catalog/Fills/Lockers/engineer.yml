@@ -22,7 +22,7 @@
       - id: Multitool
         prob: 0.2
       - id: trayScanner
-        prob: 0.7
+        prob: 0.2
       - id: GasAnalyzer
         prob: 0.7
       - id: ClothingBeltUtility
@@ -48,15 +48,13 @@
   - type: StorageFill
     contents:
       - id: ToolboxElectricalFilled
-        prob: 0.7
-      - id: FirelockElectronics
-        prob: 0.05
+        amount: 3
       - id: APCElectronics
-        prob: 0.1
+        amount: 3
+      - id: ClothingHandsGlovesColorYellow
+        amount: 2
       - id: CableMVStack
-        prob: 0.2
       - id: CableApcStack
-        prob: 0.3
 
 - type: entity
   id: LockerWeldingSuppliesFilled
@@ -66,19 +64,9 @@
   - type: StorageFill
     contents:
       - id: ClothingHeadHatWelding
-      - id: ClothingHeadHatWelding
-      - id: ClothingHeadHatWelding
-        prob: 0.5
-      - id: Welder
-      - id: Welder
-      - id: WelderMini
-        orGroup: thirdWelder
-      - id: Welder
-        prob: 0.33
-        orGroup: thirdWelder
+        amount: 3
       - id: WelderIndustrial
-        prob: 0.33
-        orGroup: thirdWelder
+        amount: 3
 
 - type: entity
   id: LockerAtmosphericsFilledHardsuit
@@ -108,22 +96,29 @@
   suffix: Filled
   parent: LockerAtmospherics
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingMaskGasAtmos
-      - id: ClothingOuterSuitAtmosFire
-      - id: ClothingHeadHelmetAtmosFire
-      - id: GasAnalyzer
-      - id: MedkitOxygenFilled
-      - id: HolofanProjector
-      - id: DoorRemoteFirefight
-      - id: RCD
-      - id: RCDAmmo
-      - id: RPD
-      - id: RCDAmmo # Extra Compressed matter for the RPD
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: ClothingBackpackAtmospherics
+          - id: ClothingBackpackSatchelAtmospherics
+        - id: ClothingUniformJumpsuitAtmos
+        - id: ClothingShoesBootsWork
+        - id: BoxInflatable
+        - id: ToolboxMechanical
+        - id: FireExtinguisher
+        - id: ClothingHeadsetEngineering
+        - id: ClothingOuterVestHazard
+        - id: ClothingMaskGasAtmos
+        - id: WeaponFlareGun
+        - id: BoxFlare
+        - id: GasAnalyzer
+        - id: RPD
+        - id: RCDAmmo # TODO remove once RPD becomes free to use
+        - id: HandheldGPSBasic
+        - id: AccessConfigurator # ??? the hell is this thing
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -147,16 +142,24 @@
   suffix: Filled
   parent: LockerEngineer
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesColorYellow
-      - id: ClothingMaskGas
-      - id: trayScanner
-      - id: RCD
-      - id: RCDAmmo
-      - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-      - id: AccessConfigurator
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: ClothingBackpackEngineering
+          - id: ClothingBackpackSatchelEngineering
+        - id: ClothingUniformJumpsuitEngineering
+        - id: ClothingShoesBootsWork
+        - id: BoxInflatable
+        - id: ClothingHeadsetEngineering
+        - id: ToolboxMechanical
+        - id: ClothingOuterVestHazard
+        - id: ClothingMaskGas
+        - id: ClothingEyesGlassesMeson
+        - id: HandheldGPSBasic
+        - id: AccessConfigurator
 
 - type: entity
   id: ClosetRadiationSuitFilled
