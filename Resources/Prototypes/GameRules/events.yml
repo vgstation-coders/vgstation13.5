@@ -33,7 +33,7 @@
 
 - type: entity
   id: AnomalySpawn
-  parent: BaseGameRule
+  parent: BaseGameRule # /vg/station - remove midround anoms until they're not fucking annoying
   categories: [ HideSpawnMenu ]
   components:
   - type: AnomalySpawnRule
