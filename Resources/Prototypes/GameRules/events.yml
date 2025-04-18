@@ -33,12 +33,9 @@
 
 - type: entity
   id: AnomalySpawn
-  parent: BaseStationEventLongDelay
+  parent: BaseGameRule
   categories: [ HideSpawnMenu ]
   components:
-  - type: StationEvent
-    weight: 8
-    duration: 35
   - type: AnomalySpawnRule
 
 - type: entity
