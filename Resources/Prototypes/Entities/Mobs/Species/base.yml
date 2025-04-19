@@ -251,6 +251,8 @@
     - DoorBumpOpener
   - type: Targeting
   - type: SurgeryTarget
+  - type: MovedByPressure
+    cutoffTime: 1.0
 
 - type: entity
   save: false
