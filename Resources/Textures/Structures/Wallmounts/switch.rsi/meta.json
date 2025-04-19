@@ -60,6 +60,50 @@
           1
         ]
       ]
+    },
+    {
+      "name": "doorctrl0",
+      "directions": 4
+    },
+    {
+      "name": "doorctrl1",
+      "directions": 4,
+      "delays": [
+        [0.2, 0.2, 0.1],
+        [0.2, 0.2, 0.1], 
+        [0.2, 0.2, 0.1], 
+        [0.2, 0.2, 0.1]
+      ]
+    },
+    {
+      "name": "doorctrl-denied",
+      "directions": 4,
+      "delays": [
+        [0.2, 0.2], 
+        [0.2, 0.2], 
+        [0.2, 0.2], 
+        [0.2, 0.2]
+      ]
+    },
+    {
+      "name": "doorctrlp",
+      "directions": 4
+    },
+    {
+      "name": "light-p",
+      "directions": 4
+    },
+    {
+      "name": "light-p1",
+      "directions": 4
+    },
+    {
+      "name": "light0",
+      "directions": 4
+    },
+    {
+      "name": "light1",
+      "directions": 4
     }
   ]
 }
