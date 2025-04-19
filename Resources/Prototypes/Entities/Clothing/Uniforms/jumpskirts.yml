@@ -1237,6 +1237,39 @@
 
 - type: entity
   parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressPlaidBlue
+  name: blue plaid skirt
+  description: A preppy blue skirt with a white blouse.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/plaidbluedress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/plaidbluedress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressPlaidRed
+  name: red plaid skirt
+  description: A preppy red skirt with a white blouse.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/plaidreddress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/plaidreddress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressPlaidPurple
+  name: purple plaid skirt
+  description: A preppy purple skirt with a white blouse.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/plaidpurpledress.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/plaidpurpledress.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtDressPuffy
   name: puffy dress
   description: An iconic dress with a very puffy bottom.

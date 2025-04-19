@@ -10,15 +10,9 @@
       - id: HandLabeler
         amount: 1
       - id: DrinkBottleBeer
-        prob: 0.5
-      - id: DrinkBottleBeer
-        prob: 0.5
-      - id: DrinkBottleBeer
-        prob: 0.5
+        amount: 10
       - id: RagItem
-        amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
+        amount: 1
 
 - type: entity
   id: LockerBartenderFilled
@@ -32,48 +26,45 @@
       - id: HandLabeler
         amount: 1
       - id: DrinkBottleBeer
-        prob: 0.5
-      - id: DrinkBottleBeer
-        prob: 0.5
-      - id: DrinkBottleBeer
-        prob: 0.5
+        amount: 10
       - id: RagItem
-        amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
-
-#- type: entity
-#  id: LockerFormalFilled
-#  suffix: Filled
-#  parent: LockerFormal
+        amount: 1
 
 - type: entity
   id: ClosetChefFilled
   suffix: Filled
-  parent: ClosetChef
+  parent: LockerKitchenCloset
   components:
   - type: StorageFill
     contents:
-      - id: CrowbarRed
-      - id: VariantCubeBox
-      - id: BoxMousetrap
-        amount: 2
-      - id: SprayBottleWater
       - id: ReagentContainerFlour
-        amount: 2
+        amount: 3
       - id: ReagentContainerSugar
-      - id: FoodCondimentPacketSalt
-        amount: 3
-      - id: FoodCondimentPacketPepper
-        amount: 3
-      - id: FoodCondimentBottleEnzyme
-      # really, milk should go in the fridge. Unfortunately saltern only has freezers.
-      # yes, I'm using this as an excuse to not have to do extra work.
-      - id: DrinkMilkCarton
-        amount: 2
-      - id: DrinkSoyMilkCarton
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
+
+- type: entity
+  id: LockerFreezerMeatFilled
+  suffix: Filled
+  parent: LockerFreezerMeat
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodMeat
+      amount: 4
+
+- type: entity
+  id: LockerFreezerFridgeFilled
+  suffix: Filled
+  parent: LockerFreezerFridge
+  components:
+  - type: StorageFill
+    contents:
+    - id: DrinkMilkCarton
+      amount: 5
+    - id: DrinkSoyMilkCarton
+      amount: 5
+    - id: FoodContainerEgg
+      amount: 2
+    - id: FoodMealMint
 
 - type: entity
   id: ClosetJanitorFilled
@@ -82,25 +73,19 @@
   components:
   - type: StorageFill
     contents:
-      - id: MopItem
-        amount: 2
-      - id: BoxMousetrap
-        amount: 2
+      - id: ClothingUniformJumpsuitJanitor
+      - id: FlashlightLantern
+      - id: ClothingShoesGaloshes
+      - id: ClothingOuterSuitOveralls
+      - id: ClothingHandsGlovesColorBlack
+      - id: ClothingHeadHatPurplesoft
       - id: WetFloorSign
-        amount: 3
+        amount: 6
       - id: TrashBag
-        amount: 2
       - id: LightReplacer
       - id: BoxLightMixed
-      - id: Holoprojector
-      - id: SoapNT
-        amount: 2
-      - id: FlashlightLantern
         amount: 2
       - id: Plunger
-        amount: 2
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
 
 - type: entity
   id: ClosetLegalFilled
@@ -109,36 +94,38 @@
   components:
   - type: StorageFill
     contents:
-      - id: BriefcaseBrownFilled
-        prob: 0.80
-      - id: ClothingOuterRobesJudge
+      - id: ClothingUniformJumpsuitJournalist
+      - id: ClothingUniformJumpsuitLawyerBlack
+      - id: ClothingUniformJumpsuitLawyerRed
+      - id: ClothingUniformJumpsuitLawyerBlue
+      - id: ClothingUniformBluesuit
+      - id: ClothingUniformPurpsuit
+      - id: ClothingShoesColorBlack
+      - id: ClothingShoesColorBrown
 
 - type: entity
   id: LockerBotanistFilled
   suffix: Filled
   parent: LockerBotanist
   components:
-  - type: StorageFill
-    contents:
-      - id: ClothingHandsGlovesLeather
-      - id: ClothingOuterApronBotanist
-      - id: ClothingHeadBandBotany
-      - id: HydroponicsToolClippers
-      - id: HydroponicsToolSpade
-      - id: HydroponicsToolMiniHoe
-      - id: RobustHarvestChemistryBottle
-        prob: 0.3
-      - id: ClothingBeltPlant
-      - id: PlantBag ##Some maps don't have nutrivend
-      - id: PlantAnalyzer
-      - id: BoxMouthSwab
-      - id: Dropper
-      - id: HandLabeler
-      - id: ClothingUniformOveralls
-      - id: ClothingHeadHatTrucker
-        prob: 0.1
-      - id: LunchboxServiceFilledRandom # Delta-V Lunchboxes!
-        prob: 0.3
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:GroupSelector
+          children:
+          - id: ClothingOuterApronBotanist
+          - id: ClothingOuterSuitOveralls
+        - !type:GroupSelector
+          children:
+          - id: ClothingBackpackHydroponics
+          - id: ClothingBackpackSatchelHydroponics
+        - id: ClothingUniformJumpsuitHydroponics
+        - id: PlantAnalyzer
+        - id: ClothingHeadBandBotany
+        - id: HydroponicsToolMiniHoe
+        - id: HydroponicsToolHatchet
+        - id: ClothingBeltPlant
 
 - type: entity
   id: LockerBotanistLoot

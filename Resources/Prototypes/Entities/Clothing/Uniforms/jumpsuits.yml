@@ -1928,3 +1928,46 @@
     sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/black_flannel_khakis.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitTourist
+  name: tourist uniform
+  description: A bright cyan shirt and a pair of brown shorts. Looks old.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/tourist.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/tourist.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformBluesuit
+  name: blue suit
+  description: A classy suit and tie.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/bluesuit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/bluesuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformPurpsuit
+  name: purple suit
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/purpsuit.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/purpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformCia
+  name: casual IAA outfit
+  description: Just looking at this makes you feel in charge.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpsuit/cia.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpsuit/cia.rsi
