@@ -37,3 +37,8 @@
   name: guide-entry-rules-sl-crime-list
   priority: 50
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
+
+- type: guideEntry
+  id: VgRuleset
+  name: guide-entry-rules
+  text: "/ServerInfo/Guidebook/ServerRules/VgRuleset.xml"
