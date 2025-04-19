@@ -267,10 +267,6 @@ binds:
 - function: ToggleStanding
   type: State
   key: R
-- function: ToggleCrawlingUnder
-  type: State
-  mod1: Shift
-  key: R
 - function: ShowDebugConsole
   type: State
   key: Tilde

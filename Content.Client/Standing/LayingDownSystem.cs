@@ -1,4 +1,5 @@
 using Content.Shared.Buckle;
+using Content.Shared.Climbing.Components;
 using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Client.GameObjects;
@@ -27,14 +28,14 @@ public sealed class LayingDownSystem : SharedLayingDownSystem
     public override void Update(float frameTime)
     {
         // Update draw depth of laying down entities as necessary
-        var query = EntityQueryEnumerator<LayingDownComponent, StandingStateComponent, SpriteComponent>();
-        while (query.MoveNext(out var uid, out var layingDown, out var standing, out var sprite))
+        var query = EntityQueryEnumerator<LayingDownComponent, StandingStateComponent, SpriteComponent, ClimbingComponent>();
+        while (query.MoveNext(out var uid, out var layingDown, out var standing, out var sprite, out var climbingComponent))
         {
             // Do not modify the entities draw depth if it's modified externally
             if (sprite.DrawDepth != layingDown.NormalDrawDepth && sprite.DrawDepth != layingDown.CrawlingUnderDrawDepth)
                 continue;
 
-            sprite.DrawDepth = standing.CurrentState is StandingState.Lying && layingDown.IsCrawlingUnder
+            sprite.DrawDepth = standing.CurrentState is StandingState.Lying && !climbingComponent.IsClimbing
                 ? layingDown.CrawlingUnderDrawDepth
                 : layingDown.NormalDrawDepth;
         }

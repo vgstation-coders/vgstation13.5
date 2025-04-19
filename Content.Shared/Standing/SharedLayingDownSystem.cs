@@ -32,7 +32,6 @@ public abstract class SharedLayingDownSystem : EntitySystem
     {
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.ToggleStanding, InputCmdHandler.FromDelegate(ToggleStanding))
-            .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: false))
             .Register<SharedLayingDownSystem>();
 
         SubscribeNetworkEvent<ChangeLayingDownEvent>(OnChangeState);
@@ -58,31 +57,6 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return;
 
         RaiseNetworkEvent(new ChangeLayingDownEvent());
-    }
-
-    private void HandleCrawlUnderRequest(ICommonSession? session)
-    {
-        if (session == null
-            || session.AttachedEntity is not {} uid
-            || !TryComp<StandingStateComponent>(uid, out var standingState)
-            || !TryComp<LayingDownComponent>(uid, out var layingDown)
-            || !_actionBlocker.CanInteract(uid, null))
-            return;
-
-        var newState = !layingDown.IsCrawlingUnder;
-        if (standingState.CurrentState is StandingState.Standing)
-            newState = false; // If the entity is already standing, this function only serves a fallback method to fix its draw depth
-
-        // Do not allow to begin crawling under if it's disabled in config. We still, however, allow to stop it, as a failsafe.
-        if (newState && !_config.GetCVar(CCVars.CrawlUnderTables))
-        {
-            _popups.PopupEntity(Loc.GetString("crawling-under-tables-disabled-popup"), uid, session);
-            return;
-        }
-
-        layingDown.IsCrawlingUnder = newState;
-        _speed.RefreshMovementSpeedModifiers(uid);
-        Dirty(uid, layingDown);
     }
 
     private void OnChangeState(ChangeLayingDownEvent ev, EntitySessionEventArgs args)
@@ -114,8 +88,8 @@ public abstract class SharedLayingDownSystem : EntitySystem
             || _mobState.IsIncapacitated(uid)
             || !_standing.Stand(uid))
             component.CurrentState = StandingState.Lying;
-
-        component.CurrentState = StandingState.Standing;
+        else
+            component.CurrentState = StandingState.Standing;
     }
 
     private void OnRefreshMovementSpeed(EntityUid uid, LayingDownComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -123,7 +97,7 @@ public abstract class SharedLayingDownSystem : EntitySystem
         if (!_standing.IsDown(uid))
             return;
 
-        var modifier = component.LyingSpeedModifier * (component.IsCrawlingUnder ? component.CrawlingUnderSpeedModifier : 1);
+        var modifier = component.LyingSpeedModifier;
         args.ModifySpeed(modifier, modifier);
     }
 
@@ -160,7 +134,6 @@ public abstract class SharedLayingDownSystem : EntitySystem
             return false;
 
         standingState.CurrentState = StandingState.GettingUp;
-        layingDown.IsCrawlingUnder = false;
         return true;
     }
 
